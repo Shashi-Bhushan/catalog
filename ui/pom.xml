@@ -15,7 +15,7 @@
     <!-- P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
 
-    <artifactId>catalog-content</artifactId>
+    <artifactId>catalog-ui</artifactId>
     <packaging>content-package</packaging>
     <name>Catalog Package</name>
 

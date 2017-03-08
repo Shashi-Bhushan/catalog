@@ -242,6 +242,6 @@
     </profiles>
   <modules>
     <module>bundle</module>
-    <module>content</module>
+    <module>ui</module>
   </modules>
 </project>
