@@ -1,14 +1,20 @@
 Catalog
 ========
 
-This a content package project generated using the multimodule-content-package-archetype.
+This Project is an AEM based Book Catalog System.
+
+-   *Uses Separate UI and Content Package System.* 
+    UI is for /apps components and /etc clientlibs and design pages.
+    CONTENT is for /content pages.
 
 Building
 --------
 
-This project uses Maven for building. Common commands:
+Common commands:
 
-From the root directory, run ``mvn -PautoInstallPackage clean install`` to build the bundle and content package and install to a CQ instance.
+From the root directory, run ``mvn -PautoInstallPackage clean install`` to build the bundle and ui package and install to a CQ instance.
+
+From the root directory, run ``mvn -PautoInstallContent clean install`` to build the content package and install to a CQ instance.
 
 From the bundle directory, run ``mvn -PautoInstallBundle clean install`` to build *just* the bundle and install to a CQ instance.
 
