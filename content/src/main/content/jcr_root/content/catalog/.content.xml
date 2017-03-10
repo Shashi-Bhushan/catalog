@@ -3,10 +3,6 @@
     jcr:primaryType="sling:OrderedFolder">
     <jcr:content
         jcr:primaryType="nt:unstructured"
-        jcr:title="Client Library">
-        <par
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="/apps/clientlibs/servlet"/>
-    </jcr:content>
+        jcr:title="Catalog"/>
     <base/>
 </jcr:root>

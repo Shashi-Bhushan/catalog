@@ -1,7 +1,7 @@
 Catalog
 ========
 
-This Project is an AEM based Book Catalog System.
+This Project is an AEM based Book Catalog System. It's meant to be a development exercise.
 
 -   *Uses Separate UI and Content Package System.* 
     UI is for /apps components and /etc clientlibs and design pages.
