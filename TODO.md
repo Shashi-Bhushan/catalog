@@ -1,0 +1,8 @@
+- [x] Have Separate Maven modules - UI and Content.
+- [] Enable Java8 for Project
+- [] Enable jUnit and Mockito Testing Frameworks for Project.
+- [] Implement Books Catalog System using AEM Scaffolding and a templating engine.
+- [] Implement Import and Export Product Utilities. Should also be able to extract restricted AEM nodes such as rep:policy.
+- [] Implement Google Analytics for Project.
+- [] Make Project Multilingual.
+- [] Implement Solr Search on Project.
