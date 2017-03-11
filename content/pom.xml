@@ -46,6 +46,36 @@
 					<includeEmptyDirs>true</includeEmptyDirs>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>com.citytechinc.cq.cq-component-plugin</groupId>
+                <artifactId>cq-component-maven-plugin</artifactId>
+                <version>4.1.0</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>component</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <componentPathBase>jcr_root/apps/catalog/components</componentPathBase>
+                    <componentPathSuffix>content</componentPathSuffix>
+                    <defaultComponentGroup>Client Group</defaultComponentGroup>
+                    <transformerName>camel-case</transformerName>
+                    <generateTouchUiDialogs>true</generateTouchUiDialogs>
+                    <excludedDependencies>
+                        <dependency>
+                            <groupId>dependency.group.id</groupId>
+                            <artifactId>dependency-artifact-id</artifactId>
+                        </dependency>
+                    </excludedDependencies>
+                    <additionalFeatures>
+                        <additionalFeature>feature-flag</additionalFeature>
+                        <additionalFeature>another-feature-flag</additionalFeature>
+                    </additionalFeatures>
+                </configuration>
+            </plugin>
 
 			<plugin>
 				<groupId>com.day.jcr.vault</groupId>

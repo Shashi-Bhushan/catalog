@@ -100,8 +100,8 @@
             </dependency>
             <dependency>
                 <groupId>com.citytechinc.cq.cq-component-plugin</groupId>
-                <artifactId>cq-component-maven-plugin</artifactId>
-                <version>4.2.0</version>
+                <artifactId>cq-component-annotations</artifactId>
+                <version>4.1.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -230,18 +230,7 @@
                 <plugin>
                     <groupId>com.citytechinc.cq.cq-component-plugin</groupId>
                     <artifactId>cq-component-maven-plugin</artifactId>
-                    <version>4.2.0</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>component</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <componentPathBase>jcr_root/apps/catalog/components</componentPathBase>
-                        <defaultComponentGroup>Client Group</defaultComponentGroup>
-                    </configuration>
+                    <version>4.1.0</version>
                 </plugin>
 
             </plugins>
