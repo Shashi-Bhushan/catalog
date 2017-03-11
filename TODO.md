@@ -4,5 +4,6 @@
 - [ ] Implement Books Catalog System using AEM Scaffolding and a templating engine.
 - [ ] Implement Import and Export Product Utilities. Should also be able to extract restricted AEM nodes such as rep:policy.
 - [ ] Implement Google Analytics for Project.
+- [ ] Implement Pagination on Catalog
 - [ ] Make Project Multilingual.
 - [ ] Implement Solr Search on Project.

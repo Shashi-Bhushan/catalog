@@ -98,6 +98,11 @@
                 <version>4.8.1</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>com.citytechinc.cq.cq-component-plugin</groupId>
+                <artifactId>cq-component-maven-plugin</artifactId>
+                <version>4.2.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -222,6 +227,23 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>com.citytechinc.cq.cq-component-plugin</groupId>
+                    <artifactId>cq-component-maven-plugin</artifactId>
+                    <version>4.2.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>component</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <componentPathBase>jcr_root/apps/catalog/components</componentPathBase>
+                        <defaultComponentGroup>Client Group</defaultComponentGroup>
+                    </configuration>
+                </plugin>
+
             </plugins>
         </pluginManagement>
     </build>
