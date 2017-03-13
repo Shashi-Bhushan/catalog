@@ -2,7 +2,9 @@ package in.shabhushan.catalog.commerce.product;
 
 import com.adobe.cq.commerce.common.AbstractJcrProduct;
 import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
+import com.day.cq.wcm.api.PageManager
+import groovy.transform.CompileStatic
+import groovy.util.logging.Slf4j;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 
@@ -10,7 +12,8 @@ import org.apache.sling.api.resource.ResourceResolver;
  * Created by Shashi Bhushan
  *      on 13/3/17.
  */
-public class CatalogProductImpl extends AbstractJcrProduct {
+@CompileStatic
+class CatalogProductImpl extends AbstractJcrProduct {
 
     public static final String PN_IDENTIFIER = "identifier";
 

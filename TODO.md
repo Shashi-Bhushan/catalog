@@ -1,6 +1,6 @@
 - [x] Have Separate Maven modules - UI and Content.
-- [x] Enable Java8 for Project
-- [ ] Enable jUnit and Mockito Testing Frameworks for Project.
+- [x] Enable Java8 and Groovy for Project
+- [ ] Enable jUnit and Spock Testing Frameworks for Project.
 - [ ] Enable CQ-Component Plugin for Project
 - [x] Implement AEM Scaffolding.
 - [x] Implement AEM Commerce Implementation.

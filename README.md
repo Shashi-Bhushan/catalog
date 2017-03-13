@@ -4,8 +4,16 @@ Catalog
 This Project is an AEM based Book Catalog System. It's meant to be a development exercise.
 
 -   *Uses Separate UI and Content Package System.*  
-    UI is for /apps components and /etc clientlibs and design pages.
+    UI is for /apps components and /etc folder deployment.
     CONTENT is for /content pages.
+    Have different Maven Deployment profiles as well.
+-   *AEM Scaffolding is used*
+    Used to create /etc/commerce/products nodes
+-   *AEM Commerce API is implemented*
+    Commerce API provider implementation for AbstractJcrProducts etc.
+    It's under in.shabhushan.catalog.commerce package
+    Intention is to write Spock based test cases for these classes as well.
+    
 
 Building
 --------
