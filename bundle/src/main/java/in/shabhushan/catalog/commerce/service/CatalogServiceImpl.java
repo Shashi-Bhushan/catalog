@@ -1,9 +1,6 @@
 package in.shabhushan.catalog.commerce.service;
 
-import com.adobe.cq.commerce.api.CommerceException;
-import com.adobe.cq.commerce.api.CommerceService;
-import com.adobe.cq.commerce.api.CommerceSession;
-import com.adobe.cq.commerce.api.Product;
+import com.adobe.cq.commerce.api.*;
 import com.adobe.cq.commerce.common.AbstractJcrCommerceService;
 import com.adobe.cq.commerce.common.AbstractJcrProduct;
 import com.adobe.cq.commerce.common.ServiceContext;
@@ -34,8 +31,8 @@ public class CatalogServiceImpl extends AbstractJcrCommerceService implements Co
     }
 
     @Override
-    public boolean isAvailable(String s) {
-        return false;
+    public boolean isAvailable(String serviceType) {
+        return CommerceConstants.SERVICE_COMMERCE.equals(serviceType);
     }
 
     @Override
