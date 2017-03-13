@@ -14,11 +14,9 @@ import org.apache.sling.api.resource.Resource;
  * Created by Shashi Bhushan
  *      on 13/3/17.
  */
-@Component(metatype = true)
-@Service
-    @Property(name = "service.description", value = "Factory for reference implementation commerce service")
-    @Property(name = "commerceProvider", value = "catalog", propertyPrivate = true)
-@Slf4j
+@Component(label = "Catalog Service Factory", description = "Factory for reference implementation commerce service", metatype = true)
+@Service(CommerceServiceFactory.class)
+@Property(name = "commerceProvider", value = "catalog", propertyPrivate = true)
 public class CatalogServiceFactory extends AbstractJcrCommerceServiceFactory implements CommerceServiceFactory {
     @Override
     public CommerceService getCommerceService(Resource resource) {

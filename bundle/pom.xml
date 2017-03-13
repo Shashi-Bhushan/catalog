@@ -88,6 +88,13 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-scr-plugin</artifactId>
+                <!--
+                    Note: Enable Groovy OSGi Components
+                    In Order to Run Scan Groovy SCR classes, change to this version Here
+                -->
+                <configuration>
+                    <scanClasses>true</scanClasses>
+                </configuration>
                 <executions>
                     <execution>
                         <id>generate-scr-descriptor</id>

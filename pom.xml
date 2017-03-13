@@ -50,10 +50,14 @@
                 <version>4.2.0</version>
                 <scope>provided</scope>
             </dependency>
+            <!--
+                Note: Enable Groovy OSGi Components
+                In Order to Run Scan Groovy SCR classes, change to this version Here
+            -->
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr.annotations</artifactId>
-                <version>1.6.0</version>
+                <version>1.9.8</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -155,10 +159,14 @@
     <build>
         <pluginManagement>
             <plugins>
+                <!--
+                    Note: Enable Groovy OSGi Components
+                    In Order to Run Scan Groovy SCR classes, change to this version Here
+                    -->
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-scr-plugin</artifactId>
-                    <version>1.7.4</version>
+                    <version>1.17.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.felix</groupId>
