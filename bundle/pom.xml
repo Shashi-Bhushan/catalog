@@ -64,6 +64,11 @@
             <groupId>com.citytechinc.cq.cq-component-plugin</groupId>
             <artifactId>cq-component-annotations</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>uber-jar</artifactId>
+            <classifier>apis</classifier>
+        </dependency>
     </dependencies>
 
     <!-- ====================================================================== -->
