@@ -1,7 +1,10 @@
 package in.shabhushan.catalog.commerce.product;
 
 import com.adobe.cq.commerce.common.AbstractJcrProduct;
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 
 /**
  * Created by Shashi Bhushan
@@ -11,8 +14,19 @@ public class CatalogProductImpl extends AbstractJcrProduct {
 
     public static final String PN_IDENTIFIER = "identifier";
 
+    public static final String PN_PRICE = "price";
+
+    protected final ResourceResolver resourceResolver;
+    protected final PageManager pageManager;
+    protected final Page productPage;
+    protected String brand = null;
+
     public CatalogProductImpl(Resource resource) {
         super(resource);
+
+        resourceResolver = resource.getResourceResolver();
+        pageManager = resourceResolver.adaptTo(PageManager.class);
+        productPage = pageManager.getContainingPage(resource);
     }
 
     @Override
