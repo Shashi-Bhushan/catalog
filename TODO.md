@@ -10,3 +10,13 @@
 - [ ] Implement Pagination on Catalog
 - [ ] Make Project Multilingual.
 - [ ] Implement Solr Search on Project.
+
+
+
+
+Make Product Details Page
+    - Template Created (apps.catalog.template.product)
+    - Create Product Component (apps.catalog.components.content.commerce.product)
+    - Create Product Details Page
+    
+Make Product Listing

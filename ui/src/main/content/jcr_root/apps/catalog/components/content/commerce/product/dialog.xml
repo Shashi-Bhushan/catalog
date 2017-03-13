@@ -6,26 +6,25 @@
         jcr:primaryType="cq:Widget"
         xtype="tabpanel">
         <items jcr:primaryType="cq:WidgetCollection">
-            <tab1
+            <productDetails
                 jcr:primaryType="cq:Panel"
-                title="Cart Recommendation Properties">
+                title="Product Properties">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <logo
+                    <title
                         jcr:primaryType="cq:Widget"
-                        fieldDescription="Site Title"
+                        fieldDescription="Product Title"
                         fieldLabel="Title"
                         name="./title"
                         xtype="textfield"
                         defaultValue="Books Catalog"/>
-                    <searchText
+                    <image
                         jcr:primaryType="cq:Widget"
-                        fieldDescription="Search Bar Text"
-                        fieldLabel="Search Text"
-                        name="./searchText"
-                        xtype="textfield"
-                        defaultValue="Search"/>
+                        fieldDescription="Product Image"
+                        fieldLabel="Image"
+                        name="./image"
+                        xtype="html5smartimage"/>
                 </items>
-            </tab1>
+            </productDetails>
         </items>
     </items>
 </jcr:root>

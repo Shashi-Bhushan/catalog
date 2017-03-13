@@ -30,6 +30,14 @@ public class CatalogServiceImpl extends AbstractJcrCommerceService implements Co
         return new CatalogSessionImpl(this, slingHttpServletRequest, slingHttpServletResponse, resource);
     }
 
+    /**
+     * Checks if Commerce Provider Service is available or not
+     *
+     * @param serviceType
+     *      Criteria to search for i.e. {@code serviceType} equals to {@link CommerceConstants#SERVICE_COMMERCE}
+     * @return
+     *      True if Commerce Provider is available according to the criteria
+     */
     @Override
     public boolean isAvailable(String serviceType) {
         return CommerceConstants.SERVICE_COMMERCE.equals(serviceType);
