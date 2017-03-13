@@ -5,6 +5,7 @@ import com.adobe.cq.commerce.api.CommerceService;
 import com.adobe.cq.commerce.api.CommerceSession;
 import com.adobe.cq.commerce.api.Product;
 import com.adobe.cq.commerce.common.AbstractJcrCommerceService;
+import com.adobe.cq.commerce.common.AbstractJcrProduct;
 import com.adobe.cq.commerce.common.ServiceContext;
 import in.shabhushan.catalog.commerce.product.CatalogProductImpl;
 import in.shabhushan.catalog.commerce.session.CatalogSessionImpl;
@@ -40,7 +41,10 @@ public class CatalogServiceImpl extends AbstractJcrCommerceService implements Co
     @Override
     public Product getProduct(String path) throws CommerceException {
         Resource resource = resolver.getResource(path);
-        if (resource != null && CatalogProductImpl.isAProductOrVariant(resource)) {
+        if (resource != null
+            && CatalogProductImpl.isAProductOrVariant(resource)
+            && resource.isResourceType(AbstractJcrProduct.RESOURCE_TYPE_PRODUCT)) {
+
             return new CatalogProductImpl(resource);
         }
         return null;
