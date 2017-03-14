@@ -19,6 +19,9 @@
     </prerequisites>
 
 
+    <!-- ====================================================================== -->
+    <!-- L I C E N S E A N D D E V E L O P E R -->
+    <!-- ====================================================================== -->
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -51,6 +54,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
+    <!-- ====================================================================== -->
+    <!-- D E P E N D E N C I E S -->
+    <!-- ====================================================================== -->
 
     <dependencyManagement>
         <dependencies>
