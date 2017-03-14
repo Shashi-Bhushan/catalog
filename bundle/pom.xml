@@ -146,6 +146,9 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>in.shabhushan.catalog-bundle</Bundle-SymbolicName>
+                        <Embed-Dependency>*;scope=system|compile</Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>
+                        <Import-Package>*;resolution:=optional</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
