@@ -129,10 +129,13 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <testSourceDirectory>src/test/java</testSourceDirectory>
+                    <testSourceDirectory>${basedir}/src/test/java/</testSourceDirectory>
+                    <testClassesDirectory>${project.build.directory}/test-classes/</testClassesDirectory>
+                    <failIfNoTests>true</failIfNoTests>
                     <useFile>false</useFile>
                     <includes>
-                        <include>**/*Spec.java</include>
+                        <include>**/*Test*.*</include>
+                        <include>**/*Spec*.*</include>
                     </includes>
                 </configuration>
             </plugin>
