@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.product
+package in.shabhushan.catalog.commerce
 
+import in.shabhushan.catalog.commerce.product.CatalogProductImpl
+import org.apache.sling.api.resource.Resource
+import spock.lang.Shared
 import spock.lang.Specification
 
 /**
@@ -23,6 +26,16 @@ import spock.lang.Specification
  *       on 14/3/17.
  */
 class CatalogProductImplSpec extends Specification {
+
+//    @Shared
+//    CatalogProductImpl product;
+
+//    def setupSpec() {
+//        Resource resource = Mock(Resource.class)
+//
+//        product = new CatalogProductImpl(resource)
+//    }
+
     def "maximum of two numbers"() {
         expect:
         Math.max(a, b) == c
@@ -32,4 +45,15 @@ class CatalogProductImplSpec extends Specification {
         b << [7, 4, 9]
         c << [7, 5, 9]
     }
+
+//    def "Should Return Correct Page Title"() {
+//        given:
+//        String pagePath
+//
+//        when:
+//        pagePath = product.getPagePath()
+//
+//        then:
+//        pagePath != null
+//    }
 }
