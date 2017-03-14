@@ -18,6 +18,22 @@
         <maven>3.0.2</maven>
     </prerequisites>
 
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>shabhushan</id>
+            <name>Shashi Bhushan</name>
+            <email>sbhushan1@outlook.com</email>
+        </developer>
+    </developers>
+
     <!-- ====================================================================== -->
     <!-- P R O P E R T I E S -->
     <!-- ====================================================================== -->
@@ -131,6 +147,13 @@
                 <artifactId>commons-collections</artifactId>
                 <version>3.0</version>
             </dependency>
+            <!-- Mandatory dependencies for using Spock -->
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>1.0-groovy-2.4</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -196,6 +219,20 @@
                             <version>2.4.3-01</version>
                         </dependency>
                     </dependencies>
+                </plugin>
+                <!-- Mandatory plugins for using Spock -->
+                <plugin>
+                    <!-- The gmavenplus plugin is used to compile Groovy code. To learn more about this plugin,
+                    visit https://github.com/groovy/GMavenPlus/wiki -->
+                    <groupId>org.codehaus.gmavenplus</groupId>
+                    <artifactId>gmavenplus-plugin</artifactId>
+                    <version>1.5</version>
+                </plugin>
+                <!-- Optional plugins for using Spock -->
+                <!-- Only required if names of spec classes don't match default Surefire patterns (`*Test` etc.) -->
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.18.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
