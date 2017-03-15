@@ -17,6 +17,14 @@
                         name="./title"
                         xtype="textfield"
                         defaultValue="Books Catalog"/>
+                    <productData
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Product data location"
+                        name="./productData"
+                        predicate="nosystem"
+                        rootPath="/etc/commerce/products"
+                        rootTitle="Products"
+                        xtype="pathfield"/>
                     <image
                         jcr:primaryType="cq:Widget"
                         fieldDescription="Product Image"

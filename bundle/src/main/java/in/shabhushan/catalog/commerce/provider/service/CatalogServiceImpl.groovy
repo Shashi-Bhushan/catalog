@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.service
+package in.shabhushan.catalog.commerce.provider.service
 
 import com.adobe.cq.commerce.api.*
 import com.adobe.cq.commerce.common.AbstractJcrCommerceService
@@ -22,8 +22,8 @@ import com.adobe.cq.commerce.common.AbstractJcrProduct
 import com.adobe.cq.commerce.common.ServiceContext
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
-import in.shabhushan.catalog.commerce.product.CatalogProductImpl
-import in.shabhushan.catalog.commerce.session.CatalogSessionImpl
+import in.shabhushan.catalog.commerce.provider.product.CatalogProductImpl
+import in.shabhushan.catalog.commerce.provider.session.CatalogSessionImpl
 import org.apache.sling.api.SlingHttpServletRequest
 import org.apache.sling.api.SlingHttpServletResponse
 import org.apache.sling.api.resource.Resource
@@ -62,7 +62,7 @@ class CatalogServiceImpl extends AbstractJcrCommerceService implements CommerceS
     }
 
     @Override
-    public Product getProduct(String path) throws CommerceException {
+    Product getProduct(String path) throws CommerceException {
         Resource resource = resolver.getResource(path)
         if (resource != null
             && CatalogProductImpl.isAProductOrVariant(resource)
@@ -70,7 +70,6 @@ class CatalogServiceImpl extends AbstractJcrCommerceService implements CommerceS
 
             return new CatalogProductImpl(resource)
         }
-        return null
     }
 
     @Override

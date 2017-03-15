@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.session;
+package in.shabhushan.catalog.commerce.provider.session;
 
 import com.adobe.cq.commerce.api.CommerceException;
 import com.adobe.cq.commerce.common.AbstractJcrCommerceService;

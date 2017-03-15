@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.product;
+package in.shabhushan.catalog.commerce.provider.product
 
 import com.adobe.cq.commerce.common.AbstractJcrProduct;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager
 import groovy.transform.CompileStatic
-import groovy.util.logging.Slf4j;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 
@@ -40,7 +39,7 @@ class CatalogProductImpl extends AbstractJcrProduct {
     protected final Page productPage;
     protected String brand = null;
 
-    public CatalogProductImpl(Resource resource) {
+    CatalogProductImpl(Resource resource) {
         super(resource);
 
         resourceResolver = resource.getResourceResolver();
@@ -49,7 +48,7 @@ class CatalogProductImpl extends AbstractJcrProduct {
     }
 
     @Override
-    public String getSKU() {
+    String getSKU() {
         String sku = getProperty(PN_IDENTIFIER, String.class);
 
         // Geometrixx products don't have unique ids for size, so append the size to the sku:
