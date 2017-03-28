@@ -19,6 +19,7 @@ package in.shabhushan.catalog.commerce.service;
 import com.adobe.cq.commerce.api.CommerceService;
 import com.adobe.cq.commerce.api.CommerceServiceFactory;
 import com.adobe.cq.commerce.common.AbstractJcrCommerceServiceFactory
+import in.shabhushan.catalog.commerce.provider.service.CatalogServiceImpl
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;

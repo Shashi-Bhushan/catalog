@@ -16,9 +16,6 @@
 
 package in.shabhushan.catalog.commerce
 
-import in.shabhushan.catalog.commerce.product.CatalogProductImpl
-import org.apache.sling.api.resource.Resource
-import spock.lang.Shared
 import spock.lang.Specification
 
 /**
