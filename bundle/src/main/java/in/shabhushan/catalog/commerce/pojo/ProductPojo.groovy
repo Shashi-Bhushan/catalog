@@ -1,12 +1,8 @@
 package in.shabhushan.catalog.commerce.pojo
 
 import com.adobe.cq.commerce.api.CommerceService
-import com.adobe.cq.commerce.api.CommerceSession
 import com.adobe.cq.commerce.api.Product
 import com.adobe.cq.sightly.WCMUsePojo
-import org.apache.sling.api.SlingHttpServletRequest
-import org.apache.sling.api.SlingHttpServletResponse
-import org.apache.sling.api.resource.Resource
 
 /**
  * Created by Shashi Bhushan
@@ -16,6 +12,9 @@ class ProductPojo extends WCMUsePojo{
 
     String productData
 
+    /**
+     * Instance of {@link in.shabhushan.catalog.commerce.provider.product.CatalogProductImpl}
+     */
     Product product
 
     @Override
@@ -32,7 +31,7 @@ class ProductPojo extends WCMUsePojo{
         product.getProperty("jcr:title", String)
     }
 
-    def getRating() {
+    String getRating() {
         product.getProperty("catalogRating", String)
     }
 }
