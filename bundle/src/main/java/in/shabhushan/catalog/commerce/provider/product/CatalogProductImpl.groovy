@@ -32,19 +32,19 @@ class CatalogProductImpl extends AbstractJcrProduct {
 
     public static final String PN_IDENTIFIER = "identifier";
 
-    public static final String PN_PRICE = "price";
+    public static final String PN_PRICE = "price"
 
-    protected final ResourceResolver resourceResolver;
-    protected final PageManager pageManager;
-    protected final Page productPage;
-    protected String brand = null;
+    protected final ResourceResolver resourceResolver
+    protected final PageManager pageManager
+    protected final Page productPage
+    protected String brand = null
 
     CatalogProductImpl(Resource resource) {
-        super(resource);
+        super(resource)
 
-        resourceResolver = resource.getResourceResolver();
-        pageManager = resourceResolver.adaptTo(PageManager.class);
-        productPage = pageManager.getContainingPage(resource);
+        resourceResolver = resource.getResourceResolver()
+        pageManager = resourceResolver.adaptTo(PageManager.class)
+        productPage = pageManager.getContainingPage(resource)
     }
 
     @Override

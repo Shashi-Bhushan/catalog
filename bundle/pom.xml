@@ -87,11 +87,16 @@
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
+        <!-- CG Lib for Mocking Classes -->
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib-nodep</artifactId>
         </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+
 
     </dependencies>
 

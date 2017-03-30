@@ -19,7 +19,7 @@ class ProductPojo extends WCMUsePojo{
 
     @Override
     void activate() throws Exception {
-        productData = getProperties().get("productData", String)
+        productData = getProperties()?.get("productData", String)
 
         CommerceService commerceService = getResource().adaptTo(CommerceService.class)
         commerceService.login(getRequest(), getResponse())

@@ -2,7 +2,13 @@ package in.shabhushan.catalog.commerce.pojo
 
 import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.Product
+import com.adobe.cq.commerce.api.asset.ProductAssetManager
+import com.day.cq.wcm.api.Page
+import com.day.cq.wcm.api.PageManager
 import in.shabhushan.catalog.commerce.provider.product.CatalogProductImpl
+import org.apache.sling.api.resource.Resource
+import org.apache.sling.api.resource.ResourceResolver
+import org.apache.sling.api.resource.ValueMap
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -14,29 +20,42 @@ import spock.lang.Specification
 class ProductPojoSpec extends Specification {
 
     @Shared
-    private ProductPojo productPojo;
+    private ProductPojo productPojo
 
     def setupSpec() {
-        productPojo = Spy(ProductPojo, {
-            getTitle() >> {
-                "myTitle"
+        Resource constructorArg = Spy(Resource) {
+            getResourceResolver() >> Spy(ResourceResolver) {
+                adaptTo(ProductAssetManager) >> Mock(ProductAssetManager)
+                adaptTo(PageManager) >> Mock(PageManager)
             }
-        })
+        }
 
-        /*
-         * TODO: Make This interaction based test
-         */
-//        Product product = Spy(CatalogProductImpl, {
-//            getProperty("jcr:title") >> {
-//                "myTitle"
-//            }
-//        })
+        Resource resource = Spy(Resource) {
+            getResourceResolver() >> Spy(ResourceResolver) {
+                adaptTo(ProductAssetManager) >> Mock(ProductAssetManager)
+                adaptTo(PageManager) >> Mock(PageManager)
+                adaptTo(CommerceService) >> Spy(CommerceService) {
+                    getProduct() >> Spy(CatalogProductImpl, constructorArgs : [constructorArg]) {
+                        getProperty("jcr:title") >> {
+                            "myTitle"
+                        }
+                        getProperty("catalogRating") >> {
+                            "6"
+                        }
+                    }
+                }
+            }
+        }
 
-//        Spy(CommerceService, {
-//            getProduct(String) >> {
-//                product
-//            }
-//        })
+        productPojo = Spy(ProductPojo, {
+            getResource() >> resource
+            getProperties() >> Mock(ValueMap) {
+                get(String, String) >> {
+                    "/etc/commerce/products"
+                }
+                get("resourcePage", Page.class) >> Mock(Page)
+            }
+        }).activate()
     }
 
     def "Method Returns Intended Title"() {
