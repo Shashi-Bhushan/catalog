@@ -27,7 +27,7 @@ class CatalogAdapterFactory implements AdapterFactory {
 
             CatalogAdapter adapter = new CatalogAdapter()
                 .setTitle(product.getProperty("jcr:title", String))
-                .setRating(product.getProperty("catalogRating", String))
+                .setRating(product.getProperty("rating", String))
 
             return adapter
         }
