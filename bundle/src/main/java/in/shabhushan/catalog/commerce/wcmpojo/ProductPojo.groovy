@@ -43,23 +43,13 @@ class ProductPojo extends WCMUsePojo{
     }
 
     /**
-     * Delegate Getter for {@link CatalogAdapter#getTitle()}
+     * Getter for {@link CatalogAdapter} instance
      *
      * @return
-     *      title returned from {@link CatalogAdapter#getTitle()}
+     *      {@link Product} adapted to {@link CatalogAdapter}
      */
-    String getTitle() {
-        adapter.title
-    }
-
-    /**
-     * Delegate Getter for {@link CatalogAdapter#getRating()}
-     *
-     * @return
-     *      title returned from {@link CatalogAdapter#getRating()}
-     */
-    String getRating() {
-        adapter.rating
+    CatalogAdapter getPojo() {
+        adapter
     }
 
     /**
