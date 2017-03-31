@@ -24,12 +24,19 @@ com.adobe.granite.ui.components.Tag" %>
     attrsTextField.addDisabled(true);
 %>
 
-<!-- Ticked and Filled Vertical Slider -->
-<div class="coral-InputGroup coral-InputGroup--block" style="text-align: center;">
-    <div class="slider ticked filled tooltips" data-init="slider" style="float: left; width: 89%">
-        <input <%= attrsInput.build() %> min="0" max="10" step="1" style="cursor: pointer;">
-    </div>
-    <div style="float: right; width: 10%">
-        <input class="coral-Form-field coral-Textfield" <%= attrsTextField.build() %> style="min-width: 5px;">
-    </div>
-</div>
+<select id="example">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<script type="text/javascript">
+   $(function() {
+      $('#example').barrating({
+        theme: 'fontawesome-stars-o',
+        initialRating : 4
+      });
+   });
+</script>

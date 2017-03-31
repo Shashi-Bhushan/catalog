@@ -1,0 +1,4 @@
+#base=.
+
+fontawesome-stars-o.less
+font-awesome.css
