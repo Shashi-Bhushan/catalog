@@ -1,15 +1,5 @@
 package in.shabhushan.catalog.commerce.pojo
 
-import com.adobe.cq.commerce.api.CommerceService
-import com.adobe.cq.commerce.api.Product
-import com.adobe.cq.commerce.api.asset.ProductAssetManager
-import com.adobe.cq.sightly.WCMUsePojo
-import com.day.cq.wcm.api.Page
-import com.day.cq.wcm.api.PageManager
-import in.shabhushan.catalog.commerce.provider.product.CatalogProductImpl
-import org.apache.sling.api.resource.Resource
-import org.apache.sling.api.resource.ResourceResolver
-import org.apache.sling.api.resource.ValueMap
 import spock.lang.Shared
 import spock.lang.Specification
 

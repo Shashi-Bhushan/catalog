@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.provider.product
+package in.shabhushan.catalog.commerce.framework.provider.product
 
 import com.adobe.cq.commerce.common.AbstractJcrProduct;
 import com.day.cq.wcm.api.Page;

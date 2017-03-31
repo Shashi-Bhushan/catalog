@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.provider.service;
+package in.shabhushan.catalog.commerce.framework.provider.service;
 
 import com.adobe.cq.commerce.api.CommerceService;
 import com.adobe.cq.commerce.api.CommerceServiceFactory;

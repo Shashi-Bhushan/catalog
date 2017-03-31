@@ -14,30 +14,61 @@ class ProductPojo extends WCMUsePojo{
     String productData
 
     /**
-     * Instance of {@link in.shabhushan.catalog.commerce.provider.product.CatalogProductImpl}
+     * Instance of {@link in.shabhushan.catalog.commerce.framework.provider.product.CatalogProductImpl}
      */
-    CatalogAdapter adapter
+    private CatalogAdapter adapter
 
     @Override
     void activate() throws Exception {
         productData = getProperties()?.get("productData", String)
 
-        CommerceService commerceService = getResource().adaptTo(CommerceService.class)
-        commerceService.login(getRequest(), getResponse())
-
-        Product product = commerceService.getProduct(productData)
-        adapter = product.adaptTo(CatalogAdapter)
+        setAdapterInternal()
     }
 
+    /**
+     *  This method sets {@code adapter}
+     *
+     * - Logins to {@link CommerceService}
+     * - Get {@link Product} from path specified by {@code productDate}
+     * - Adapt {@link Product} to {@link CatalogAdapter}
+     */
+    private void setAdapterInternal() {
+        CommerceService commerceService = getResource().adaptTo(CommerceService)
+
+        if(commerceService){
+            commerceService.login(getRequest(), getResponse())
+
+            Product product = commerceService.getProduct(productData)
+            adapter = product?.adaptTo(CatalogAdapter)
+        }
+    }
+
+    /**
+     * Delegate Getter for {@link CatalogAdapter#getTitle()}
+     *
+     * @return
+     *      title returned from {@link CatalogAdapter#getTitle()}
+     */
     String getTitle() {
-        adapter.getTitle()
+        adapter.title
     }
 
+    /**
+     * Delegate Getter for {@link CatalogAdapter#getRating()}
+     *
+     * @return
+     *      title returned from {@link CatalogAdapter#getRating()}
+     */
     String getRating() {
-        adapter.getRating()
+        adapter.rating
     }
 
+    /**
+     * Getter for Class name of {@link CatalogAdapter}
+     *
+     * @return
+     */
     String getName() {
-        adapter.getClass().getName()
+        adapter.class.name
     }
 }

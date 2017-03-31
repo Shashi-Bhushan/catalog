@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.provider.service
+package in.shabhushan.catalog.commerce.framework.provider.service
 
 import com.adobe.cq.commerce.api.*
 import com.adobe.cq.commerce.common.AbstractJcrCommerceService
@@ -22,8 +22,8 @@ import com.adobe.cq.commerce.common.AbstractJcrProduct
 import com.adobe.cq.commerce.common.ServiceContext
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
-import in.shabhushan.catalog.commerce.provider.product.CatalogProductImpl
-import in.shabhushan.catalog.commerce.provider.session.CatalogSessionImpl
+import in.shabhushan.catalog.commerce.framework.provider.product.CatalogProductImpl
+import in.shabhushan.catalog.commerce.framework.provider.session.CatalogSessionImpl
 import org.apache.sling.api.SlingHttpServletRequest
 import org.apache.sling.api.SlingHttpServletResponse
 import org.apache.sling.api.resource.Resource
