@@ -3,6 +3,7 @@ package in.shabhushan.catalog.commerce.pojo
 import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.Product
 import com.adobe.cq.sightly.WCMUsePojo
+import in.shabhushan.catalog.commerce.adapter.CatalogAdapter
 
 /**
  * Created by Shashi Bhushan
@@ -15,7 +16,7 @@ class ProductPojo extends WCMUsePojo{
     /**
      * Instance of {@link in.shabhushan.catalog.commerce.provider.product.CatalogProductImpl}
      */
-    Product product
+    CatalogAdapter adapter
 
     @Override
     void activate() throws Exception {
@@ -24,14 +25,15 @@ class ProductPojo extends WCMUsePojo{
         CommerceService commerceService = getResource().adaptTo(CommerceService.class)
         commerceService.login(getRequest(), getResponse())
 
-        product = commerceService.getProduct(productData)
+        Product product = commerceService.getProduct(productData)
+        adapter = product.adaptTo(CatalogAdapter)
     }
 
     String getTitle() {
-        product.getProperty("jcr:title", String)
+        adapter.getTitle()
     }
 
     String getRating() {
-        product.getProperty("catalogRating", String)
+        adapter.getRating()
     }
 }
