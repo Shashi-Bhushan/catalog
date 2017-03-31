@@ -1,4 +1,4 @@
-package in.shabhushan.catalog.commerce.pojo
+package in.shabhushan.catalog.commerce.wcmpojo
 
 import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.Product
@@ -22,7 +22,8 @@ class ProductPojo extends WCMUsePojo{
     void activate() throws Exception {
         productData = getProperties()?.get("productData", String)
 
-        setAdapterInternal()
+        CommerceService commerceService = getResource().adaptTo(CommerceService)
+        setAdapterInternal(commerceService)
     }
 
     /**
@@ -32,9 +33,7 @@ class ProductPojo extends WCMUsePojo{
      * - Get {@link Product} from path specified by {@code productDate}
      * - Adapt {@link Product} to {@link CatalogAdapter}
      */
-    private void setAdapterInternal() {
-        CommerceService commerceService = getResource().adaptTo(CommerceService)
-
+    private void setAdapterInternal(CommerceService commerceService) {
         if(commerceService){
             commerceService.login(getRequest(), getResponse())
 
