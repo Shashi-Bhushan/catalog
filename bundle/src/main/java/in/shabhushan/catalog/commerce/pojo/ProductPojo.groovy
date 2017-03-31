@@ -36,4 +36,8 @@ class ProductPojo extends WCMUsePojo{
     String getRating() {
         adapter.getRating()
     }
+
+    String getName() {
+        adapter.getClass().getName()
+    }
 }
