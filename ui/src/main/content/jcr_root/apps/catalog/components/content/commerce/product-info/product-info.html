@@ -2,12 +2,14 @@
 data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductPojo' @ productData = properties.productData}">
 
 
-    <h1>${product.pojo.title}</h1>
-    Product is : <h1>${product.productData}</h1><br/>
-    Rating is : ${product.pojo.rating} <br/>
-    Class is : ${product.name} <br/>
-    Description : ${product.pojo.description} <br/>
-    Price : ${product.pojo.price} <br/>
-    Summary : ${product.pojo.summary} <br/>
+    <h3>${product.pojo.title}</h3>
+    <strong>${product.pojo.description}</strong>
+    <hr/>
+
+    <dl>
+        <dt>Summary</dt> <br/>
+        <dd>${product.pojo.summary @ context = 'html'}</dd>
+    </dl>
+    <hr/>
     Published Date : ${product.pojo.publishedDate} <br/>
 </div>

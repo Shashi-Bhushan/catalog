@@ -6,9 +6,15 @@ data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductPojo' @ p
 
     <sly data-sly-use.itemCount="${'use-api/rating.js' @ rating = product.pojo.starRating}" data-sly-unwrap/>
 
-    <select id="image-rating" data-sly-list.item="${itemCount}" data-rating="${product.pojo.starRating}">
-        <option>${item}</option>
-    </select>
+    <div class="rating text-center">
+        <select id="image-rating" data-sly-list.item="${itemCount}" data-rating="${product.pojo.starRating}">
+            <option>${item}</option>
+        </select>
+    </div>
+
+    <div class="price text-center">
+        <h2>Rs. ${product.pojo.price}</h2>
+    </div>
 </div>
 
 <script type="text/javascript">
