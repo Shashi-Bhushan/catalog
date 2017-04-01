@@ -13,7 +13,9 @@ class CatalogAdapter {
     String description
     String rating
     String starRating
-    String color
+    String summary
+    Date publishedDate
+    int noOfPages
     int price
 
 
@@ -37,14 +39,28 @@ class CatalogAdapter {
         this
     }
 
-    CatalogAdapter setColor(String color) {
-        this.color = color
-        this
-    }
-
     CatalogAdapter setPrice(String price) {
         this.price = price
         this
+    }
+
+    CatalogAdapter setNoOfPages(int noOfPages) {
+        this.noOfPages = noOfPages
+        this
+    }
+
+    CatalogAdapter setSummary(String summary) {
+        this.summary = summary
+        this
+    }
+
+    CatalogAdapter setPublishedDate(Date date) {
+        this.publishedDate = date
+        this
+    }
+
+    String getPublishedDate() {
+        publishedDate.format("MMM d, YYYY")
     }
 
     CatalogAdapter setImageSource(String imageSource) {

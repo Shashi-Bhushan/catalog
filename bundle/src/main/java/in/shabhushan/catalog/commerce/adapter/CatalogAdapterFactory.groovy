@@ -38,6 +38,10 @@ class CatalogAdapterFactory implements AdapterFactory {
             .setDescription(product.getProperty("jcr:description", String))
             .setRating(product.getProperty("rating", String))
             .setStarRating(product.getProperty("starRating", String))
+            .setPrice(product.getProperty("price", String))
+            .setSummary(product.getProperty("summary", String))
+            .setNoOfPages(product.getProperty("noOfPages", Integer))
+            .setPublishedDate(product.getProperty("publishedDate", Date))
 
         if(product.image?.src) {
             adapter.setImageSource(product.image.src)
