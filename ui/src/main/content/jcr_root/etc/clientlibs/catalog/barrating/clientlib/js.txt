@@ -1,3 +1,4 @@
-#base=.
+#base=js
 
+init.js
 jquery.barrating.js

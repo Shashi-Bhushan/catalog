@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/catalog"/>
-    <filter root="/apps/custom-components2"/>
+    <filter root="/apps/custom-components"/>
     <filter root="/etc/scaffolding/catalog"/>
     <filter root="/etc/clientlibs/catalog"/>
 </workspaceFilter>

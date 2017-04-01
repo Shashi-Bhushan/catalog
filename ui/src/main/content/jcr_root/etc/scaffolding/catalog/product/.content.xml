@@ -117,13 +117,13 @@
                                                                 renderReadOnly="{Boolean}true"/>
                                                             <rating
                                                                 jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="/apps/custom-components2/rating"
+                                                                sling:resourceType="/apps/custom-components/rating"
                                                                 fieldLabel="Rating"
                                                                 name="./rating"
                                                                 renderReadOnly="{Boolean}true"/>
                                                             <good-reads
                                                                 jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="/apps/custom-components2/bar-rating"
+                                                                sling:resourceType="/apps/custom-components/bar-rating"
                                                                 fieldLabel="Good Reads Rating"
                                                                 name="./goodRead"
                                                                 renderReadOnly="{Boolean}true"/>

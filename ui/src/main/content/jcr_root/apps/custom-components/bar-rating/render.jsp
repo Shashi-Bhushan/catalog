@@ -43,19 +43,9 @@ com.adobe.granite.ui.components.Tag" %>
 <script type="text/javascript">
    $(function() {
       var $input = $('input[name="<%= name %>"]');
-      if($input.val() === "") {
-        $input.val("0");
-      }
 
-      var inputValue = $input.val();
-
-      $('#bar-rating').barrating({
-        theme: 'fontawesome-stars-o',
-        initialRating : inputValue
-      });
-
-      $('#bar-rating').on('change', function(event){
-        $input.val($(this).val());
+      $($input).initBarRating({
+         barRating : $('#bar-rating')
       });
    });
 </script>
