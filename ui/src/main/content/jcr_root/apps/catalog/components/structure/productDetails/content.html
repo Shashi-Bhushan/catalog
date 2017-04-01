@@ -1,5 +1,20 @@
 Product Details Page Component
+<hr/>
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.all @ categories='catalog.product'}" data-sly-unwrap/>
 
-<div data-sly-resource="${ @path='productDetails', resourceType='catalog/components/content/commerce/product'}" data-sly-unwrap/>
 
+<template data-sly-template.two="${@ p}"> <!--/* Notice the usage hint on the resource parameter. */-->
+    <p>Parent: ${p.productData}</p>
+</template>
+<div data-sly-call="${two @ p=product}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2 text-">
+            <div data-sly-resource="${ @path='productDetails', resourceType='catalog/components/content/commerce/product'}" data-sly-unwrap/>
+        </div>
+        <div class="col-xs-8">
+            <div data-sly-resource="${ @path='productDetails', resourceType='catalog/components/content/commerce/product'}" data-sly-unwrap/>
+        </div>
+    </div>
+</div>
