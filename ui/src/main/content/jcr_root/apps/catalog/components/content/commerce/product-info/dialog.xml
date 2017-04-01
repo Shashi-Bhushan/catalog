@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <productDetails
+                jcr:primaryType="cq:Panel"
+                title="Product Properties">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Product Title"
+                        fieldLabel="Title"
+                        name="./title"
+                        xtype="textfield"
+                        defaultValue="Books Catalog"/>
+                    <productData
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Product data location"
+                        name="./productData"
+                        predicate="nosystem"
+                        rootPath="/etc/commerce/products"
+                        rootTitle="Products"
+                        xtype="pathfield"/>
+                    <image
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Product Image"
+                        fieldLabel="Image"
+                        name="./image"
+                        xtype="html5smartimage"/>
+                </items>
+            </productDetails>
+        </items>
+    </items>
+</jcr:root>

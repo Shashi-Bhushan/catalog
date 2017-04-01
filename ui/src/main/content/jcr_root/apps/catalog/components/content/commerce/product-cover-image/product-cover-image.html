@@ -1,0 +1,21 @@
+<div
+data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductPojo' @ productData = properties.productData}">
+    <div id="image">
+        <image id="coverImage" class="img-thumbnail" src="${product.pojo.imageSource}"/>
+    </div>
+
+    <sly data-sly-use.itemCount="${'use-api/rating.js' @ rating = product.pojo.starRating}" data-sly-unwrap/>
+
+    <select id="image-rating" data-sly-list.item="${itemCount}" data-rating="${product.pojo.starRating}">
+        <option>${item}</option>
+    </select>
+</div>
+
+<script type="text/javascript">
+   $(document).ready(function() {
+      $("#image-rating").barrating({
+          theme: 'fontawesome-stars-o',
+          initialRating : $("#image-rating").data('rating')
+      });
+   });
+</script>
