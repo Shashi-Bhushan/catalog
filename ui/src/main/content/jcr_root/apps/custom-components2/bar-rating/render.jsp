@@ -21,27 +21,41 @@ com.adobe.granite.ui.components.Tag" %>
 
     AttrBuilder attrsTextField = new AttrBuilder(request, xssAPI);
     attrsTextField.add("value", vm.get("value", String.class));
-    attrsTextField.addDisabled(true);
+    attrsTextField.add("type", "hidden");
+    attrsTextField.add("name", name);
 %>
 
-<select id="example">
+<input <%= attrsTextField.build() %>>
+
+<select id="bar-rating">
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
   <option value="4">4</option>
   <option value="5">5</option>
-  <option value="5">6</option>
-  <option value="5">7</option>
-  <option value="5">8</option>
-  <option value="5">9</option>
-  <option value="5">10</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
 </select>
 
 <script type="text/javascript">
    $(function() {
-      $('#example').barrating({
+      var $input = $('input[name="<%= name %>"]');
+      if($input.val() === "") {
+        $input.val("0");
+      }
+
+      var inputValue = $input.val();
+
+      $('#bar-rating').barrating({
         theme: 'fontawesome-stars-o',
-        initialRating : 4
+        initialRating : inputValue
+      });
+
+      $('#bar-rating').on('change', function(event){
+        $input.val($(this).val());
       });
    });
 </script>
