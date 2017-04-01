@@ -1,6 +1,14 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.css @ categories='catalog.product'}" data-sly-unwrap/>
+
 <div data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductPojo' @ productData = properties.productData}">
+
+    <blockquote>
+        <h1>${product.pojo.title}</h1>
+        <div id="image">
+            <image id="coverImage" src="${product.pojo.imageSource}"/>
+        </div>
+    </blockquote>
     Product is : <h1>${product.productData}</h1><br/>
-    Title is : ${product.pojo.title} <br/> <br/>
     Rating is : ${product.pojo.rating} <br/>
     Class is : ${product.name}
 </div>

@@ -22,15 +22,27 @@ class CatalogAdapterFactory implements AdapterFactory {
 
     @Override
     public <AdapterType> AdapterType getAdapter(Object adaptableClass, Class<AdapterType> typeClass) {
-        if(adaptableClass instanceof Product && typeClass.equals(CatalogAdapter)) {
-            Product product = (Product)adaptableClass;
+        if(adaptableClass instanceof Product && typeClass == CatalogAdapter) {
+            Product product = (Product)adaptableClass
 
-            CatalogAdapter adapter = new CatalogAdapter()
-                .setTitle(product.getProperty("jcr:title", String))
-                .setRating(product.getProperty("rating", String))
-
-            return adapter
+            return populateAdapterInternal(product)
         }
         return null
+    }
+
+    private CatalogAdapter populateAdapterInternal(Product product) {
+        CatalogAdapter adapter = new CatalogAdapter()
+
+        adapter
+            .setTitle(product.getProperty("jcr:title", String))
+            .setDescription(product.getProperty("jcr:description", String))
+            .setRating(product.getProperty("rating", String))
+            .setStarRating(product.getProperty("starRating", String))
+
+        if(product.image?.src) {
+            adapter.setImageSource(product.image.src)
+        }
+
+        adapter
     }
 }
