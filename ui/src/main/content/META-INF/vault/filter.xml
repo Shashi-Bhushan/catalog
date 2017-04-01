@@ -3,4 +3,5 @@
     <filter root="/apps/catalog"/>
     <filter root="/apps/custom-components2"/>
     <filter root="/etc/scaffolding/catalog"/>
+    <filter root="/etc/clientlibs/catalog"/>
 </workspaceFilter>
