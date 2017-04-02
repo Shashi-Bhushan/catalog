@@ -1,15 +1,41 @@
+TODO: Individual model id
+
 <hr/>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12">
-            Product Listing Root : ${properties.rootPath}
-        </div>
-
         <sly data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductListingPojo' @ rootPath = properties.rootPath}"/>
 
-        Root is : ${product.rootPath}
         <div data-sly-list.item="${product.pageList}">
-            Item : ${item.title}
+            <div class="col-xs-2">
+                <div id="image">
+                    <image id="coverImage" class="img-thumbnail" src="${item.imageSource}"/>
+                    <div id="coverAction">
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-custom-size">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title"><strong>${item.title}</strong></h3>
+                        </div>
+                        <div class="modal-body">
+                            <image id="full-image" class="img-thumbnail" src="${item.imageSource}"/>
+                        </div>
+                        <div class="modal-footer modal-text-left">
+                            <strong>${item.description}</strong>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
