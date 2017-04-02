@@ -4,6 +4,7 @@ import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.Product
 import com.adobe.cq.sightly.WCMUsePojo
 import in.shabhushan.catalog.commerce.adapter.CatalogAdapter
+import in.shabhushan.catalog.commerce.helper.ProductHelper
 
 /**
  * Created by Shashi Bhushan
@@ -39,6 +40,9 @@ class ProductPojo extends WCMUsePojo{
 
             Product product = commerceService.getProduct(productData)
             adapter = product?.adaptTo(CatalogAdapter)
+
+            ProductHelper.product = product
+            ProductHelper.pojo = adapter
         }
     }
 

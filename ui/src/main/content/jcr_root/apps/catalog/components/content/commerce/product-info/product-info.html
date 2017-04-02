@@ -1,6 +1,6 @@
-<div
-data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductPojo' @ productData = properties.productData}">
+<div>
 
+    <sly data-sly-use.product="${'in.shabhushan.catalog.commerce.helper.ProductHelper'}"/>
 
     <h3>${product.pojo.title}</h3>
     <strong>${product.pojo.description}</strong>
@@ -11,5 +11,6 @@ data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductPojo' @ p
         <dd>${product.pojo.summary @ context = 'html'}</dd>
     </dl>
     <hr/>
+    Pages : ${product.pojo.noOfPages} <br/>
     Published Date : ${product.pojo.publishedDate} <br/>
 </div>

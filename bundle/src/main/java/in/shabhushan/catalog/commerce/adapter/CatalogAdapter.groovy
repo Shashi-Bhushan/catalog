@@ -40,7 +40,7 @@ class CatalogAdapter {
     }
 
     CatalogAdapter setPrice(String price) {
-        this.price = price
+        this.price = price as Integer
         this
     }
 
