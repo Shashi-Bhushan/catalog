@@ -2,13 +2,13 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:template="/apps/catalog/template/product"
+        cq:template="/apps/catalog/template/productList"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Product Details Page"
-        sling:resourceType="catalog/components/structure/productDetails">
+        jcr:title="Product Listing Page"
+        sling:resourceType="catalog/components/structure/productListing">
         <image
             jcr:primaryType="nt:unstructured"
             sling:resourceType="catalog/components/content/commerce/product-cover-image"
-            productData="/etc/commerce/products/catalog/photography"/>
+            productDate="/etc/commerce/products/catalog/photography"/>
     </jcr:content>
 </jcr:root>
