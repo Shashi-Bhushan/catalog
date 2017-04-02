@@ -5,10 +5,7 @@
         cq:template="/apps/catalog/template/productList"
         jcr:primaryType="cq:PageContent"
         jcr:title="Product Listing Page"
+        rootPath="/etc/commerce/products/catalog"
         sling:resourceType="catalog/components/structure/productListing">
-        <image
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="catalog/components/content/commerce/product-cover-image"
-            productDate="/etc/commerce/products/catalog/photography"/>
     </jcr:content>
 </jcr:root>
