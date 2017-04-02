@@ -3,7 +3,7 @@
     cq:disableTargeting="{Boolean}true"
     cq:layout="editbar"
     cq:dialogMode="floating"
-    cq:actions="[text:Product Details,-,edit,-,delete]"
+    cq:actions="[text:Product Cover Image,-,edit]"
     jcr:primaryType="cq:EditConfig">
     <cq:listeners
         jcr:primaryType="cq:EditListenersConfig"

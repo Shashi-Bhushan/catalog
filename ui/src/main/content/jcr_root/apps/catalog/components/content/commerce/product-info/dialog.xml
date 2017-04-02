@@ -10,27 +10,6 @@
                 jcr:primaryType="cq:Panel"
                 title="Product Properties">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <title
-                        jcr:primaryType="cq:Widget"
-                        fieldDescription="Product Title"
-                        fieldLabel="Title"
-                        name="./title"
-                        xtype="textfield"
-                        defaultValue="Books Catalog"/>
-                    <productData
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Product data location"
-                        name="./productData"
-                        predicate="nosystem"
-                        rootPath="/etc/commerce/products"
-                        rootTitle="Products"
-                        xtype="pathfield"/>
-                    <image
-                        jcr:primaryType="cq:Widget"
-                        fieldDescription="Product Image"
-                        fieldLabel="Image"
-                        name="./image"
-                        xtype="html5smartimage"/>
                 </items>
             </productDetails>
         </items>
