@@ -5,19 +5,21 @@ TODO: Individual model id
     <div class="row">
         <sly data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductListingPojo' @ rootPath = properties.rootPath}"/>
 
-        <div data-sly-list.item="${product.pageList}">
+        <div data-sly-list="${product.pageList}">
             <div class="col-xs-2">
                 <div id="image">
-                    <image id="coverImage" class="img-thumbnail" src="${item.imageSource}"/>
+                    <a href="${item.path}">
+                        <image id="coverImage" class="img-thumbnail" src="${item.imageSource}"/>
+                    </a>
                     <div id="coverAction">
                         <!-- Trigger the modal with a button -->
-                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal${itemList.index}">Open Modal</button>
                     </div>
                 </div>
             </div>
 
             <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
+            <div id="myModal${itemList.index}" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-custom-size">
 
                     <!-- Modal content-->

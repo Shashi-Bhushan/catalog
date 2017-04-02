@@ -14,6 +14,7 @@ class CatalogAdapter {
     String rating
     String starRating
     String summary
+    String path
     Date publishedDate
     int noOfPages
     int price
@@ -51,6 +52,11 @@ class CatalogAdapter {
 
     CatalogAdapter setSummary(String summary) {
         this.summary = summary
+        this
+    }
+
+    CatalogAdapter setPath(String path) {
+        this.path = path
         this
     }
 

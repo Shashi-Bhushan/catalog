@@ -40,6 +40,7 @@ class CatalogAdapterFactory implements AdapterFactory {
             .setStarRating(product.getProperty("starRating", String))
             .setPrice(product.getProperty("price", String))
             .setSummary(product.getProperty("summary", String))
+            .setPath(product.path)
             .setNoOfPages(product.getProperty("noOfPages", Integer))
             .setPublishedDate(product.getProperty("publishedDate", Date))
 
