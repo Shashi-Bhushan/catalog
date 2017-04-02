@@ -2,8 +2,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12">
-            Product Listing
+            Product Listing Root : ${properties.rootPath}
         </div>
 
+        <sly data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductListingPojo' @ rootPath = properties.rootPath}"/>
+
+        Root is : ${product.rootPath}
+        <div data-sly-list.item="${product.pageList}">
+            Item : ${item.title}
+        </div>
     </div>
 </div>
