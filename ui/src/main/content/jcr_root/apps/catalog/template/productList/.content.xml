@@ -5,7 +5,7 @@
     jcr:description="Catalog Generic Product Detail Page Template."
     jcr:primaryType="cq:Template"
     jcr:title="Catalog Product Listing Page"
-    allowedPaths="[/content/catalog(/.*)?]"
+    allowedPaths="[/content/catalog/[^/]+(/.*)?,/content/catalogs/catalog/template-pages(/.*)?]"
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"

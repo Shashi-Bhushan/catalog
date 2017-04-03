@@ -3,4 +3,5 @@
     <filter root="/content/catalog"/>
     <filter root="/content/dam/catalogs"/>
     <filter root="/etc/commerce/products/catalog"/>
+    <filter root="/etc/designs/catalog-design"/>
 </workspaceFilter>

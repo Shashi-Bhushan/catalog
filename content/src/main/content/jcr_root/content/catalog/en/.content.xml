@@ -4,7 +4,7 @@
     <jcr:content
         cq:template="/apps/catalog/template/index"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Base Page"
+        jcr:title="English"
         sling:resourceType="/apps/catalog/components/structure/index">
         <!-- TODO : Make Reference component work for both touch and classic UI-->
         <header
