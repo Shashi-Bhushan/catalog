@@ -3,6 +3,7 @@
     jcr:primaryType="sling:OrderedFolder">
     <jcr:content
         jcr:primaryType="nt:unstructured"
-        jcr:title="Catalog"/>
-    <base/>
+        jcr:title="English"/>
+    <base-catalog/>
+    <template-pages/>
 </jcr:root>

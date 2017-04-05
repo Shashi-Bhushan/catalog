@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-          xmlns:cq="http://www.day.com/jcr/cq/1.0"
-          xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="Catalog Generic Product Detail Page Template."
-    jcr:primaryType="cq:Template"
-    jcr:title="Catalog Product Page"
-    allowedPaths="[/content/[^/]+(/.*)?]"
-    ranking="{Long}100">
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
     <jcr:content
+        cq:template="/apps/catalog/template/product"
         jcr:primaryType="cq:PageContent"
+        jcr:title="Catalog Product Template"
         sling:resourceType="catalog/components/structure/productDetails">
         <productDetails
             jcr:primaryType="nt:unstructured"

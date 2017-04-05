@@ -5,7 +5,7 @@
     jcr:description="Index Page"
     jcr:primaryType="cq:Template"
     jcr:title="Catalog Index Page"
-    allowedPaths="[/content/catalog/[^/]+(/.*)?,/content/catalogs/catalog/template-pages(/.*)?]"
+    allowedPaths="[/content/[^/]+(/.*)?]"
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"

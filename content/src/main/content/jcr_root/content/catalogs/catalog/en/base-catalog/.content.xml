@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:catalogVersion="561"
+        cq:template="/libs/commerce/templates/catalog"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Base Page"
+        sling:resourceType="commerce/components/catalog">
+        <templates
+            jcr:primaryType="nt:unstructured"
+            catalog="/content/catalogs/catalog/en/template-pages/catalog-base-page"
+            product="/content/catalogs/catalog/en/template-pages/catalog-product-template"
+            section="/content/catalogs/catalog/en/template-pages/catalog-product-listing-template"/>
+        <target
+            jcr:primaryType="nt:unstructured"
+            cq_designPath="/etc/designs/catalog-design"
+            jcr_title="English"/>
+        <filter
+            jcr:primaryType="nt:unstructured"
+            basePath="/etc/commerce/products/catalog"/>
+        <cq:CatalogSyncConfig jcr:primaryType="cq:CatalogSyncConfig">
+            <catalog
+                cq:catalogPath="/content/catalog/en"
+                cq:rolloutConfigs="[/etc/msm/rolloutconfigs/catalogpagecontent,/etc/msm/rolloutconfigs/catalogrollouthooks]"
+                jcr:primaryType="nt:unstructured"/>
+        </cq:CatalogSyncConfig>
+    </jcr:content>
+    <fiction/>
+</jcr:root>
