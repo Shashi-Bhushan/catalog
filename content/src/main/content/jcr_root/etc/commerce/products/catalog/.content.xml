@@ -7,6 +7,7 @@
     </jcr:content>
     <photography
         cq:commerceType="product"
+        cq:tags="[geometrixx-outdoors:activity/biking,geometrixx-outdoors:activity/hiking]"
         jcr:description="An intimate and poignant graphic novel portraying one family’s journey from war-torn Vietnam from debut author Thi Bui."
         jcr:mixinTypes="[cq:Taggable]"
         jcr:primaryType="nt:unstructured"
