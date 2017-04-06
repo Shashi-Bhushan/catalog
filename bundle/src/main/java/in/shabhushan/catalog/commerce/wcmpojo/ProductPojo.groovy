@@ -21,7 +21,7 @@ class ProductPojo extends WCMUsePojo{
 
     @Override
     void activate() throws Exception {
-        productData = getProperties()?.get("productData", String)
+        productData = resource.valueMap["cq:productMaster"]
 
         CommerceService commerceService = getResource().adaptTo(CommerceService)
         setAdapterInternal(commerceService)
