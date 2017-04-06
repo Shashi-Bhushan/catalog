@@ -5,7 +5,7 @@
         cq:template="/apps/catalog/template/product"
         jcr:primaryType="cq:PageContent"
         jcr:title="Catalog Product Template"
-        sling:resourceType="catalog/components/structure/productDetails">
+        sling:resourceType="catalog/components/structure/product">
         <product
             cq:commerceType="product"
             jcr:primaryType="nt:unstructured"
