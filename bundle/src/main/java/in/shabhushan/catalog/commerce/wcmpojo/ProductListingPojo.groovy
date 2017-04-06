@@ -15,39 +15,34 @@ import org.apache.sling.api.resource.Resource
  */
 class ProductListingPojo extends WCMUsePojo {
 
-    String rootPath
-
-    List<CatalogAdapter> pageList = new ArrayList<CatalogAdapter>()
-    List<String> pageHrefList = new ArrayList<String>()
+    List<CatalogAdapter> pageList = []
+    List<String> pageHrefList = []
 
     @Override
     void activate() throws Exception {
         CommerceService commerceService = resource.adaptTo(CommerceService)
+
         if(commerceService) {
             commerceService.login(request, response)
         }
 
-        Resource pagesRoot = resourceResolver.resolve(resource.path.reverse().drop(12).reverse())
+        iterateInternal(commerceService)
+    }
 
-        /*
-         * TODO: iterate using groovy each
-         */
-        if(pagesRoot.hasChildren()){
-            Iterator<Resource> pages = pagesRoot.listChildren()
+    private void iterateInternal(CommerceService commerceService) {
+        Resource pagesRoot = resourceResolver.resolve(resource.path[0..-12])
 
-            while(pages.hasNext()) {
-                Resource page = pages.next()
+        pagesRoot.listChildren().each { Resource page ->
+            if(page.resourceType == "cq:Page") {
+                String productMaster = page.getChild('jcr:content')?.valueMap['cq:productMaster']
 
-                if(page.resourceType == "cq:Page") {
-                    String productMaster = page.getChild('jcr:content')?.valueMap['cq:productMaster']
-                    if(productMaster) {
-                        Product product = commerceService.getProduct(productMaster)
-                        CatalogAdapter adapter = product.adaptTo(CatalogAdapter)
+                if(productMaster) {
+                    Product product = commerceService.getProduct(productMaster)
+                    CatalogAdapter adapter = product.adaptTo(CatalogAdapter)
 
-                        if(adapter) {
-                            pageList.add(adapter)
-                            pageHrefList.add(page.path + '.html')
-                        }
+                    if(adapter) {
+                        pageList << adapter
+                        pageHrefList << (page.path + '.html')
                     }
                 }
             }
