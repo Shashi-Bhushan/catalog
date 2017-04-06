@@ -18,17 +18,16 @@ class ProductListingPojo extends WCMUsePojo {
     String rootPath
 
     List<CatalogAdapter> pageList = new ArrayList<CatalogAdapter>()
+    List<String> pageHrefList = new ArrayList<String>()
 
     @Override
     void activate() throws Exception {
-        rootPath = properties.get("rootPath", String)
-
         CommerceService commerceService = resource.adaptTo(CommerceService)
         if(commerceService) {
             commerceService.login(request, response)
         }
 
-        Resource pagesRoot = resourceResolver.resolve(rootPath)
+        Resource pagesRoot = resourceResolver.resolve(resource.path.reverse().drop(12).reverse())
 
         /*
          * TODO: iterate using groovy each
@@ -39,12 +38,16 @@ class ProductListingPojo extends WCMUsePojo {
             while(pages.hasNext()) {
                 Resource page = pages.next()
 
-                if(page.resourceType == "commerce/components/product") {
-                    Product product = commerceService.getProduct(page.getPath())
-                    CatalogAdapter adapter = product.adaptTo(CatalogAdapter)
+                if(page.resourceType == "cq:Page") {
+                    String productMaster = page.getChild('jcr:content')?.valueMap['cq:productMaster']
+                    if(productMaster) {
+                        Product product = commerceService.getProduct(productMaster)
+                        CatalogAdapter adapter = product.adaptTo(CatalogAdapter)
 
-                    if(adapter) {
-                        pageList.add(adapter)
+                        if(adapter) {
+                            pageList.add(adapter)
+                            pageHrefList.add(page.path + '.html')
+                        }
                     }
                 }
             }

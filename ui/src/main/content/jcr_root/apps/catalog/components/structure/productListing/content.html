@@ -3,12 +3,12 @@ TODO: Individual model id
 <hr/>
 <div class="container-fluid">
     <div class="row">
-        <sly data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductListingPojo' @ rootPath = properties.rootPath}"/>
+        <sly data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductListingPojo'}"/>
 
         <div data-sly-list="${product.pageList}">
             <div class="col-xs-2">
                 <div id="image">
-                    <a href="${item.path}">
+                    <a href="${product.pageHrefList[itemList.index]}">
                         <image id="coverImage" class="img-thumbnail" src="${item.imageSource}"/>
                     </a>
                     <div id="coverAction">
