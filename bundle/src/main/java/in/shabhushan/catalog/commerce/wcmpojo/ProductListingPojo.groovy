@@ -30,6 +30,9 @@ class ProductListingPojo extends WCMUsePojo {
 
         Resource pagesRoot = resourceResolver.resolve(rootPath)
 
+        /*
+         * TODO: iterate using groovy each
+         */
         if(pagesRoot.hasChildren()){
             Iterator<Resource> pages = pagesRoot.listChildren()
 

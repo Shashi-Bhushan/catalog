@@ -23,7 +23,7 @@ class ProductPojo extends WCMUsePojo{
     void activate() throws Exception {
         productData = resource.valueMap["cq:productMaster"]
 
-        CommerceService commerceService = getResource().adaptTo(CommerceService)
+        CommerceService commerceService = resource.adaptTo(CommerceService)
         setAdapterInternal(commerceService)
     }
 
@@ -36,7 +36,7 @@ class ProductPojo extends WCMUsePojo{
      */
     private void setAdapterInternal(CommerceService commerceService) {
         if(commerceService){
-            commerceService.login(getRequest(), getResponse())
+            commerceService.login(request, response)
 
             Product product = commerceService.getProduct(productData)
             adapter = product?.adaptTo(CatalogAdapter)
