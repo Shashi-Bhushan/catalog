@@ -2,7 +2,9 @@ package in.shabhushan.catalog.commerce.wcmpojo
 
 import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.Product
+import com.adobe.cq.commerce.common.CommerceHelper
 import com.adobe.cq.sightly.WCMUsePojo
+import com.day.cq.wcm.api.Page
 import in.shabhushan.catalog.commerce.adapter.ProductAdapter
 import org.apache.sling.api.resource.Resource
 
@@ -17,30 +19,15 @@ class ProductListingPojo extends WCMUsePojo {
 
     @Override
     void activate() throws Exception {
-        CommerceService commerceService = resource.adaptTo(CommerceService)
+        currentPage.listChildren().each { Page page ->
+            Product product = CommerceHelper.findCurrentProduct(page)
 
-        if(commerceService) {
-            commerceService.login(request, response)
-        }
+            if (product) {
+                ProductAdapter adapter = product.adaptTo(ProductAdapter)
 
-        iterateInternal(commerceService)
-    }
-
-    private void iterateInternal(CommerceService commerceService) {
-        Resource pagesRoot = resourceResolver.resolve(resource.path[0..-12])
-
-        pagesRoot.listChildren().each { Resource page ->
-            if(page.resourceType == "cq:Page") {
-                String productMaster = page.getChild('jcr:content')?.valueMap['cq:productMaster']
-
-                if(productMaster) {
-                    Product product = commerceService.getProduct(productMaster)
-                    ProductAdapter adapter = product.adaptTo(ProductAdapter)
-
-                    if(adapter) {
-                        pageList << adapter
-                        pageHrefList << (page.path + '.html')
-                    }
+                if (adapter) {
+                    pageList << adapter
+                    pageHrefList << (page.path + '.html')
                 }
             }
         }
