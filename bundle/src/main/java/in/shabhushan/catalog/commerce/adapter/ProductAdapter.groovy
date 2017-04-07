@@ -5,7 +5,7 @@ package in.shabhushan.catalog.commerce.adapter
  *      on 3/31/2017
  *      for catalog
  */
-class CatalogAdapter {
+class ProductAdapter {
 
     String imageSource
 
@@ -20,47 +20,47 @@ class CatalogAdapter {
     int price
 
 
-    CatalogAdapter setTitle(String title) {
+    ProductAdapter setTitle(String title) {
         this.title = title
         this
     }
 
-    CatalogAdapter setDescription(String description) {
+    ProductAdapter setDescription(String description) {
         this.description = description
         this
     }
 
-    CatalogAdapter setRating(String rating) {
+    ProductAdapter setRating(String rating) {
         this.rating = rating
         this
     }
 
-    CatalogAdapter setStarRating(String starRating) {
+    ProductAdapter setStarRating(String starRating) {
         this.starRating = starRating
         this
     }
 
-    CatalogAdapter setPrice(String price) {
+    ProductAdapter setPrice(String price) {
         this.price = price as Integer
         this
     }
 
-    CatalogAdapter setNoOfPages(int noOfPages) {
+    ProductAdapter setNoOfPages(int noOfPages) {
         this.noOfPages = noOfPages
         this
     }
 
-    CatalogAdapter setSummary(String summary) {
+    ProductAdapter setSummary(String summary) {
         this.summary = summary
         this
     }
 
-    CatalogAdapter setPath(String path) {
+    ProductAdapter setPath(String path) {
         this.path = path
         this
     }
 
-    CatalogAdapter setPublishedDate(Date date) {
+    ProductAdapter setPublishedDate(Date date) {
         this.publishedDate = date
         this
     }
@@ -69,7 +69,7 @@ class CatalogAdapter {
         publishedDate.format("MMM d, YYYY")
     }
 
-    CatalogAdapter setImageSource(String imageSource) {
+    ProductAdapter setImageSource(String imageSource) {
         this.imageSource = imageSource
         this
     }

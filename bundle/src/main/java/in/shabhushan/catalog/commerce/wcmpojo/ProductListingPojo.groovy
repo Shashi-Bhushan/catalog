@@ -3,10 +3,7 @@ package in.shabhushan.catalog.commerce.wcmpojo
 import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.Product
 import com.adobe.cq.sightly.WCMUsePojo
-import com.day.cq.wcm.api.Page
-import com.sun.org.apache.xml.internal.resolver.Catalog
-import in.shabhushan.catalog.commerce.adapter.CatalogAdapter
-import in.shabhushan.catalog.commerce.helper.ProductHelper
+import in.shabhushan.catalog.commerce.adapter.ProductAdapter
 import org.apache.sling.api.resource.Resource
 
 /**
@@ -15,7 +12,7 @@ import org.apache.sling.api.resource.Resource
  */
 class ProductListingPojo extends WCMUsePojo {
 
-    List<CatalogAdapter> pageList = []
+    List<ProductAdapter> pageList = []
     List<String> pageHrefList = []
 
     @Override
@@ -38,7 +35,7 @@ class ProductListingPojo extends WCMUsePojo {
 
                 if(productMaster) {
                     Product product = commerceService.getProduct(productMaster)
-                    CatalogAdapter adapter = product.adaptTo(CatalogAdapter)
+                    ProductAdapter adapter = product.adaptTo(ProductAdapter)
 
                     if(adapter) {
                         pageList << adapter

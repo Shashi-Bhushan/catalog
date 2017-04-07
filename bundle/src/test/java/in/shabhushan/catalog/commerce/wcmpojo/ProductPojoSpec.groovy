@@ -3,7 +3,7 @@ package in.shabhushan.catalog.commerce.wcmpojo
 import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.asset.ProductAssetManager
 import com.day.cq.wcm.api.PageManager
-import in.shabhushan.catalog.commerce.adapter.CatalogAdapter
+import in.shabhushan.catalog.commerce.adapter.ProductAdapter
 import in.shabhushan.catalog.commerce.framework.provider.product.CatalogProductImpl
 import org.apache.sling.api.resource.Resource
 import org.apache.sling.api.resource.ResourceResolver
@@ -46,7 +46,7 @@ class ProductPojoSpec extends Specification {
         }
 
         productPojo = Spy(ProductPojo) {
-            getPojo() >> Spy(CatalogAdapter) {
+            getPojo() >> Spy(ProductAdapter) {
                 getTitle() >> {
                     "myTitle"
                 }

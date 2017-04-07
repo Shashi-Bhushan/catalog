@@ -3,7 +3,7 @@ package in.shabhushan.catalog.commerce.wcmpojo
 import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.Product
 import com.adobe.cq.sightly.WCMUsePojo
-import in.shabhushan.catalog.commerce.adapter.CatalogAdapter
+import in.shabhushan.catalog.commerce.adapter.ProductAdapter
 import in.shabhushan.catalog.commerce.helper.ProductHelper
 
 /**
@@ -17,7 +17,7 @@ class ProductPojo extends WCMUsePojo{
     /**
      * Instance of {@link in.shabhushan.catalog.commerce.framework.provider.product.CatalogProductImpl}
      */
-    private CatalogAdapter adapter
+    private ProductAdapter adapter
 
     @Override
     void activate() throws Exception {
@@ -32,14 +32,14 @@ class ProductPojo extends WCMUsePojo{
      *
      * - Logins to {@link CommerceService}
      * - Get {@link Product} from path specified by {@code productDate}
-     * - Adapt {@link Product} to {@link CatalogAdapter}
+     * - Adapt {@link Product} to {@link ProductAdapter}
      */
     private void setAdapterInternal(CommerceService commerceService) {
         if(commerceService){
             commerceService.login(request, response)
 
             Product product = commerceService.getProduct(productData)
-            adapter = product?.adaptTo(CatalogAdapter)
+            adapter = product?.adaptTo(ProductAdapter)
 
             ProductHelper.product = product
             ProductHelper.pojo = adapter
@@ -47,17 +47,17 @@ class ProductPojo extends WCMUsePojo{
     }
 
     /**
-     * Getter for {@link CatalogAdapter} instance
+     * Getter for {@link ProductAdapter} instance
      *
      * @return
-     *      {@link Product} adapted to {@link CatalogAdapter}
+     *      {@link Product} adapted to {@link ProductAdapter}
      */
-    CatalogAdapter getPojo() {
+    ProductAdapter getPojo() {
         adapter
     }
 
     /**
-     * Getter for Class name of {@link CatalogAdapter}
+     * Getter for Class name of {@link ProductAdapter}
      *
      * @return
      */

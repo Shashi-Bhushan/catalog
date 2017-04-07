@@ -2,7 +2,7 @@ package in.shabhushan.catalog.commerce.helper
 
 import com.adobe.cq.commerce.api.Product
 import com.adobe.cq.sightly.WCMUsePojo
-import in.shabhushan.catalog.commerce.adapter.CatalogAdapter
+import in.shabhushan.catalog.commerce.adapter.ProductAdapter
 
 /**
  * Created by Shashi Bhushan
@@ -11,7 +11,7 @@ import in.shabhushan.catalog.commerce.adapter.CatalogAdapter
 class ProductHelper extends WCMUsePojo{
 
     static Product product
-    static CatalogAdapter pojo
+    static ProductAdapter pojo
 
     @Override
     void activate() throws Exception {
