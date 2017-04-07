@@ -14,3 +14,12 @@ new hobs.TestSuite("Catalog - Product Page Tests", {
             .click("button[data-target='#myModal']")
             .asserts.hasCssClass("div[id='myModal']:has(div[class='modal-content'])", "modal fade in")
     )
+    .addTestCase(
+        new hobs.TestCase("Open Model and Close")
+            .navigateTo("/content/catalog/en/fiction/the-best-we-could-do.html")
+            .asserts.hasCssClass("div[id='myModal']:has(div[class='modal-content'])", "modal fade")
+            .click("button[data-target='#myModal']")
+            .asserts.hasCssClass("div[id='myModal']:has(div[class='modal-content'])", "modal fade in")
+            .click("button[class='close'][data-dismiss='modal']")
+            .asserts.hasCssClass("div[id='myModal']:has(div[class='modal-content'])", "modal fade")
+    )
