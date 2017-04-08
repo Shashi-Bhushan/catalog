@@ -1,1 +1,47 @@
 Signin Wrapper
+
+
+<div data-sly-use.signInUtil="${'in.shabhushan.catalog.signin.SignInUtil'}" data-sly-test="${signInUtil.isAnonymous}">
+    User is Anonymous
+</div>
+<div data-sly-use.signInUtil="${'in.shabhushan.catalog.signin.SignInUtil'}" data-sly-test="${!signInUtil.isAnonymous}">
+    User is Not Anonymous
+</div>
+
+<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#loginModal">Login/Signup</button>
+
+<!-- Modal -->
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-custom-size">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#login">Login</a></li>
+                <li><a data-toggle="tab" href="#signup">Signup</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="login" class="tab-pane fade in active">
+                    <form name="loginForm">
+                        <h4>Username</h4>
+                        <input type="text" name="j_username" />
+                        <h4>Password</h4>
+                        <input type="password" name="j_password" />
+                        <input type="submit" name="submit"/>
+                    </form>
+                </div>
+                <div id="signup" class="tab-pane fade">
+                    <form name="loginForm">
+                        <h4>Username</h4>
+                        <input type="text" name="j_username" />
+                        <h4>Password</h4>
+                        <input type="password" name="j_password" />
+                        <h4>Confirm Password</h4>
+                        <input type="password" name="j_confirm_password" />
+                        <input type="submit" name="submit"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
