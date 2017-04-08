@@ -32,6 +32,16 @@ class SignupServlet extends SlingAllMethodsServlet {
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         log.error("Signup servlet called")
 
+        createUserInternal(request)
+
+        log.debug("user ${username} with password ${password} has been created")
+
+//         TODO: Use UserManager API to update user
+
+        response.writer.write("success")
+    }
+
+    private void createUserInternal(SlingHttpServletRequest request) {
         String username = request.getParameter(SigninConstants.USERNAME_PLACEHOLDER)
         String password = request.getParameter(SigninConstants.PASSWORD_PLACEHOLDER)
 
@@ -40,15 +50,12 @@ class SignupServlet extends SlingAllMethodsServlet {
         Session session = resourceResolver.adaptTo(Session)
         UserManager userManager = resourceResolver.adaptTo(UserManager)
 
-        userManager.createUser(username, password)
+        if(userManager) {
+            userManager.createUser(username, password)
 
-        if(!userManager.autoSave) {
-            session.save()
+            if(!userManager.autoSave) {
+                session?.save()
+            }
         }
-
-
-//         TODO: Use UserManager API to create user
-
-        response.writer.write("success")
     }
 }
