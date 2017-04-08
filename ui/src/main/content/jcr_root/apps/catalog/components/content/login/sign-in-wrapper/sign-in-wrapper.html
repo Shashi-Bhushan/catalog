@@ -1,10 +1,9 @@
-Signin Wrapper
+<sly data-sly-use.signInUtil="${'in.shabhushan.catalog.signin.SignInUtil'}" data-sly-unwrap/>
 
-
-<div data-sly-use.signInUtil="${'in.shabhushan.catalog.signin.SignInUtil'}" data-sly-test="${signInUtil.isAnonymous}">
+<div data-sly-test="${signInUtil.isAnonymous}">
     User is Anonymous
 </div>
-<div data-sly-use.signInUtil="${'in.shabhushan.catalog.signin.SignInUtil'}" data-sly-test="${!signInUtil.isAnonymous}">
+<div data-sly-test="${!signInUtil.isAnonymous}">
     User is Not Anonymous
 </div>
 
@@ -22,7 +21,7 @@ Signin Wrapper
             </ul>
             <div class="tab-content">
                 <div id="login" class="tab-pane fade in active">
-                    <form name="loginForm">
+                    <form name="loginForm" action="/bin/signup" method="post">
                         <h4>Username</h4>
                         <input type="text" name="j_username" />
                         <h4>Password</h4>
