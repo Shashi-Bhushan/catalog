@@ -1,15 +1,19 @@
 package in.shabhushan.catalog.signin.servlet
 
+import com.adobe.cq.account.api.AccountManagementService
 import groovy.util.logging.Slf4j
 import in.shabhushan.catalog.signin.constants.SigninConstants
+import org.apache.commons.lang3.Validate
 import org.apache.felix.scr.annotations.Component
 import org.apache.felix.scr.annotations.Properties
 import org.apache.felix.scr.annotations.Property
+import org.apache.felix.scr.annotations.Reference
 import org.apache.felix.scr.annotations.Service
 import org.apache.jackrabbit.api.security.user.UserManager
 import org.apache.sling.api.SlingHttpServletRequest
 import org.apache.sling.api.SlingHttpServletResponse
 import org.apache.sling.api.resource.ResourceResolver
+import org.apache.sling.api.resource.ResourceResolverFactory
 import org.apache.sling.api.servlets.SlingAllMethodsServlet
 
 import javax.jcr.Session
@@ -33,22 +37,32 @@ import javax.servlet.ServletException
 @Slf4j
 class SignupServlet extends SlingAllMethodsServlet {
 
+    @Reference
+    AccountManagementService accountManagementService
+
+    @Reference
+    ResourceResolverFactory resolverFactory
+
     @Override
-    protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        log.error("Signup servlet called")
+    protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
+        throws ServletException, IOException {
 
-        createUserInternal(request)
+        String username = request.getParameter(SigninConstants.USERNAME_PLACEHOLDER)
+        String password = request.getParameter(SigninConstants.PASSWORD_PLACEHOLDER)
 
+        Validate.notNull(username, "Username is Mendatory")
+        Validate.notNull(password, "Password is Mendatory")
 
+        Map<String, Object> param = []
+            {ResourceResolverFactory}
 
-//         TODO: Use UserManager API to update user
+//      TODO: Use AccountManagement API to update user
 
         response.writer.write("success")
     }
 
     private void createUserInternal(SlingHttpServletRequest request) {
-        String username = request.getParameter(SigninConstants.USERNAME_PLACEHOLDER)
-        String password = request.getParameter(SigninConstants.PASSWORD_PLACEHOLDER)
+
 
         ResourceResolver resourceResolver = request.resourceResolver
 
