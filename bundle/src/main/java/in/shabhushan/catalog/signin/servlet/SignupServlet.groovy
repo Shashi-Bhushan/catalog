@@ -17,6 +17,11 @@ import javax.servlet.Servlet
 import javax.servlet.ServletException
 
 /**
+ * The AccountManagementService provides a way for a visitor (a non logged-in user) to request a new account
+ * or to request a password reset.
+ * For any other account management task (e.g. modifying a user property)
+ * use org.apache.jackrabbit.api.security.user.UserManager, based on the logged-in user session.
+ *
  * Created by Shashi Bhushan
  *       on 9/4/17.
  */
@@ -34,7 +39,7 @@ class SignupServlet extends SlingAllMethodsServlet {
 
         createUserInternal(request)
 
-        log.debug("user ${username} with password ${password} has been created")
+
 
 //         TODO: Use UserManager API to update user
 
@@ -49,6 +54,8 @@ class SignupServlet extends SlingAllMethodsServlet {
 
         Session session = resourceResolver.adaptTo(Session)
         UserManager userManager = resourceResolver.adaptTo(UserManager)
+
+        log.debug("user ${username} with password ${password} has been created")
 
         if(userManager) {
             userManager.createUser(username, password)
