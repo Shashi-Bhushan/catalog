@@ -110,12 +110,12 @@ class SignupServlet extends SlingAllMethodsServlet {
 
             @Override
             String getString() {
-                return "sbhushan1@outlook.com"
+                return "stylesense3@gmail.com"
             }
 
             @Override
             String getString(String s) throws UnsupportedEncodingException {
-                return "sbhushan1@outlook.com"
+                return "stylesense3@gmail.com"
             }
         }
 
