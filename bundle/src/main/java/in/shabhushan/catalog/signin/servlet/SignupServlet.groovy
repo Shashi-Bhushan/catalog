@@ -55,6 +55,7 @@ class SignupServlet extends SlingAllMethodsServlet {
         throws ServletException, IOException {
 
         JSONObject jsonObject = new JSONObject()
+        response.setContentType("application/json")
 
         String username = request.getParameter(SigninConstants.USERNAME_PLACEHOLDER)
         String password = request.getParameter(SigninConstants.PASSWORD_PLACEHOLDER)
@@ -65,13 +66,15 @@ class SignupServlet extends SlingAllMethodsServlet {
         resourceResolver = getResourceResolver()
 
         // Check if user already exists
-        Authorizable authorizable = getAuthorizable(username)
+        Authorizable authorizable = getAuthorizableOf(username)
 
         RequestParameter[] parameters = new RequestParameter[1]
         parameters[0] = new CustomRequestParameter("stylesense3@gmail.com")
 
+        // If there is no Authorizable of username
         if(!authorizable) {
-            isAccountCreated = accountManagementService.requestAccount(username, password, ['email': parameters], request.requestURL[0..-12], "/content/catalog/en/properties")
+            isAccountCreated = accountManagementService.requestAccount(username, password, ['email': parameters],
+                        request.requestURL[0..-12], SigninConstants.PROPERTIES_NODE_PATH)
 
             jsonObject.put("status", isAccountCreated)
         } else {
@@ -116,7 +119,7 @@ class SignupServlet extends SlingAllMethodsServlet {
     }
 
     /**
-     * Gets {@link Authorizable} instance pertaining to 'signupService' users' {@link ResourceResolver}
+     * Gets {@link Authorizable} of 'signupService' user
      *
      * @param username
      *      Username to get {@link Authorizable} of
@@ -124,7 +127,7 @@ class SignupServlet extends SlingAllMethodsServlet {
      * @return
      *      {@link Authorizable} instance of {@code username}
      */
-    private Authorizable getAuthorizable(String username) {
+    private Authorizable getAuthorizableOf(String username) {
         UserManager userManager = resourceResolver.adaptTo(UserManager)
         return userManager.getAuthorizable(username)
     }

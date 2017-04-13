@@ -14,6 +14,8 @@ class SigninConstants extends WCMUsePojo {
     static final String FULL_NAME= "j_name"
     static final String EMAIL = "j_email"
 
+    static final String PROPERTIES_NODE_PATH = "/content/catalog/en/properties"
+
     @Override
     void activate() throws Exception {
 

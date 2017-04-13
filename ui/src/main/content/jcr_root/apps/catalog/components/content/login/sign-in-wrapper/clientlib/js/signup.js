@@ -19,7 +19,7 @@
                 },
                 success: function(response) {
                     console.log(response);
-                    if(response.success) {
+                    if(response.status) {
                         $('#verificationMail').show();
                     }
                 },
