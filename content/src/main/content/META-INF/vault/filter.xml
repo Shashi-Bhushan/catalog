@@ -2,6 +2,8 @@
 <workspaceFilter version="1.0">
     <filter root="/content/catalogs/catalog"/>
     <filter root="/content/dam/catalogs"/>
+    <filter root="/content/properties"/>
+    <filter root="/home/users/catalog"/>
     <filter root="/etc/commerce/products/catalog"/>
     <filter root="/etc/designs/catalog-design"/>
 </workspaceFilter>
