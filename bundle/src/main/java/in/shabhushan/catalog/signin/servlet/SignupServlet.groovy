@@ -5,7 +5,6 @@ import groovy.util.logging.Slf4j
 import in.shabhushan.catalog.signin.constants.SigninConstants
 import org.apache.commons.lang3.Validate
 import org.apache.felix.scr.annotations.Component
-import org.apache.felix.scr.annotations.ConfigurationPolicy
 import org.apache.felix.scr.annotations.Properties
 import org.apache.felix.scr.annotations.Property
 import org.apache.felix.scr.annotations.Reference
@@ -60,67 +59,19 @@ class SignupServlet extends SlingAllMethodsServlet {
         String username = request.getParameter(SigninConstants.USERNAME_PLACEHOLDER)
         String password = request.getParameter(SigninConstants.PASSWORD_PLACEHOLDER)
 
-        Validate.notNull(username, "Username is Mendatory")
-        Validate.notNull(password, "Password is Mendatory")
+        validateForNull(username, password)
 
         // Get Service Resource Resolver
-        Map<String, Object> param = ["sling.service.subservice":'signupService']
-        resourceResolver = resourceResolverFactory.getServiceResourceResolver(param)
+        resourceResolver = getResourceResolver()
 
         // Check if user already exists
-        UserManager userManager = resourceResolver.adaptTo(UserManager)
-        Authorizable authorizable = userManager.getAuthorizable(username)
+        Authorizable authorizable = getAuthorizable(username)
 
         RequestParameter[] parameters = new RequestParameter[1]
-        parameters[0] = new RequestParameter() {
-            @Override
-            String getName() {
-                return null
-            }
-
-            @Override
-            boolean isFormField() {
-                return false
-            }
-
-            @Override
-            String getContentType() {
-                return null
-            }
-
-            @Override
-            long getSize() {
-                return 0
-            }
-
-            @Override
-            byte[] get() {
-                return new byte[0]
-            }
-
-            @Override
-            InputStream getInputStream() throws IOException {
-                return null
-            }
-
-            @Override
-            String getFileName() {
-                return null
-            }
-
-            @Override
-            String getString() {
-                return "shabhushan@deloitte.com"
-            }
-
-            @Override
-            String getString(String s) throws UnsupportedEncodingException {
-                return "stylesense3@gmail.com"
-            }
-        }
+        parameters[0] = new CustomRequestParameter("stylesense3@gmail.com")
 
         if(!authorizable) {
-            isAccountCreated = accountManagementService.requestAccount(username, password, ['email': parameters], "http://localhost:4502", "/content/properties")
+            isAccountCreated = accountManagementService.requestAccount(username, password, ['email': parameters], request.requestURL[0..-12], "/content/catalog/en/properties")
 
             jsonObject.put("status", isAccountCreated)
         } else {
@@ -148,6 +99,101 @@ class SignupServlet extends SlingAllMethodsServlet {
             if(!userManager.autoSave) {
                 session?.save()
             }
+        }
+    }
+
+    /**
+     * Get Service Resource Resolver associated with 'signupService'
+     *
+     * @return
+     *      {@link ResourceResolver} of user associated with 'signupService'
+     */
+    private ResourceResolver getResourceResolver() {
+        // Get Service Resource Resolver
+        Map<String, Object> param = ["sling.service.subservice":"signupService"]
+
+        return resourceResolverFactory.getServiceResourceResolver(param)
+    }
+
+    /**
+     * Gets {@link Authorizable} instance pertaining to 'signupService' users' {@link ResourceResolver}
+     *
+     * @param username
+     *      Username to get {@link Authorizable} of
+     *
+     * @return
+     *      {@link Authorizable} instance of {@code username}
+     */
+    private Authorizable getAuthorizable(String username) {
+        UserManager userManager = resourceResolver.adaptTo(UserManager)
+        return userManager.getAuthorizable(username)
+    }
+
+    /**
+     * Validate inputs for Null check using Apache common's Lang3 Library
+     *
+     * @param username
+     *      Username of Signing up user
+     *
+     * @param password
+     *      Password of Signing up user
+     */
+    private void validateForNull(String username, String password) {
+        Validate.notNull(username, "Username is Mandatory")
+        Validate.notNull(password, "Password is Mandatory")
+    }
+
+    private class CustomRequestParameter implements RequestParameter {
+
+        private String email
+
+        CustomRequestParameter(String email) {
+            this.email = email
+        }
+
+        @Override
+        String getName() {
+            return null
+        }
+
+        @Override
+        boolean isFormField() {
+            return false
+        }
+
+        @Override
+        String getContentType() {
+            return null
+        }
+
+        @Override
+        long getSize() {
+            return 0
+        }
+
+        @Override
+        byte[] get() {
+            return new byte[0]
+        }
+
+        @Override
+        InputStream getInputStream() throws IOException {
+            return null
+        }
+
+        @Override
+        String getFileName() {
+            return null
+        }
+
+        @Override
+        String getString() {
+            return this.email
+        }
+
+        @Override
+        String getString(String s) throws UnsupportedEncodingException {
+            return this.email
         }
     }
 }

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
+    <!-- Catalog Blue prints -->
     <filter root="/content/catalogs/catalog"/>
+    <!-- Dam images -->
     <filter root="/content/dam/catalogs"/>
-    <filter root="/content/properties"/>
-    <filter root="/content/confirmation"/>
+    <!-- Confirmation page and Properties node inside catalog/en -->
+    <filter root="/content/catalog/en/confirmation"/>
+    <filter root="/content/catalog/en/properties"/>
+    <!-- Users -->
     <filter root="/home/users/catalog"/>
+    <!-- Ecommerce Products -->
     <filter root="/etc/commerce/products/catalog"/>
+    <!-- Design Page-->
     <filter root="/etc/designs/catalog-design"/>
 </workspaceFilter>
