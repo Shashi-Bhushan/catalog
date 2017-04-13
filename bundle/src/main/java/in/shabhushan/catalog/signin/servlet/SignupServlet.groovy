@@ -110,7 +110,7 @@ class SignupServlet extends SlingAllMethodsServlet {
 
             @Override
             String getString() {
-                return "stylesense3@gmail.com"
+                return "shabhushan@deloitte.com"
             }
 
             @Override

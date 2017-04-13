@@ -5,13 +5,6 @@
         cq:template="/apps/catalog/template/index"
         jcr:primaryType="cq:PageContent"
         jcr:title="English"
-        sling:resourceType="/apps/catalog/components/structure/index">
-        <par
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="foundation/components/parsys">
-            <accountManager
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="/libs/foundation/components/account/requestconfirmation"/>
-        </par>
+        sling:resourceType="/libs/foundation/components/account/requestconfirmation">
     </jcr:content>
 </jcr:root>

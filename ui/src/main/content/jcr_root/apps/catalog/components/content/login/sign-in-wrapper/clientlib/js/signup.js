@@ -19,6 +19,9 @@
                 },
                 success: function(response) {
                     console.log(response);
+                    if(response.success) {
+                        $('#verificationMail').show();
+                    }
                 },
                 error: function(response) {
                     console.log(response)
