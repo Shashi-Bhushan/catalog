@@ -1,11 +1,22 @@
 <sly data-sly-use.signInConstants="${'in.shabhushan.catalog.signin.constants.SigninConstants'}"/>
 
 <div id="login" class="tab-pane fade in active">
-    <form name="loginForm">
+    <form id="loginForm" action="${currentPage.path}/j_security_check" enctype="multipart/form-data"
+        method="POST">
         <h4>Username</h4>
         <input type="text" name="${signInConstants.USERNAME_PLACEHOLDER}" />
         <h4>Password</h4>
         <input type="password" name="${signInConstants.PASSWORD_PLACEHOLDER}" />
+        <input type="hidden" name="j_validate" value="true">
+        <input type="hidden" name="_charset_" value="UTF-8"/>
         <input type="submit" name="submit"/>
     </form>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#loginForm').initiateLogin({
+            path : "${currentPage.path  @ context='scriptString'}"
+        });
+    });
+</script>
