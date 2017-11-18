@@ -1,11 +1,7 @@
 package in.shabhushan.catalog.services.impl
 
 import in.shabhushan.catalog.services.PersonConfiguration
-import org.apache.felix.scr.annotations.Activate
-import org.apache.felix.scr.annotations.Component
-import org.apache.felix.scr.annotations.Modified
-import org.apache.felix.scr.annotations.Property
-import org.apache.felix.scr.annotations.PropertyOption
+import org.apache.felix.scr.annotations.*
 import org.apache.sling.commons.osgi.PropertiesUtil
 import org.osgi.service.component.ComponentContext
 import org.slf4j.Logger
@@ -17,14 +13,17 @@ import org.slf4j.LoggerFactory
  * Change History:
  * Revision         Date            Dev             Comment
  * ----------------------------------------------------------------------------------------
- * 1.0              Oct 25, 2017    Shashi          Initial OSGi ConfigImpl
+ * 1.0              Nov 11, 2017    Shashi          Initial Person ConfigImpl
  *
  * TODO:
  * ----------------------------------------------------------------------------------------
- * - Configuration Using {@link org.apache.felix.scr.annotations.Properties}
  * - Configuration Factory
  * - osgiConfig Node
  * - ConfigAdmin class
+ *
+ * DONE:
+ * ----------------------------------------------------------------------------------------
+ * - Configuration Using {@link org.apache.felix.scr.annotations.Properties}
  *
  * This is a concrete Implementation of {@link PersonConfiguration}
  * The class is created as a way to demonstrate various different types of OSGi Configuration Types.
@@ -33,26 +32,12 @@ import org.slf4j.LoggerFactory
 /*
  * Notes:
  * ----------------------------------------------------------------------------------------
- * Declarative Services (DS) is a component model that simplifies the creation of components that publish and/or
- * reference OSGi Services.
+ * This is a Cleaner Way of Maintaining Properties. All the properties are grouped together.
  *
- * - Declarative means no need to write explicit code to publish or consume services.
- * - components that publish services are delayed, meaning that the service implementation class is not loaded or
- *   instantiated until the service is actually requested by a client.
- * - components have their own lifecycle (i.e. activation and deactivation), bounded by the lifecycle of the bundle
- *   in which they are defined.
- * - components can automatically receive configuration data from Configuration Admin.
- *
- * Order of precedence of configurations
- * felix > apps > libs is precedence order while looking for configurations at run time(Reason Below)
- * and apps > libs > felix is the order while startup
- * Reason: In CQ5. Any changes done in felix console modifies the config files with the highest priority(in apps).
- *
- * Tools have taken different approach to generate Service-Component's xml.
- * BND and SCR takes Annotations approach.
- * Note that the maven-bundle-plugin and maven-scr-plugin will generate the manifest(Manifest.mf)
- * and serviceComponents(serviceComponents.xml) files automatically
+ * Making This an OSGi Service, in order to demonstrate how data can be retrieved via It's interface class, as opposed to
+ * using Configuration Admin.
  */
+
 @Component(
     label = "Person Configuration",
     immediate = true,
@@ -60,68 +45,72 @@ import org.slf4j.LoggerFactory
     enabled = true,
     description = "Sample OSGi Configuration having Some Properties"
 )
-class PersonConfigurationImpl implements PersonConfiguration {
-
-    private static final Logger logger = LoggerFactory.getLogger(PersonConfigurationImpl)
-
-    /**
-     * This property specifies with which name to save this property in ComponentContext Map.
-     * You can directly do, componentContextMap.get('PropertyName') each time you require the value of the property
-     * and you would get the latest property of that name.
-     */
+@Properties([
     @Property(
-        name = "config.name",
+        name = PersonConfigurationImplCleanerWay.STRING_CONFIG_KEY,
         label = "Person's Name",
         description = "Configuration Supporting String Values only",
-        value = "Default Value"
-    )
-    public static final String STRING_CONFIG_KEY = "config.name"
-
+        value = "Default Name"
+    ),
     @Property(
+        name = PersonConfigurationImplCleanerWay.PASSWORD_CONFIG_KEY,
         label = "Person's Password",
         description = "Configuration Supporting String Values only",
+        value="Default Password",
         passwordValue = []
-    )
-    public static final String PASSWORD_CONFIG_KEY = "config.password"
-
-    @Property(label="Gender" , description = "Configuration Supporting Dropdown Selection",
+    ),
+    @Property(
+        name = PersonConfigurationImplCleanerWay.DROPDOWN_CONFIG_KEY,
+        label = "Gender" ,
+        description = "Configuration Supporting Dropdown Selection",
         options = [
             @PropertyOption(name = "Male", value = "MALE"),
             @PropertyOption(name = "Female", value = "FEMALE")
-        ])
-    public static final String DROPDOWN_CONFIG_KEY = "config.gender"
-
+        ]
+    ),
     @Property(
+        name = PersonConfigurationImplCleanerWay.NUMERIC_CONFIG_KEY,
         label = "Phone Numbers",
         description = "Configuration Supporting Multiple Values",
         cardinality = Integer.MAX_VALUE
-    )
-    public static final String MULTIFIELD_CONFIG_KEY = "config.phoneNumbers"
-
+    ),
     @Property(
-        label = "Number of Children",
-        description = "Configuration Supporting Numeric Values only",
-        intValue = 0
-    )
-    public static final String NUMERIC_CONFIG_KEY = "config.numberOfChildren"
-
-    @Property(
+        name = PersonConfigurationImplCleanerWay.BOOLEAN_CONFIG_KEY,
         label = "Married",
         description = "Configuration Supporting Boolean Values only",
         boolValue = false
     )
+])
+class PersonConfigurationImplCleanerWay implements PersonConfiguration {
+
+    private static final Logger logger = LoggerFactory.getLogger(PersonConfigurationImplCleanerWay)
+
+    /**
+     * Static Final String Names for the Configurations
+     */
+    public static final String STRING_CONFIG_KEY = "config.name"
+
+    public static final String PASSWORD_CONFIG_KEY = "config.password"
+
+    public static final String DROPDOWN_CONFIG_KEY = "config.gender"
+
+    public static final String MULTIFIELD_CONFIG_KEY = "config.phoneNumbers"
+
+    public static final String NUMERIC_CONFIG_KEY = "config.numberOfChildren"
+
     public static final String BOOLEAN_CONFIG_KEY = "config.married"
+
 
     @Activate
     protected void activate(final ComponentContext context) {
-        logger.info("${PersonConfigurationImpl.class.name} : Activate Method.")
+        logger.info("${PersonConfigurationImplCleanerWay.class.name} : Activate Method.")
         this.modified(context)
-        logger.info("${PersonConfigurationImpl.class.name} : Activate Method End.")
+        logger.info("${PersonConfigurationImplCleanerWay.class.name} : Activate Method End.")
     }
 
     @Modified
     protected void modified(final ComponentContext context) {
-        logger.info("${PersonConfigurationImpl.class.name} : Modified Method.")
+        logger.info("${PersonConfigurationImplCleanerWay.class.name} : Modified Method.")
         final Dictionary<?, ?> config = context.properties
 
         // Synthetic Accessors of Instance Variables
@@ -138,7 +127,7 @@ class PersonConfigurationImpl implements PersonConfiguration {
 
         logger.info("Password value is : ${PropertiesUtil.toString(config.get(PASSWORD_CONFIG_KEY), null)}.")
 
-        logger.info("${PersonConfigurationImpl.class.name} : Modified Method End.")
+        logger.info("${PersonConfigurationImplCleanerWay.class.name} : Modified Method End.")
     }
 
     /**
