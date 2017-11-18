@@ -19,11 +19,11 @@ import org.slf4j.LoggerFactory
  * ----------------------------------------------------------------------------------------
  * - Configuration Factory
  * - osgiConfig Node
- * - ConfigAdmin class
  *
  * DONE:
  * ----------------------------------------------------------------------------------------
  * - Configuration Using {@link org.apache.felix.scr.annotations.Properties}
+ * - ConfigAdmin class
  *
  * This is a concrete Implementation of {@link PersonConfiguration}
  * The class is created as a way to demonstrate various different types of OSGi Configuration Types.
