@@ -69,10 +69,16 @@ import org.slf4j.LoggerFactory
         ]
     ),
     @Property(
-        name = PersonConfigurationImplCleanerWay.NUMERIC_CONFIG_KEY,
+        name = PersonConfigurationImplCleanerWay.MULTIFIELD_CONFIG_KEY,
         label = "Phone Numbers",
         description = "Configuration Supporting Multiple Values",
         cardinality = Integer.MAX_VALUE
+    ),
+    @Property(
+        name = PersonConfigurationImplCleanerWay.NUMERIC_CONFIG_KEY,
+        label = "Number of Children",
+        description = "Configuration Supporting Numeric Values only",
+        intValue = 0
     ),
     @Property(
         name = PersonConfigurationImplCleanerWay.BOOLEAN_CONFIG_KEY,
@@ -81,6 +87,7 @@ import org.slf4j.LoggerFactory
         boolValue = false
     )
 ])
+@Service(PersonConfiguration)
 class PersonConfigurationImplCleanerWay implements PersonConfiguration {
 
     private static final Logger logger = LoggerFactory.getLogger(PersonConfigurationImplCleanerWay)

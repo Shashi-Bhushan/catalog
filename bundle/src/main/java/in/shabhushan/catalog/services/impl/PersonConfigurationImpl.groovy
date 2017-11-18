@@ -157,11 +157,4 @@ class PersonConfigurationImpl implements PersonConfiguration {
     Integer numericConfig
     // Married
     Boolean booleanConfig
-
-    /**
-     * Caveat:
-     * - No UI Check for Property Values. Eg. intValue
-     * - Value of Metatype Service Object not Linked to instance Variable. Eg. Password even though not saved as
-     *   Instance Variable, still saved in system/config.
-     */
 }

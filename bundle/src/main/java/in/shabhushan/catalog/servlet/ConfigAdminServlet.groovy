@@ -48,7 +48,7 @@ class ConfigAdminServlet extends SlingSafeMethodsServlet {
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
         throws ServletException, IOException {
 
-        Configuration config = getConfig(PersonConfigurationImpl)
+        Configuration config = getConfig(PersonConfigurationImpl.class.name)
 
         Dictionary properties = config.properties
 
@@ -56,8 +56,8 @@ class ConfigAdminServlet extends SlingSafeMethodsServlet {
         String name             = (String) properties.get(PersonConfigurationImpl.STRING_CONFIG_KEY)
         String gender           = properties.get(PersonConfigurationImpl.DROPDOWN_CONFIG_KEY) as String
         String[] phoneNumbers   = properties.get(PersonConfigurationImpl.MULTIFIELD_CONFIG_KEY) as String[]
-        int noOfChildren        = properties.get(PersonConfigurationImpl.NUMERIC_CONFIG_KEY) as Integer
-        boolean isMarried       = Boolean.parseBoolean(properties.get(PersonConfigurationImpl.BOOLEAN_CONFIG_KEY))
+        int noOfChildren        = properties.get(PersonConfigurationImpl.NUMERIC_CONFIG_KEY) as int
+        boolean isMarried       = properties.get(PersonConfigurationImpl.BOOLEAN_CONFIG_KEY) as boolean
 
         JSONObject responseObject = new JSONObject()
 
