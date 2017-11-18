@@ -17,13 +17,13 @@ import org.slf4j.LoggerFactory
  *
  * TODO:
  * ----------------------------------------------------------------------------------------
- * - Configuration Factory
- * - osgiConfig Node
  *
  * DONE:
  * ----------------------------------------------------------------------------------------
  * - Configuration Using {@link org.apache.felix.scr.annotations.Properties}
  * - ConfigAdmin class
+ * - Configuration Factory
+ * - osgiConfig Node
  *
  * This is a concrete Implementation of {@link PersonConfiguration}
  * The class is created as a way to demonstrate various different types of OSGi Configuration Types.
@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory
  */
 
 @Component(
-    label = "Person Configuration",
+    label = "Person Configuration - Second Way",
     immediate = true,
     metatype = true,
     enabled = true,
