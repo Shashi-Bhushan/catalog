@@ -41,3 +41,4 @@ To use vlt with this project, first build and install the package to your local 
 
 Once the working copy is created, you can use the normal ``vlt up`` and ``vlt ci`` commands.
 
+Read me updated
