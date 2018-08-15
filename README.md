@@ -1,10 +1,14 @@
 Catalog
 ========
 
-This Project is an AEM based Book Catalog System. It's meant to be a development exercise.
+This Project is an AEM based Book Catalog System. Hence the name Catalog. 
+It's meant to be a development exercise. AEM version supported is AEM 6.1.
 
+Note: As of Aug 15th 2017, I have started migrating this to AEM 6.4. Will remove this line when the project is migrated completed to AEM 6.4.
+
+Features -
 -   *Uses Separate UI and Content Package System.*  
-    UI is for /apps components and /etc folder deployment.  
+    UI.apps is for /apps components and /etc folder deployment.  
     CONTENT is for /content pages.  
     Have different Maven Deployment profiles as well.
 -   *AEM Scaffolding is used*  
