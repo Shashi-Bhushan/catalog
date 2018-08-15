@@ -15,9 +15,10 @@
     <!-- P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
 
-    <artifactId>catalog-bundle</artifactId>
+    <artifactId>catalog-core</artifactId>
     <packaging>bundle</packaging>
-    <name>Catalog Bundle</name>
+    <name>Catalog - Core Package</name>
+    <description>Core package for Catalog Project</description>
 
     <dependencies>
         <dependency>

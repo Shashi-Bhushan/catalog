@@ -392,8 +392,8 @@
         </profile>
     </profiles>
     <modules>
-        <module>bundle</module>
-        <module>ui</module>
-        <module>content</module>
+        <module>core</module>
+        <module>ui.apps</module>
+        <module>ui.content</module>
     </modules>
 </project>

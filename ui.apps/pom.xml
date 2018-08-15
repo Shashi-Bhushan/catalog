@@ -17,7 +17,8 @@
 
     <artifactId>catalog-ui</artifactId>
     <packaging>content-package</packaging>
-    <name>Catalog - UI Package</name>
+    <name>Catalog - UI Apps Package</name>
+    <description>UI apps package for Catalog Project</description>
 
     <dependencies>
         <dependency>

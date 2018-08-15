@@ -18,6 +18,7 @@
 	<artifactId>catalog-content</artifactId>
 	<packaging>content-package</packaging>
 	<name>Catalog - Content Package</name>
+    <description>UI content package for Catalog Project</description>
 
 	<dependencies>
 		<dependency>
