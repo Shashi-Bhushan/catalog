@@ -9,28 +9,13 @@
                 <responsivegrid jcr:primaryType="nt:unstructured">
                     <catalog-default
                         jcr:description="Policy for editable layout containers"
-                        jcr:lastModified="{Date}2018-02-05T18:34:17.420+01:00"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Catalog Default"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group]"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid]"
                         policyResourceType="wcm/foundation/components/responsivegrid">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
-                                <image
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="image/*"
-                                    droptarget="image"
-                                    resourceType="weretail/components/content/image"
-                                    type="Images"/>
-                                <product
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="product"
-                                    droptarget="product-data-reference"
-                                    resourceType="commerce/components/product"
-                                    type="Products"/>
                                 <document
                                     jcr:primaryType="nt:unstructured"
                                     assetGroup="media"
@@ -45,13 +30,6 @@
                                     droptarget="video"
                                     resourceType="foundation/components/video"
                                     type="Images"/>
-                                <contentfragment
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
-                                    droptarget="contentfragment"
-                                    resourceType="weretail/components/content/contentfragment"
-                                    type="Content Fragment"/>
                                 <experiencefragment
                                     jcr:primaryType="nt:unstructured"
                                     assetGroup="content"
@@ -67,28 +45,13 @@
                     </catalog-default>
                     <catalog-structure
                         jcr:description="Policy for templates to allow structure components"
-                        jcr:lastModified="{Date}2016-10-10T22:34:33.689+02:00"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Catalog Structure"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,/libs/cq/experience-fragments/editor/components/experiencefragment]"
+                        components="[group:General,group:Catalog.Structure]"
                         policyResourceType="wcm/foundation/components/responsivegrid">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
-                                <image
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="image/*"
-                                    droptarget="image"
-                                    resourceType="weretail/components/content/image"
-                                    type="Images"/>
-                                <product
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="product"
-                                    droptarget="product-data-reference"
-                                    resourceType="commerce/components/product"
-                                    type="Products"/>
                                 <document
                                     jcr:primaryType="nt:unstructured"
                                     assetGroup="media"
@@ -103,13 +66,6 @@
                                     droptarget="video"
                                     resourceType="foundation/components/video"
                                     type="Images"/>
-                                <contentfragment
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
-                                    droptarget="contentfragment"
-                                    resourceType="weretail/components/content/contentfragment"
-                                    type="Content Fragment"/>
                                 <experiencefragment
                                     jcr:primaryType="nt:unstructured"
                                     assetGroup="content"
