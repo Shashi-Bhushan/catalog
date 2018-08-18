@@ -7,8 +7,8 @@
     <!-- Dam images -->
     <filter root="/content/dam/catalogs"/>
     <!-- Confirmation page and Properties node inside catalog/en -->
-    <filter root="/content/catalog/en/confirmation"/>
-    <filter root="/content/catalog/en/properties"/>
+    <filter root="/content/catalog/en"/>
+    <filter root="/content/catalog/en"/>
     <!-- Users -->
     <filter root="/home/users/catalog"/>
     <!-- Ecommerce Products -->

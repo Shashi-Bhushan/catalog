@@ -16,12 +16,12 @@
 
 package in.shabhushan.catalog.commerce.framework.provider.product
 
-import com.adobe.cq.commerce.common.AbstractJcrProduct;
-import com.day.cq.wcm.api.Page;
+import com.adobe.cq.commerce.common.AbstractJcrProduct
+import com.day.cq.wcm.api.Page
 import com.day.cq.wcm.api.PageManager
 import groovy.transform.CompileStatic
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.Resource
+import org.apache.sling.api.resource.ResourceResolver
 
 /**
  * Created by Shashi Bhushan
@@ -30,7 +30,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 @CompileStatic
 class CatalogProductImpl extends AbstractJcrProduct {
 
-    public static final String PN_IDENTIFIER = "identifier";
+    public static final String PN_IDENTIFIER = "identifier"
 
     public static final String PN_PRICE = "price"
 
@@ -49,14 +49,14 @@ class CatalogProductImpl extends AbstractJcrProduct {
 
     @Override
     String getSKU() {
-        String sku = getProperty(PN_IDENTIFIER, String.class);
+        String sku = getProperty(PN_IDENTIFIER, String.class)
 
         // Geometrixx products don't have unique ids for size, so append the size to the sku:
-        String size = getProperty("size", String.class);
+        String size = getProperty("size", String.class)
 
         if (size != null && size.length() > 0) {
-            sku += "-" + size;
+            sku += "-" + size
         }
-        return sku;
+        return sku
     }
 }

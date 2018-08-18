@@ -16,15 +16,15 @@
 
 package in.shabhushan.catalog.commerce.framework.service;
 
-import com.adobe.cq.commerce.api.CommerceService;
-import com.adobe.cq.commerce.api.CommerceServiceFactory;
+import com.adobe.cq.commerce.api.CommerceService
+import com.adobe.cq.commerce.api.CommerceServiceFactory
 import com.adobe.cq.commerce.common.AbstractJcrCommerceServiceFactory
 import in.shabhushan.catalog.commerce.framework.provider.service.CatalogServiceImpl
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Properties;
-import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.resource.Resource;
+import org.apache.felix.scr.annotations.Component
+import org.apache.felix.scr.annotations.Properties
+import org.apache.felix.scr.annotations.Property
+import org.apache.felix.scr.annotations.Service
+import org.apache.sling.api.resource.Resource
 
 /**
  * Created by Shashi Bhushan
@@ -37,7 +37,7 @@ import org.apache.sling.api.resource.Resource;
 ])
 class CatalogServiceFactory extends AbstractJcrCommerceServiceFactory implements CommerceServiceFactory {
     @Override
-    public CommerceService getCommerceService(Resource resource) {
-        return new CatalogServiceImpl(getServiceContext(), resource);
+    CommerceService getCommerceService(Resource resource) {
+        new CatalogServiceImpl(getServiceContext(), resource)
     }
 }

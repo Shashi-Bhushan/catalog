@@ -44,8 +44,8 @@ class CatalogServiceImpl extends AbstractJcrCommerceService implements CommerceS
     }
 
     @Override
-    public CommerceSession login(SlingHttpServletRequest slingHttpServletRequest, SlingHttpServletResponse slingHttpServletResponse) throws CommerceException {
-        return new CatalogSessionImpl(this, slingHttpServletRequest, slingHttpServletResponse, resource)
+    CommerceSession login(SlingHttpServletRequest slingHttpServletRequest, SlingHttpServletResponse slingHttpServletResponse) throws CommerceException {
+        new CatalogSessionImpl(this, slingHttpServletRequest, slingHttpServletResponse, resource)
     }
 
     /**
@@ -73,17 +73,17 @@ class CatalogServiceImpl extends AbstractJcrCommerceService implements CommerceS
     }
 
     @Override
-    public List<String> getCountries() throws CommerceException {
+    List<String> getCountries() throws CommerceException {
         return null
     }
 
     @Override
-    public List<String> getCreditCardTypes() throws CommerceException {
+    List<String> getCreditCardTypes() throws CommerceException {
         return null
     }
 
     @Override
-    public List<String> getOrderPredicates() throws CommerceException {
+    List<String> getOrderPredicates() throws CommerceException {
         return null
     }
 }
