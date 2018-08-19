@@ -23,7 +23,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>catalog-bundle</artifactId>
+			<artifactId>catalog-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
@@ -62,7 +62,7 @@
 					<embeddeds>
 						<embedded>
 							<groupId>${project.groupId}</groupId>
-							<artifactId>catalog-bundle</artifactId>
+							<artifactId>catalog-core</artifactId>
 							<target>/apps/catalog/install</target>
 						</embedded>
 					</embeddeds>

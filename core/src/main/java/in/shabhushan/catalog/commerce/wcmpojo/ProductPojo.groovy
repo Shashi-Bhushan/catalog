@@ -15,7 +15,7 @@ class ProductPojo extends WCMUsePojo{
     String productData
 
     /**
-     * Instance of {@link in.shabhushan.catalog.commerce.framework.provider.product.CatalogProductImpl}
+     * Instance of {@link in.shabhushan.catalog.commerce.framework.provider.product.CatalogCommerceProductImpl}
      */
     private ProductAdapter adapter
 

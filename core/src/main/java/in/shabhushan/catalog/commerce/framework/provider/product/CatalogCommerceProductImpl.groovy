@@ -28,7 +28,7 @@ import org.apache.sling.api.resource.ResourceResolver
  *      on 13/3/17.
  */
 @CompileStatic
-class CatalogProductImpl extends AbstractJcrProduct {
+class CatalogCommerceProductImpl extends AbstractJcrProduct {
 
     public static final String PN_IDENTIFIER = "identifier"
 
@@ -39,7 +39,7 @@ class CatalogProductImpl extends AbstractJcrProduct {
     protected final Page productPage
     protected String brand = null
 
-    CatalogProductImpl(Resource resource) {
+    CatalogCommerceProductImpl(Resource resource) {
         super(resource)
 
         resourceResolver = resource.getResourceResolver()

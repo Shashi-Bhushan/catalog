@@ -31,9 +31,9 @@ import org.apache.sling.api.resource.Resource
 @Component(label = "Catalog Service Factory", description = "Factory for reference implementation commerce service", metatype = true)
 @Service(CommerceServiceFactory.class)
 @Property(name = "commerceProvider", value = "catalog", propertyPrivate = true)
-class CatalogServiceFactory extends AbstractJcrCommerceServiceFactory implements CommerceServiceFactory {
+class CatalogCommerceServiceFactory extends AbstractJcrCommerceServiceFactory implements CommerceServiceFactory {
     @Override
     CommerceService getCommerceService(Resource resource) {
-        new CatalogServiceImpl(getServiceContext(), resource)
+        new CatalogCommerceServiceImpl(getServiceContext(), resource)
     }
 }

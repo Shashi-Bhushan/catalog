@@ -16,12 +16,12 @@ import org.apache.sling.api.adapter.AdapterFactory
 @Service(value = AdapterFactory)
 @Properties([
     @Property(name = AdapterFactory.ADAPTABLE_CLASSES, value = "com.adobe.cq.commerce.api.Product"),
-    @Property(name = AdapterFactory.ADAPTER_CLASSES, value = "in.shabhushan.catalog.commerce.adapter.ProductAdapter"),
+    @Property(name = AdapterFactory.ADAPTER_CLASSES, value = "in.shabhushan.catalog.commerce.adapter.ProductAdapter")
 ])
 class ProductAdapterFactory implements AdapterFactory {
 
     @Override
-    public <AdapterType> AdapterType getAdapter(Object adaptableClass, Class<AdapterType> typeClass) {
+    <AdapterType> AdapterType getAdapter(Object adaptableClass, Class<AdapterType> typeClass) {
         if(adaptableClass instanceof Product && typeClass == ProductAdapter) {
             Product product = (Product)adaptableClass
 

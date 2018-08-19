@@ -4,7 +4,7 @@ import com.adobe.cq.commerce.api.CommerceService
 import com.adobe.cq.commerce.api.asset.ProductAssetManager
 import com.day.cq.wcm.api.PageManager
 import in.shabhushan.catalog.commerce.adapter.ProductAdapter
-import in.shabhushan.catalog.commerce.framework.provider.product.CatalogProductImpl
+import in.shabhushan.catalog.commerce.framework.provider.product.CatalogCommerceProductImpl
 import org.apache.sling.api.resource.Resource
 import org.apache.sling.api.resource.ResourceResolver
 import spock.lang.Shared
@@ -33,7 +33,7 @@ class ProductPojoSpec extends Specification {
                 adaptTo(ProductAssetManager) >> Mock(ProductAssetManager)
                 adaptTo(PageManager) >> Mock(PageManager)
                 adaptTo(CommerceService) >> Spy(CommerceService) {
-                    getProduct() >> Spy(CatalogProductImpl, constructorArgs : [constructorArg]) {
+                    getProduct() >> Spy(CatalogCommerceProductImpl, constructorArgs : [constructorArg]) {
                         getProperty("jcr:title") >> {
                             "myTitle"
                         }
@@ -67,7 +67,7 @@ class ProductPojoSpec extends Specification {
                 adaptTo(ProductAssetManager) >> Mock(ProductAssetManager)
                 adaptTo(PageManager) >> Mock(PageManager)
                 adaptTo(CommerceService) >> Spy(CommerceService) {
-                    getProduct() >> Spy(CatalogProductImpl, constructorArgs : [constructorArg]) {
+                    getProduct() >> Spy(CatalogCommerceProductImpl, constructorArgs : [constructorArg]) {
                         getProperty("jcr:title") >> {
                             "myTitle"
                         }
