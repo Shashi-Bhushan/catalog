@@ -29,12 +29,27 @@ import org.slf4j.LoggerFactory
  * Created by Shashi Bhushan
  *      on 13/3/17.
  */
-class CatalogSessionImpl extends AbstractJcrCommerceSession {
+class CatalogCommerceSessionImpl extends AbstractJcrCommerceSession {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CatalogSessionImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CatalogCommerceSessionImpl.class);
 
-    CatalogSessionImpl(AbstractJcrCommerceService commerceService, SlingHttpServletRequest request,
-                              SlingHttpServletResponse response, Resource resource) throws CommerceException {
+    private static final Map<String, BigDecimal> shippingCosts = new HashMap<String, BigDecimal>() {{
+            // A simple shipping pricing architecture with fixed shipping costs.
+
+            put("/var/commerce/shipping-methods/we-retail/standard-shipping", new BigDecimal("5.00"));
+            put("/var/commerce/shipping-methods/we-retail/ground-shipping", new BigDecimal("10.00"));
+            put("/var/commerce/shipping-methods/we-retail/two-business-day", new BigDecimal("15.00"));
+            put("/var/commerce/shipping-methods/we-retail/one-business-day", new BigDecimal("25.00"));
+    }};
+
+    CatalogCommerceSessionImpl(AbstractJcrCommerceService commerceService, SlingHttpServletRequest request,
+                               SlingHttpServletResponse response, Resource resource) throws CommerceException {
         super(commerceService, request, response, resource)
+    }
+
+    @Override
+    protected BigDecimal getShipping(String method) {
+        BigDecimal shippingCost = shippingCosts.get(method)
+        return shippingCost ?: BigDecimal.ZERO
     }
 }

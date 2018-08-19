@@ -3,8 +3,11 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:template="/conf/catalog/settings/wcm/templates/hero-page"
-        cq:allowedTemplates="[/conf/catalog/settings/wcm/templates/.*]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="English"
-        sling:resourceType="/apps/catalog/components/structure/page"/>
+        jcr:title="Home"
+        sling:resourceType="catalog/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid"/>
+    </jcr:content>
 </jcr:root>

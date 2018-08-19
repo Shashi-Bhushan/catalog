@@ -22,8 +22,8 @@ import com.adobe.cq.commerce.common.AbstractJcrProduct
 import com.adobe.cq.commerce.common.ServiceContext
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
-import in.shabhushan.catalog.commerce.framework.provider.product.CatalogProductImpl
-import in.shabhushan.catalog.commerce.framework.provider.session.CatalogSessionImpl
+import in.shabhushan.catalog.commerce.framework.provider.product.CatalogCommerceProductImpl
+import in.shabhushan.catalog.commerce.framework.provider.session.CatalogCommerceSessionImpl
 import org.apache.sling.api.SlingHttpServletRequest
 import org.apache.sling.api.SlingHttpServletResponse
 import org.apache.sling.api.resource.Resource
@@ -34,18 +34,29 @@ import org.apache.sling.api.resource.Resource
  */
 @CompileStatic
 @Slf4j
-class CatalogServiceImpl extends AbstractJcrCommerceService implements CommerceService {
+class CatalogCommerceServiceImpl extends AbstractJcrCommerceService implements CommerceService {
+
+    private static final String REQUEST_ATTRIBUTE_NAME = CatalogCommerceServiceImpl.class.getName();
 
     private Resource resource
 
-    protected CatalogServiceImpl(ServiceContext serviceContext, Resource resource) {
+    protected CatalogCommerceServiceImpl(ServiceContext serviceContext, Resource resource) {
         super(serviceContext, resource)
         this.resource = resource
     }
 
     @Override
     CommerceSession login(SlingHttpServletRequest slingHttpServletRequest, SlingHttpServletResponse slingHttpServletResponse) throws CommerceException {
-        new CatalogSessionImpl(this, slingHttpServletRequest, slingHttpServletResponse, resource)
+        // This avoids that the session is instantiated multiple times by multiple components for the same request
+        Object session = slingHttpServletRequest.getAttribute(REQUEST_ATTRIBUTE_NAME);
+        if (session != null) {
+            return (CommerceSession) session;
+        }
+
+        CommerceSession commerceSession = new CatalogCommerceSessionImpl(this, slingHttpServletRequest, slingHttpServletResponse, resource)
+        slingHttpServletRequest.setAttribute(REQUEST_ATTRIBUTE_NAME, commerceSession)
+
+        return commerceSession
     }
 
     /**
@@ -65,25 +76,35 @@ class CatalogServiceImpl extends AbstractJcrCommerceService implements CommerceS
     Product getProduct(String path) throws CommerceException {
         Resource resource = resolver.getResource(path)
         if (resource != null
-            && CatalogProductImpl.isAProductOrVariant(resource)
+            && CatalogCommerceProductImpl.isAProductOrVariant(resource)
             && resource.isResourceType(AbstractJcrProduct.RESOURCE_TYPE_PRODUCT)) {
 
-            return new CatalogProductImpl(resource)
+            return new CatalogCommerceProductImpl(resource)
         }
     }
 
     @Override
     List<String> getCountries() throws CommerceException {
-        return null
+        null
     }
 
     @Override
     List<String> getCreditCardTypes() throws CommerceException {
-        return null
+        null
     }
 
     @Override
     List<String> getOrderPredicates() throws CommerceException {
-        return null
+        null
+    }
+
+    @Override
+    List<ShippingMethod> getAvailableShippingMethods() throws CommerceException {
+        null
+    }
+
+    @Override
+    List<PaymentMethod> getAvailablePaymentMethods() throws CommerceException {
+        null
     }
 }

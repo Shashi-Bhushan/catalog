@@ -22,15 +22,15 @@ import spock.lang.Specification
  * Created by Shashi Bhushan
  *       on 14/3/17.
  */
-class CatalogProductImplSpec extends Specification {
+class CatalogCommerceProductImplSpec extends Specification {
 
 //    @Shared
-//    CatalogProductImpl product;
+//    CatalogCommerceProductImpl product;
 
 //    def setupSpec() {
 //        Resource resource = Mock(Resource.class)
 //
-//        product = new CatalogProductImpl(resource)
+//        product = new CatalogCommerceProductImpl(resource)
 //    }
 
     def "maximum of two numbers"() {
