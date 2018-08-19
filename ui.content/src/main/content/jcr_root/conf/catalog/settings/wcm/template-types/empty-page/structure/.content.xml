@@ -5,17 +5,21 @@
         cq:deviceGroups="[mobile/groups/responsive]"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="catalog/components/structure/page">
-        <header
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="catalog/components/structure/header"
-            theme="inverse"/>
         <root
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/foundation/components/responsivegrid"/>
-        <footer
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="catalog/components/structure/footer"
-            theme="inverse"/>
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="catalog/components/structure/header"
+                theme="inverse"/>
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true"/>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="catalog/components/structure/footer"/>
+        </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone

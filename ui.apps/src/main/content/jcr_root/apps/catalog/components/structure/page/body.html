@@ -1,8 +1,6 @@
-<div data-sly-resource="${ @path='header', resourceType='catalog/components/structure/header'}" data-sly-unwrap/>
 <!--TODO: Learn about Templated Container -->
-<div class="container">
+<div class="container-fluid">
     <sly data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"
          data-sly-repeat.child="${templatedContainer.structureResources}"
          data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div'}"/>
 </div>
-<div data-sly-resource="${ @path='footer', resourceType='catalog/components/structure/footer'}" data-sly-unwrap/>
