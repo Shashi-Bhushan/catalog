@@ -143,7 +143,7 @@
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.2.0</version>
+                <version>6.3.1.2</version>
                 <classifier>apis</classifier>
                 <scope>provided</scope>
             </dependency>
@@ -195,7 +195,7 @@
         <repository>
             <id>adobe</id>
             <name>Adobe Public Repository</name>
-            <url>http://repo.adobe.com/nexus/content/groups/public/</url>
+            <url>https://repo.adobe.com/nexus/content/repositories/public/</url>
             <layout>default</layout>
         </repository>
     </repositories>
@@ -203,7 +203,7 @@
         <pluginRepository>
             <id>adobe</id>
             <name>Adobe Public Repository</name>
-            <url>http://repo.adobe.com/nexus/content/groups/public/</url>
+            <url>https://repo.adobe.com/nexus/content/repositories/public/</url>
             <layout>default</layout>
         </pluginRepository>
     </pluginRepositories>
