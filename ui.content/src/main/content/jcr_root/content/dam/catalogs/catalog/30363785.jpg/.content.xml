@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="6170ff15-f063-4bdb-b516-7fb2129796d6">
+    <jcr:content
+        cq:name="30363785.jpg"
+        cq:parentPath="/content/dam/catalogs"
+        dam:assetState="processed"
+        dam:relativePath="catalogs/catalog/30363785.jpg"
+        jcr:lastModified="{Date}2018-08-20T08:46:04.187+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            cq:productReference="/etc/commerce/products/catalog/the_art_of_invisibil"
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2017-04-08T09:18:49.480+05:30"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}300"
+            dam:Physicalheightininches="{Decimal}1.3333333730697632"
+            dam:Physicalwidthindpi="{Long}300"
+            dam:Physicalwidthininches="{Decimal}0.8633333444595337"
+            dam:productID="invisi1"
+            dam:Progressive="yes"
+            dam:sha1="a2035f879231a17661f5050d2406a46c3eddf51b"
+            dam:size="{Long}15550"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2017-04-08T09:20:55.499+05:30"
+            jcr:lastModified="{Date}2017-04-08T09:20:55.499+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}400"
+            tiff:ImageWidth="{Long}259"/>
+        <related jcr:primaryType="nt:unstructured"/>
+        <usages
+            dam:score="{Long}1"
+            jcr:primaryType="nt:unstructured"
+            usedBy="[unknown]">
+            <unknown
+                jcr:primaryType="nt:unstructured"
+                count="{Long}1"
+                lastUsed="{Date}2017-04-08T09:19:02.137+05:30"/>
+        </usages>
+    </jcr:content>
+</jcr:root>

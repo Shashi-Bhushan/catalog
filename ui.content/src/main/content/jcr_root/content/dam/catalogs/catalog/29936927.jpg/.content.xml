@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="fee0281d-a65a-47c9-9d81-a7d101bc66a7">
+    <jcr:content
+        cq:name="29936927.jpg"
+        cq:parentPath="/content/dam/catalogs"
+        dam:assetState="processed"
+        dam:relativePath="catalogs/catalog/29936927.jpg"
+        jcr:lastModified="{Date}2018-08-20T08:46:06.385+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            cq:productReference="/etc/commerce/products/catalog/photography2"
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2017-04-01T17:39:32.055+05:30"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}6.05555534362793"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}4.416666507720947"
+            dam:productID="photo 3"
+            dam:Progressive="yes"
+            dam:sha1="d7565a69b4cb1e4ed954e9f7f13542808070723e"
+            dam:size="{Long}36145"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2017-04-01T17:40:36.915+05:30"
+            jcr:lastModified="{Date}2018-08-20T08:46:04.005+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}436"
+            tiff:ImageWidth="{Long}318"/>
+        <related jcr:primaryType="nt:unstructured"/>
+        <usages
+            dam:score="{Long}1"
+            jcr:primaryType="nt:unstructured"
+            usedBy="[unknown]">
+            <unknown
+                jcr:primaryType="nt:unstructured"
+                count="{Long}1"
+                lastUsed="{Date}2017-04-01T17:39:47.946+05:30"/>
+        </usages>
+    </jcr:content>
+</jcr:root>
