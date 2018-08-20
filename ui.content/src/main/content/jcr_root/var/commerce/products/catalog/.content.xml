@@ -2,9 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="sling:OrderedFolder"
     jcr:title="Catalog">
-    <jcr:content jcr:primaryType="nt:unstructured">
-        <folderThumbnail/>
-    </jcr:content>
+    <fiction/>
+    <jcr:content jcr:primaryType="nt:unstructured"/>
     <photography
         cq:commerceType="product"
         cq:tags="[geometrixx-outdoors:activity/biking,geometrixx-outdoors:activity/hiking]"
