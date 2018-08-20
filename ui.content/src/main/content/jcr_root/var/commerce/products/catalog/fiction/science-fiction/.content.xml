@@ -6,7 +6,7 @@
     <jcr:content jcr:primaryType="nt:unstructured"/>
     <thrawnalliances
         cq:commerceType="product"
-        cq:tags="[catalog:fiction/sci-fi/star-wars]"
+        cq:tags="[catalog:fiction,catalog:fiction/sci-fi,catalog:fiction/sci-fi/star-wars]"
         jcr:description="Grand Admiral Thrawn and Darth Vader team up against a threat to the Empire in this thrilling novel from bestselling author Timothy Zahn."
         jcr:lastModified="{Date}2018-08-20T18:08:58.945+05:30"
         jcr:mixinTypes="[cq:Taggable]"
