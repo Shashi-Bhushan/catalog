@@ -7,14 +7,14 @@
     <!-- Catalog Blue prints -->
     <filter root="/content/catalogs/catalog"/>
     <!-- Dam images -->
-    <filter root="/content/dam/catalogs"/>
+    <filter root="/content/dam/catalogs/catalog"/>
     <!-- Confirmation page and Properties node inside catalog/en -->
     <filter root="/content/catalog/en"/>
     <filter root="/content/catalog/en"/>
     <!-- Users -->
     <filter root="/home/users/catalog"/>
     <!-- Ecommerce Products -->
-    <filter root="/etc/commerce/products/catalog"/>
+    <filter root="/var/commerce/products/catalog"/>
     <!-- Design Page-->
     <filter root="/etc/designs/catalog-design"/>
 </workspaceFilter>
