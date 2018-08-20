@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="sling:Folder"
     jcr:title="Science Fiction">
-    <jcr:content jcr:primaryType="nt:unstructured">
-        <folderThumbnail/>
-    </jcr:content>
+    <jcr:content jcr:primaryType="nt:unstructured"/>
     <thrawnalliances
         cq:commerceType="product"
-        cq:tags="[geometrixx-outdoors:activity/biking,geometrixx-outdoors:activity/hiking]"
+        cq:tags="[catalog:fiction/sci-fi/star-wars]"
         jcr:description="Grand Admiral Thrawn and Darth Vader team up against a threat to the Empire in this thrilling novel from bestselling author Timothy Zahn."
+        jcr:lastModified="{Date}2018-08-20T18:08:58.945+05:30"
         jcr:mixinTypes="[cq:Taggable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="Thrawn: Alliances"
@@ -21,14 +20,13 @@
         publishedDate="{Date}2018-07-24T00:00:00.000+05:30"
         rating="8"
         starRating="8"
-        summary="&lt;p>&lt;b>Ominous words under any circumstances, but all the more so when uttered by Emperor Palpatine. On Batuu, at the edges of the Unknown Regions, a threat to the Empire is taking root--its existence little more than a glimmer, its consequences as yet unknowable. But it is troubling enough to the Imperial leader to warrant investigation by his most powerful agents: ruthless enforcer Lord Darth Vader and brilliant strategist Grand Admiral Thrawn. Fierce rivals for the emperor's favor, and outspoken adversaries on Imperial affairs--including the Death Star project--the formidable pair seem unlikely partners for such a crucial mission. But the Emperor knows it's not the first time Vader and Thrawn have joined forces. And there's more behind his royal command than either man suspects.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In what seems like a lifetime ago, General Anakin Skywalker of the Galactic Republic, and Commander Mitth'raw'nuruodo, officer of the Chiss Ascendancy, crossed paths for the first time. One on a desperate personal quest, the other with motives unknown . . . and undisclosed. But facing a gauntlet of dangers on a far-flung world, they forged an uneasy alliance--neither remotely aware of what their futures held in store.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Now, thrust together once more, they find themselves bound again for the planet where they once fought side by side. There they will be doubly challenged--by a test of their allegiance to the Empire . . . and an enemy that threatens even their combined might. &lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        summary="&lt;p>&lt;b>Ominous words under any circumstances, but all the more so when uttered by Emperor Palpatine. On Batuu, at the edges of the Unknown Regions, a threat to the Empire is taking root--its existence little more than a glimmer, its consequences as yet unknowable. But it is troubling enough to the Imperial leader to warrant investigation by his most powerful agents: ruthless enforcer Lord Darth Vader and brilliant strategist Grand Admiral Thrawn. Fierce rivals for the emperor's favor, and outspoken adversaries on Imperial affairs--including the Death Star project--the formidable pair seem unlikely partners for such a crucial mission. But the Emperor knows it's not the first time Vader and Thrawn have joined forces. And there's more behind his royal command than either man suspects.&lt;/b>&lt;br />&#xd;&#xa;&lt;br />&#xd;&#xa;In what seems like a lifetime ago, General Anakin Skywalker of the Galactic Republic, and Commander Mitth'raw'nuruodo, officer of the Chiss Ascendancy, crossed paths for the first time. One on a desperate personal quest, the other with motives unknown . . . and undisclosed. But facing a gauntlet of dangers on a far-flung world, they forged an uneasy alliance--neither remotely aware of what their futures held in store.&lt;br />&#xd;&#xa;&lt;br />&#xd;&#xa;Now, thrust together once more, they find themselves bound again for the planet where they once fought side by side. There they will be doubly challenged--by a test of their allegiance to the Empire . . . and an enemy that threatens even their combined might. &lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
         textIsRich="[true,true]">
         <assets jcr:primaryType="nt:unstructured">
             <asset
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="commerce/components/product/image"
-                assetCategory="[stockphotography:arts_and_entertainme/arts_symbols]"
-                fileReference="/content/dam/catalogs/catalog/fiction/science-fiction/36385853.jpg"/>
+                fileReference="/content/dam/catalogs/catalog/fiction/science-fiction/36385830.jpg"/>
         </assets>
     </thrawnalliances>
 </jcr:root>
