@@ -11,14 +11,14 @@
         - Add Target path
     -->
     <jcr:content
-            cq:targetPath="/etc/commerce/products/catalog"
+            cq:targetPath="/var/commerce/products/catalog"
             jcr:description="Scaffolding Used to create Catalog Data"
             jcr:primaryType="cq:PageContent"
             jcr:title="Catalog Product"
             sling:resourceType="wcm/scaffolding/components/scaffolding">
         <cq:dialog
             jcr:primaryType="nt:unstructured"
-            jcr:title="Geometrixx Outdoors Product Properties"
+            jcr:title="Catalog Product Properties"
             sling:resourceType="cq/gui/components/authoring/dialog">
             <content
                 jcr:primaryType="nt:unstructured"

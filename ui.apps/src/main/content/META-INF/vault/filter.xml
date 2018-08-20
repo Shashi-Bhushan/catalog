@@ -5,6 +5,5 @@
     </filter>
     <filter root="/apps/custom-components"/>
 
-    <filter root="/etc/scaffolding/catalog"/>
     <filter root="/etc/clientlibs/catalog"/>
 </workspaceFilter>
