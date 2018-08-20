@@ -27,7 +27,4 @@ Make Product Listing
 Bugs:
 Tags not getting saved
 
-<!--TODO: Change published date to Calendar -->
 <!--TODO: Add more products in hierarchy Like We Retail Products -->
-<!--TODO: Move to Var -->
-<!--TODO: Add Product Tags -->

@@ -3,7 +3,5 @@
     jcr:description="This is the parent namespace for Project Catalog tags."
     jcr:primaryType="cq:Tag"
     jcr:title="Catalog"
-    sling:resourceType="cq/tagging/components/tag">
-    <fiction/>
-    <business/>
-</jcr:root>
+    jcr:mixinTypes="[rep:AccessControllable]"
+    sling:resourceType="cq/tagging/components/tag"/>
