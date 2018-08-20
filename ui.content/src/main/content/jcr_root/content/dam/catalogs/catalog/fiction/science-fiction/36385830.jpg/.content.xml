@@ -6,8 +6,6 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="catalogs/fiction/science-fiction/36385830.jpg"
-        jcr:lastModified="{Date}2018-08-20T09:02:11.083+05:30"
-        jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
