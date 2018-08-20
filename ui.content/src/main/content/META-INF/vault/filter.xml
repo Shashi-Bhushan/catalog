@@ -6,14 +6,16 @@
     <filter root="/conf/catalog"/>
     <!-- Catalog Blue prints -->
     <filter root="/content/catalogs/catalog"/>
+    <!-- Confirmation page and Properties node inside catalog/en -->
+    <filter root="/content/catalog/en/confirmation"/>
+    <filter root="/content/catalog/en/properties"/>
+    <!-- Catalog Tags Folder -->
+    <filter root="/content/cq:tags/catalog"/>
     <!-- Dam images -->
     <filter root="/content/dam/catalogs/catalog"/>
-    <!-- Confirmation page and Properties node inside catalog/en -->
-    <filter root="/content/catalog/en"/>
-    <filter root="/content/catalog/en"/>
-    <!-- Users -->
+    <!-- Catalog Users -->
     <filter root="/home/users/catalog"/>
-    <!-- Ecommerce Products -->
+    <!-- Catalog e-commerce Products -->
     <filter root="/var/commerce/products/catalog"/>
     <!-- Design Page-->
     <filter root="/etc/designs/catalog-design"/>
