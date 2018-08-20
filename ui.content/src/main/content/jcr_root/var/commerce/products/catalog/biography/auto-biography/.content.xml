@@ -5,7 +5,7 @@
     jcr:title="Auto Biography">
     <the-best-we-could-do
         cq:commerceType="product"
-        cq:tags="[catalog:biography/auto-biography/memoir]"
+        cq:tags="[catalog:biography,catalog:biography/auto-biography,catalog:biography/auto-biography/memoir]"
         jcr:description="An intimate and poignant graphic novel portraying one family’s journey from war-torn Vietnam from debut author Thi Bui."
         jcr:mixinTypes="[cq:Taggable]"
         jcr:primaryType="nt:unstructured"

@@ -6,7 +6,7 @@
     <jcr:content jcr:primaryType="nt:unstructured"/>
     <the-art-of-invisibility
         cq:commerceType="product"
-        cq:tags="[catalog:science/technology/computer-science]"
+        cq:tags="[catalog:science,catalog:science/technology,catalog:science/technology/computer-science]"
         jcr:description="The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data"
         jcr:mixinTypes="[cq:Taggable]"
         jcr:primaryType="nt:unstructured"
@@ -29,7 +29,7 @@
     </the-art-of-invisibility>
     <the-second-machine-age
         cq:commerceType="product"
-        cq:tags="[catalog:science/technology/computer-science]"
+        cq:tags="[catalog:science,catalog:science/technology,catalog:science/technology/computer-science]"
         jcr:description="Work, Progress, and Prosperity in a Time of Brilliant Technologies"
         jcr:mixinTypes="[cq:Taggable]"
         jcr:primaryType="nt:unstructured"

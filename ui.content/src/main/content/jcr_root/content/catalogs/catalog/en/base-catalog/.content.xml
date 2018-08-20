@@ -18,7 +18,7 @@
             jcr_title="English"/>
         <filter
             jcr:primaryType="nt:unstructured"
-            basePath="/etc/commerce/products/catalog"/>
+            basePath="/var/commerce/products/catalog"/>
         <cq:CatalogSyncConfig jcr:primaryType="cq:CatalogSyncConfig">
             <catalog
                 cq:catalogPath="/content/catalog/en"

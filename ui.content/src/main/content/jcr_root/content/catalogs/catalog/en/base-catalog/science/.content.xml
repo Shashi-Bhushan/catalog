@@ -4,7 +4,7 @@
     <jcr:content
         cq:template="/libs/commerce/templates/section"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Fiction"
+        jcr:title="Science"
         sling:resourceType="commerce/components/section">
         <templates
             jcr:primaryType="nt:unstructured"
@@ -18,6 +18,6 @@
             jcr_title="Fiction"/>
         <filter
             jcr:primaryType="nt:unstructured"
-            matchTags="[catalog:fiction]"/>
+            matchTags="[catalog:science]"/>
     </jcr:content>
 </jcr:root>

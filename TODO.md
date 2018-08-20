@@ -24,7 +24,4 @@ Make Product Listing
 
 ====================
 
-Bugs:
-Tags not getting saved
-
 <!--TODO: Add more products in hierarchy Like We Retail Products -->
