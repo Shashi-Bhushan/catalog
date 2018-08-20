@@ -3,14 +3,14 @@
     jcr:isCheckedOut="{Boolean}true"
     jcr:mixinTypes="[mix:referenceable,mix:versionable]"
     jcr:primaryType="dam:Asset"
-    jcr:uuid="6170ff15-f063-4bdb-b516-7fb2129796d6">
+    jcr:uuid="4c131a03-c921-4dfd-9c51-ea6ab391e037">
     <jcr:content
         cq:name="30363785.jpg"
-        cq:parentPath="/content/dam/catalogs"
-        dam:relativePath="catalogs/30363785.jpg"
+        cq:parentPath="/content/dam/catalogs/catalog/science/technology"
+        dam:assetState="processed"
+        dam:relativePath="catalogs/catalog/science/technology/30363785.jpg"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            cq:productReference="/etc/commerce/products/catalog/the_art_of_invisibil"
             dam:Bitsperpixel="{Long}24"
             dam:extracted="{Date}2017-04-08T09:18:49.480+05:30"
             dam:Fileformat="JPEG"
