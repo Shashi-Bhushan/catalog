@@ -5,6 +5,7 @@
         cq:template="/conf/catalog/settings/wcm/templates/hero-page"
         cq:allowedTemplates="[/conf/catalog/settings/wcm/templates/.*]"
         jcr:primaryType="cq:PageContent"
+        cq:commerceProvider="catalog"
         jcr:title="English"
         sling:resourceType="/apps/catalog/components/structure/page"/>
 </jcr:root>
