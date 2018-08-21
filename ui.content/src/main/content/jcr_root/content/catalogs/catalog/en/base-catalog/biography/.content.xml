@@ -15,7 +15,7 @@
         <target
             jcr:primaryType="nt:unstructured"
             cq_designPath="/etc/designs/catalog-design"
-            jcr_title="Fiction"/>
+            jcr_title="Biography"/>
         <filter
             jcr:primaryType="nt:unstructured"
             matchTags="[catalog:biography]"/>

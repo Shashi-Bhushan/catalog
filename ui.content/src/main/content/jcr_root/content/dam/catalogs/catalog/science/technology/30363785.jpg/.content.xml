@@ -9,6 +9,8 @@
         cq:parentPath="/content/dam/catalogs/catalog/science/technology"
         dam:assetState="processed"
         dam:relativePath="catalogs/catalog/science/technology/30363785.jpg"
+        jcr:lastModified="{Date}2018-08-21T23:07:45.213+05:30"
+        jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
@@ -27,6 +29,8 @@
             dam:size="{Long}15550"
             dc:format="image/jpeg"
             dc:modified="{Date}2017-04-08T09:20:55.499+05:30"
+            jcr:lastModified="{Date}2018-08-21T23:07:44.760+05:30"
+            jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             tiff:ImageLength="{Long}400"
