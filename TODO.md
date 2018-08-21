@@ -24,4 +24,6 @@ Make Product Listing
 
 ====================
 
+<!--TODO: Logged in user name and logout functionality -->
+<!--TODO: Logged out user, separate signup and login button -->
 <!--TODO: Add more products in hierarchy Like We Retail Products -->

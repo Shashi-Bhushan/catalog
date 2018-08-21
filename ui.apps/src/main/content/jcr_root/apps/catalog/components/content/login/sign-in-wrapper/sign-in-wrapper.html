@@ -1,14 +1,27 @@
 <sly data-sly-use.signInUtil="${'in.shabhushan.catalog.signin.SignInUtil'}"/>
 <sly data-sly-use.signInConstants="${'in.shabhushan.catalog.signin.constants.SigninConstants'}"/>
 
-<div data-sly-test="${signInUtil.isAnonymous}">
-    User is Anonymous
-</div>
-<div data-sly-test="${!signInUtil.isAnonymous}">
-    User is Not Anonymous
-</div>
-
-<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#loginModal">Login/Signup</button>
+<ul class="nav navbar-nav navbar-right">
+    <sly data-sly-test="${signInUtil.isAnonymous}">
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-user"> Welcome</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-log-out"> Logout</span>
+            </a>
+        </li>
+    </sly>
+    <sly data-sly-test="${!signInUtil.isAnonymous}">
+        <li>
+            <a href="#">
+                <span type="button" class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#loginModal"> Login/Signup</span>
+            </a>
+        </li>
+    </sly>
+</ul>
 
 <!-- Modal -->
 <div id="loginModal" class="modal fade" role="dialog">
