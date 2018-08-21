@@ -9,7 +9,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="/system/sling/logout">
                 <span class="glyphicon glyphicon-log-out"> Logout</span>
             </a>
         </li>
@@ -17,26 +17,20 @@
     <sly data-sly-test="${!signInUtil.isAnonymous}">
         <li>
             <a href="#">
-                <span type="button" class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#loginModal"> Login/Signup</span>
+                <span type="button" class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#loginModal"> Login</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span type="button" class="glyphicon glyphicon-sign-up" data-toggle="modal" data-target="#signUpModal"> Signup</span>
             </a>
         </li>
     </sly>
 </ul>
 
-<!-- Modal -->
-<div id="loginModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-custom-size">
+<!-- Sign up Modal -->
+<sly data-sly-include="${'signup-modal.html'}"/>
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#login">Login</a></li>
-                <li><a data-toggle="tab" href="#signup">Signup</a></li>
-            </ul>
-            <div class="tab-content">
-                <sly data-sly-include="${'login-modal.html'}"/>
-                <sly data-sly-include="${'signup-modal.html'}"/>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Sign in Modal -->
+<sly data-sly-include="${'login-modal.html'}"/>
+

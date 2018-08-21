@@ -1,20 +1,29 @@
 <sly data-sly-use.signInConstants="${'in.shabhushan.catalog.signin.constants.SigninConstants'}"/>
 
-<div id="signup" class="tab-pane fade">
-    <form name="loginForm">
-        <h4>Username</h4>
-        <input type="text" name="${signInConstants.USERNAME_PLACEHOLDER}" />
-        <h4>Password</h4>
-        <input type="password" name="${signInConstants.PASSWORD_PLACEHOLDER}" />
-        <h4>Confirm Password</h4>
-        <input type="password" name="${signInConstants.CONFIRM_PASSWORD_PLACEHOLDER}" />
-        <h4>Full Name</h4>
-        <input type="text" name="${signInConstants.FULL_NAME}" />
-        <h4>Confirm Password</h4>
-        <input type="email" name="${signInConstants.EMAIL}" />
-        <input type="submit" name="submit"/>
-    </form>
-    <div id="verificationMail" style="display: none;">
-        Verification Mail has been sent.
+<div id="signUpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-content modal-custom-size">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h3>Sign up to my Website</h3>
+        </div>
+        <div class="modal-body signup">
+            <form name="loginForm">
+                <h4>Username</h4>
+                <input type="text" name="${signInConstants.USERNAME_PLACEHOLDER}" />
+                <h4>Password</h4>
+                <input type="password" name="${signInConstants.PASSWORD_PLACEHOLDER}" />
+                <h4>Confirm Password</h4>
+                <input type="password" name="${signInConstants.CONFIRM_PASSWORD_PLACEHOLDER}" />
+                <h4>Full Name</h4>
+                <input type="text" name="${signInConstants.FULL_NAME}" />
+                <h4>Confirm Password</h4>
+                <input type="email" name="${signInConstants.EMAIL}" />
+                <input type="submit" name="submit"/>
+            </form>
+            <div id="verificationMail" style="display: none;">
+                Verification Mail has been sent.
+            </div>
+        </div>
+        <div class="modal-footer">Modal Footer</div>
     </div>
 </div>
