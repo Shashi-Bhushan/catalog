@@ -7,8 +7,11 @@
     <!-- Catalog Blue prints -->
     <filter root="/content/catalogs/catalog"/>
     <!-- Confirmation page and Properties node inside catalog/en -->
-    <filter root="/content/catalog/en/confirmation"/>
-    <filter root="/content/catalog/en/properties"/>
+    <filter root="/content/catalog/en/">
+        <exclude pattern="/content/catalog/en/fiction"/>
+        <exclude pattern="/content/catalog/en/biography"/>
+        <exclude pattern="/content/catalog/en/science"/>
+    </filter>
     <!-- Catalog Tags Folder -->
     <filter root="/content/cq:tags/catalog"/>
     <!-- Dam images -->

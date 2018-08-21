@@ -6,16 +6,8 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="Catalog Base page"
         sling:resourceType="/apps/catalog/components/structure/index">
-        <header
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="foundation/components/reference"
-            path="/content/geometrixx-outdoors/en/men/jcr:content/sidebar/list"/>
         <par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys"/>
-        <footer
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="foundation/components/reference"
-            path="/content/geometrixx-outdoors/en/men/jcr:content/sidebar/list"/>
     </jcr:content>
 </jcr:root>
