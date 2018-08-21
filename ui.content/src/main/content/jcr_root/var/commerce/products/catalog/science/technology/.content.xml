@@ -50,4 +50,119 @@
                 fileReference="/content/dam/catalogs/catalog/science/technology/23316526.jpg"/>
         </assets>
     </the-second-machine-age>
+    <genetics-101
+        cq:commerceType="product"
+        cq:tags="[catalog:science]"
+        jcr:description="From Chromosomes and the Double Helix to Cloning and DNA Tests, Everything You Need to Know about Genes "
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Genetics 101"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi2"
+        noOfPages="256"
+        price="467"
+        publishedDate="{Date}2018-07-17T00:00:00.000+05:30"
+        rating="8"
+        starRating="8"
+        summary="&lt;p>&lt;b>A clear and straightforward explanation of genetics in this new edition of the popular 101 series. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Our genetic makeup determines so much about who we are, and what we pass on to our children—from eye color, to height, to health, and even our longevity. Genetics 101 breaks down the science of how genes are inherited and passed from parents to offspring, what DNA is and how it works, how your DNA affects your health, and how you can use your personal genomics to find out more about who you are and where you come from.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Whether you’re looking for a better scientific understanding of genetics, or looking into your own DNA, Genetics 101 is your go-to source to discover more about both yourself and your ancestry.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+        <assets jcr:primaryType="nt:unstructured">
+            <asset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/catalogs/catalog/science/36538893.jpg"/>
+        </assets>
+    </genetics-101>
+    <the-poisoned-city
+        cq:commerceType="product"
+        cq:tags="[catalog:science]"
+        jcr:description="Flint's Water and the American Urban Tragedy"
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="The Poisoned City"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi2"
+        noOfPages="320"
+        price="467"
+        publishedDate="{Date}2018-07-10T00:00:00.000+05:30"
+        rating="8"
+        starRating="8"
+        summary="&lt;p>&lt;b>The first full account of the Flint, Michigan, water scandal, an American tragedy, with new details, from Anna Clark, the award-winning Michigan journalist who has covered the story from its beginnings&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;When the people of Flint, Michigan, turned on their faucets in April 2014, the water pouring out was poisoned with lead and other toxins. Through a series of disastrous decisions, the state government had switched the city’s water to a source that corroded Flint’s aging lead pipes. Complaints about the foul-smelling water were dismissed: the residents of Flint—a largely poor African American city of about 100,000 people—were not seen as credible, even in matters of their own lives.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;It took 18 months of activism and a band of dogged outsiders to force the state to admit that the water was poisonous. But this was only after 12 people died and Flint's children suffered irreparable harm. The long battle for accountability and a humane response to this man-made disaster have only just begun.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In the first full-length account of this epic failure, The Poisoned City recounts the gripping story of Flint’s poisoned water through the people who caused it, suffered from it, and exposed it. It is a chronicle of one town, but could also be about any American city, all made precarious by the neglect of infrastructure and the erosion of democratic decision-making. Cities like Flint are set up to fail—and for the people who live and work in them, the consequences may be mortal. &lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+        <assets jcr:primaryType="nt:unstructured">
+            <asset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/catalogs/catalog/science/35020353.jpg"/>
+        </assets>
+    </the-poisoned-city>
+    <lost-in-math
+        cq:commerceType="product"
+        cq:tags="[catalog:science]"
+        jcr:description="How Beauty Leads Physics Astray"
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Lost in Math"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi2"
+        noOfPages="304"
+        price="467"
+        publishedDate="{Date}2018-06-12T00:00:00.000+05:30"
+        rating="8"
+        starRating="8"
+        summary="&lt;p>&lt;b>A contrarian argues that modern physicists' obsession with beauty has given us wonderful math but bad science. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Whether pondering black holes or predicting discoveries at CERN, physicists believe the best theories are beautiful, natural, and elegant, and this standard separates popular theories from disposable ones. This is why, Sabine Hossenfelder argues, we have not seen a major breakthrough in the foundations of physics for more than four decades. The belief in beauty has become so dogmatic that it now conflicts with scientific objectivity: observation has been unable to confirm mindboggling theories, like supersymmetry or grand unification, invented by physicists based on aesthetic criteria. Worse, these 'too good to not be true' theories are actually untestable and they have left the field in a cul-de-sac. To escape, physicists must rethink their methods. Only by embracing reality as it is can science discover the truth.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+    <assets jcr:primaryType="nt:unstructured">
+        <asset
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="commerce/components/product/image"
+            fileReference="/content/dam/catalogs/catalog/science/36341728.jpg"/>
+    </assets>
+    </lost-in-math>
+    <the-third-bank-of-river
+        cq:commerceType="product"
+        cq:tags="[catalog:science]"
+        jcr:description="Power and Survival in the Twenty-First-Century Amazon"
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="The Third Bank of the River"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi2"
+        noOfPages="352"
+        price="467"
+        publishedDate="{Date}2018-06-05T00:00:00.000+05:30"
+        rating="8"
+        starRating="8"
+        summary="&lt;p>&lt;b>A sweeping look at the war over the Amazon--as activists, locals, and indigenous tribes struggle to save it from the threat of loggers, drug lords, and corrupt cops and politicians&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Following doctors and detectives, environmental activists and indigenous tribes, The Third Bank of the River traces the history of the Amazon from the arrival of the first Spanish flotilla to the drones that are now mapping unexplored parts of the forest. Grounded in rigorous firsthand reporting and in-depth research, Chris Feliciano Arnold reveals a portrait of Brazil and the Amazon that is complex, bloody, and often tragic.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;During the 2014 world cup, an isolated Amazon tribe emerged from the rain forest on the misty border of Peru and Brazil, escaping massacre at the hands of loggers who wanted their land. A year later, in the jungle capital of Manaus, a bloody weekend of reprisal killings inflame a drug war that has blurred the line between cops and kingpins. Both events reveal the dual struggles of those living in and around the world's largest river. As indigenous tribes lose their ancestral culture and territory to the lure and threat of the outside world, the question arises of how best to save isolated tribes: Keep them away from the modern world or make contact in an effort to save them from extinction? As Brazil looks to be a world leader in the twenty-first century, this magnificent and vast region is mired in chaos and violence that echoes the atrocities that have haunted the rain forest since Europeans first traveled its waters.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+    <assets jcr:primaryType="nt:unstructured">
+        <asset
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="commerce/components/product/image"
+            fileReference="/content/dam/catalogs/catalog/science/34930822.jpg"/>
+    </assets>
+    </the-third-bank-of-river>
+    <the-secret-token
+        cq:commerceType="product"
+        cq:tags="[catalog:science]"
+        jcr:description="Myth, Obsession, and the Search for the Lost Colony of Roanoke"
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="The Secret Token"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi2"
+        noOfPages="352"
+        price="467"
+        publishedDate="{Date}2018-06-05T00:00:00.000+05:30"
+        rating="8"
+        starRating="8"
+        summary="&lt;p>&lt;b>A sweeping account of a four-hundred-year-old mystery, the archeologists racing to unearth the answer, and what the Lost Colony reveals about America--from colonial days to today&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In 1587, 115 men, women, and children arrived on Roanoke, an island off the coast of North Carolina. Chartered by Queen Elizabeth I, their colony was to establish a foothold for England in the New World. But by the time the colony's leader, John White, returned to Roanoke from a resupply mission in England, his settlers were nowhere to be found. They had vanished into the wilderness, leaving behind only a single clue--the word 'Croatoan' carved into a tree. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;The disappearance of the Lost Colony became an enduring American mystery. For four centuries, it has gone unsolved, obsessing countless historians, archeologists, and amateur sleuths. Today, after centuries of searching in vain, new clues have begun to surface. In The Secret Token, Andrew Lawler offers a beguiling history of the Lost Colony, and of the relentless quest to bring its fate to light. He accompanies competing archeologists as they seek out evidence, each team hoping to be the first to solve the riddle. In the course of his journey, Lawler explores how the Lost Colony came to haunt our national consciousness, working its way into literature, popular culture, and politics. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Incisive and absorbing, The Secret Token offers a new understanding not just of the Lost Colony, but of how its absence continues to define--and divide--America.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+    <assets jcr:primaryType="nt:unstructured">
+        <asset
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="commerce/components/product/image"
+            fileReference="/content/dam/catalogs/catalog/science/34937397.jpg"/>
+    </assets>
+    </the-secret-token>
 </jcr:root>

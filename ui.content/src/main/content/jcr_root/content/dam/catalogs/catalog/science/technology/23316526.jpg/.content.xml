@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:pdfx="http://ns.adobe.com/pdfx/1.3/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:pdfxid="http://www.npes.org/pdfx/ns/id/"
-    jcr:mixinTypes="[mix:referenceable]"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
     jcr:primaryType="dam:Asset"
     jcr:uuid="fceead23-312f-4fed-abd7-f98df1ee3036">
     <jcr:content
+        cq:name="23316526.jpg"
+        cq:parentPath="/content/dam/catalogs/catalog/science/technology"
         dam:assetState="processed"
         dam:relativePath="catalogs/catalog/science/technology/23316526.jpg"
-        jcr:lastModified="{Date}2018-08-20T19:52:38.172+05:30"
+        jcr:lastModified="{Date}2018-08-21T23:07:45.480+05:30"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -20,12 +23,16 @@
             dam:Physicalwidthindpi="{Long}300"
             dam:Physicalwidthininches="{Decimal}1.059999942779541"
             dam:Progressive="yes"
+            dam:sha1="5e0da7bba8667767c36dfe96a6d674b1f043b65d"
             dc:format="image/jpeg"
+            dc:modified="{Date}2018-08-21T23:07:44.778+05:30"
             dc:title="second machine age.PBK.P1C1a5copy.indd"
             exif:ColorSpace="{Long}1"
             exif:ExifVersion="0221"
             exif:PixelXDimension="{Long}800"
             exif:PixelYDimension="{Long}1196"
+            jcr:lastModified="{Date}2018-08-21T23:07:44.777+05:30"
+            jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             jcr:title="second machine age.PBK.P1C1a5copy.indd"

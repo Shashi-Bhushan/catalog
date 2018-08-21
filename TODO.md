@@ -24,4 +24,8 @@ Make Product Listing
 
 ====================
 
+Bugs:
+Products going to Right Alignment.
+Catalog rollout does not override existing pages.
+
 <!--TODO: Add more products in hierarchy Like We Retail Products -->
