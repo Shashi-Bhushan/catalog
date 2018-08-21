@@ -4,25 +4,25 @@
 <ul class="nav navbar-nav navbar-right">
     <sly data-sly-test="${!signInUtil.isAnonymous}">
         <li>
-            <a href="#" data-toggle="tooltip" title="Welcome ${signInUtil.userProperties.displayName}" data-placement="bottom">
+            <a href="#" data-toggle="tooltip" title="Welcome ${signInUtil.userProperties.displayName}" data-placement="${tooltipPlacement}">
                 <span class="glyphicon glyphicon-user"></span> </span>
             </a>
         </li>
         <li>
-            <a href="/system/sling/logout" data-toggle="tooltip" title="Logout" data-placement="bottom">
+            <a href="/system/sling/logout" data-toggle="tooltip" title="Logout" data-placement="${tooltipPlacement}">
                 <span class="glyphicon glyphicon-log-out"></span>
             </a>
         </li>
     </sly>
     <sly data-sly-test="${!signInUtil.isAnonymous}">
         <li>
-            <a href="#" data-toggle="tooltip" title="Login">
-                <span type="button" class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#loginModal" data-placement="bottom"></span>
+            <a href="#" title="Login" data-target="#loginModal" data-toggle="modal">
+                <span type="button" class="glyphicon glyphicon-log-in" ></span>
             </a>
         </li>
         <li>
-            <a href="#" data-toggle="tooltip" title="Signup">
-                <span type="button" class="glyphicon glyphicon-plus-sign" data-toggle="modal" data-target="#signUpModal" data-placement="bottom"></span>
+            <a href="#" title="Signup" data-toggle="modal" data-target="#signUpModal">
+                <span type="button" class="glyphicon glyphicon-plus-sign"></span>
             </a>
         </li>
     </sly>
