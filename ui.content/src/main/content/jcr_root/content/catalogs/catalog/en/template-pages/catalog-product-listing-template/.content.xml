@@ -5,14 +5,25 @@
         cq:template="/apps/catalog/template/productList"
         jcr:primaryType="cq:PageContent"
         jcr:title="Catalog Product Listing Template"
-        sling:resourceType="catalog/components/structure/productListing">
-        <productDetails
+        sling:resourceType="catalog/components/structure/page">
+        <root
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="foundation/components/parsys">
-            <product
-                cq:commerceType="product"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <header
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="catalog/components/content/commerce/product"/>
-        </productDetails>
+                sling:resourceType="catalog/components/structure/header"
+                theme="inverse"/>
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <productListing
+                    jcr:primaryType="cq:PageContent"
+                    sling:resourceType="catalog/components/structure/productListing"/>
+            </responsivegrid>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="catalog/components/structure/footer"/>
+        </root>
     </jcr:content>
 </jcr:root>
