@@ -14,7 +14,7 @@
             </a>
         </li>
     </sly>
-    <sly data-sly-test="${!signInUtil.isAnonymous}">
+    <sly data-sly-test="${signInUtil.isAnonymous}">
         <li>
             <a href="#" title="Login" data-target="#loginModal" data-toggle="modal">
                 <span type="button" class="glyphicon glyphicon-log-in" ></span>
