@@ -76,8 +76,7 @@ class CatalogCommerceServiceImpl extends AbstractJcrCommerceService implements C
     Product getProduct(String path) throws CommerceException {
         Resource resource = resolver.getResource(path)
         if (resource != null
-            && CatalogCommerceProductImpl.isAProductOrVariant(resource)
-            && resource.isResourceType(AbstractJcrProduct.RESOURCE_TYPE_PRODUCT)) {
+            && CatalogCommerceProductImpl.isAProductOrVariant(resource)) {
 
             return new CatalogCommerceProductImpl(resource)
         }
