@@ -1,5 +1,3 @@
-TODO: Individual model id
-
 <div class="container-fluid">
     <div class="row">
         <sly data-sly-use.product="${'in.shabhushan.catalog.commerce.wcmpojo.ProductListingPojo'}"/>
@@ -12,13 +10,13 @@ TODO: Individual model id
                     </a>
                     <div id="coverAction">
                         <!-- Trigger the modal with a button -->
-                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal${itemList.index}">Open Modal</button>
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal-${itemList.index}-${uuid}">Open Modal</button>
                     </div>
                 </div>
             </div>
 
             <!-- Modal -->
-            <div id="myModal${itemList.index}" class="modal fade" role="dialog">
+            <div id="myModal-${itemList.index}-${uuid}" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-custom-size">
 
                     <!-- Modal content-->

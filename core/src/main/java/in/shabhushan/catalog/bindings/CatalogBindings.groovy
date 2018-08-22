@@ -17,5 +17,6 @@ class CatalogBindings implements BindingsValuesProvider{
     @Override
     void addBindings(Bindings bindings) {
         bindings.put("tooltipPlacement", ToolTipPlacement.BOTTOM.toolTipPlacement)
+        bindings.put("uuid", UUID.randomUUID().toString().replace("-",""))
     }
 }
