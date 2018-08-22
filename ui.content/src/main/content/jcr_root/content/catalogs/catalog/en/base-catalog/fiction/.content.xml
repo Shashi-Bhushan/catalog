@@ -8,7 +8,7 @@
         sling:resourceType="commerce/components/section">
         <templates
             jcr:primaryType="nt:unstructured"
-            product="/content/catalogs/catalog/en/template-pages/catalog-product-template"
+            product="/content/catalogs/catalog/en/template-pages/catalog-product-detail-template"
             proxyProductPages="parseFloat"
             proxyProductPagesSelection="inherit"
             section="/content/catalogs/catalog/en/template-pages/catalog-product-listing-template"/>

@@ -9,7 +9,7 @@
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="catalog/components/structure/productDetails">
+        sling:resourceType="catalog/components/structure/productDetail">
         <product
             cq:commerceType="product"
             jcr:primaryType="nt:unstructured"

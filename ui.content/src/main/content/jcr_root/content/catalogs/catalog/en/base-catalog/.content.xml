@@ -10,7 +10,7 @@
         <templates
             jcr:primaryType="nt:unstructured"
             catalog="/content/catalogs/catalog/en/template-pages/catalog-base-page"
-            product="/content/catalogs/catalog/en/template-pages/catalog-product-template"
+            product="/content/catalogs/catalog/en/template-pages/catalog-product-detail-template"
             section="/content/catalogs/catalog/en/template-pages/catalog-product-listing-template"/>
         <target
             jcr:primaryType="nt:unstructured"
