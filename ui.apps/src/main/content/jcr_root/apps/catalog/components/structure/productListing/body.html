@@ -4,11 +4,11 @@
 
         <div data-sly-list="${product.pageList}">
             <div class="col-xs-2">
-                <div id="image">
+                <div class="image">
                     <a href="${product.pageHrefList[itemList.index]}">
-                        <image id="coverImage" class="img-thumbnail" src="${item.imageSource}"/>
+                        <image class="coverImage" class="img-thumbnail" src="${item.imageSource}"/>
                     </a>
-                    <div id="coverAction">
+                    <div class="coverAction">
                         <!-- Trigger the modal with a button -->
                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal-${itemList.index}-${uuid}">Open Modal</button>
                     </div>
@@ -26,7 +26,7 @@
                             <h3 class="modal-title"><strong>${item.title}</strong></h3>
                         </div>
                         <div class="modal-body">
-                            <image id="full-image" class="img-thumbnail" src="${item.imageSource}"/>
+                            <image class="full-image img-thumbnail" src="${item.imageSource}"/>
                         </div>
                         <div class="modal-footer modal-text-left">
                             <strong>${item.description}</strong>
