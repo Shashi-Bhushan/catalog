@@ -13,6 +13,6 @@
             imageRotate="0"/>
     </jcr:content>
     <catalog-product-listing-template/>
-    <catalog-product-template/>
+    <catalog-product-detail-template/>
     <catalog-base-page/>
 </jcr:root>
