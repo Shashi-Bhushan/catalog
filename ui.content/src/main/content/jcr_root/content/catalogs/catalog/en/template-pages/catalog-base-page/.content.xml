@@ -2,10 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:template="/apps/catalog/template/index"
+        cq:template="/conf/catalog/settings/wcm/templates/hero-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Catalog Base page"
-        sling:resourceType="/apps/catalog/components/structure/index">
+        sling:resourceType="/apps/catalog/components/structure/page">
         <par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys"/>
