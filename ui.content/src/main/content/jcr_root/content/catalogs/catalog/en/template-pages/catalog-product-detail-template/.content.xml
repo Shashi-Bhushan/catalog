@@ -20,7 +20,7 @@
                 <product
                     cq:commerceType="product"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="catalog/components/content/commerce/product-cover-image"/>
+                    sling:resourceType="/apps/catalog/components/structure/productDetail"/>
                 <recentlyViewed
                     jcr:primaryType="nt:unstructured"
                     max="3"
