@@ -3,6 +3,13 @@
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
+    <!--
+    Page Default Policy: Load Clientlibs wcm.foundation.components.page.responsive and catalog.product on page,
+    So that there would be no hard coding to load clientlib on page.
+
+    Policies:
+    Responsive Grid: All the policies related to responsive grid will go there
+    -->
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">

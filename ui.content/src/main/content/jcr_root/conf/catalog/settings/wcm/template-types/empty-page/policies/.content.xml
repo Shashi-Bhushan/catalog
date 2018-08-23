@@ -3,6 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         jcr:primaryType="nt:unstructured"
+        cq:policy="wcm/foundation/components/page/catalog-default-page"
         sling:resourceType="wcm/core/components/policies/mappings">
         <header
             cq:policy="wcm/foundation/components/responsivegrid/catalog-structure"

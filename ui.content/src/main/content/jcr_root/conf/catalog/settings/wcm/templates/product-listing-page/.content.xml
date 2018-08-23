@@ -3,6 +3,7 @@
     jcr:primaryType="cq:Template">
     <jcr:content
         cq:templateType="/conf/catalog/settings/wcm/template-types/empty-page"
+        policy="wcm/foundation/components/page/catalog-default-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Product Listing Page"
         status="enabled"/>
