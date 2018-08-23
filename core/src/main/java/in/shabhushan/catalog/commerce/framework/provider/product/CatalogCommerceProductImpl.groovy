@@ -20,6 +20,7 @@ import com.adobe.cq.commerce.common.AbstractJcrProduct
 import com.day.cq.wcm.api.Page
 import com.day.cq.wcm.api.PageManager
 import groovy.transform.CompileStatic
+import org.apache.commons.lang3.StringUtils
 import org.apache.sling.api.resource.Resource
 import org.apache.sling.api.resource.ResourceResolver
 
@@ -58,5 +59,36 @@ class CatalogCommerceProductImpl extends AbstractJcrProduct {
             sku += "-" + size
         }
         return sku
+    }
+
+    @Override
+    public <T> T getProperty(String name, Class<T> type) {
+        if (name.equals("brand")) {
+            return (T) getBrand();
+        }
+
+        return super.getProperty(name, type);
+    }
+
+    @Override
+    public <T> T getProperty(String name, String selectorString, Class<T> type) {
+        if (name.equals("brand")) {
+            return (T) getBrand();
+        }
+
+        return super.getProperty(name, selectorString, type);
+    }
+
+    public String getBrand() {
+        // A null value is considered as non-initialized
+        if (brand == null) {
+            // Get value from root page title
+            if (productPage != null)
+                brand = productPage.getAbsoluteParent(2).getTitle()
+            // Make sure that the value is not null, to avoid initializing it again
+            if (StringUtils.isBlank(brand))
+                brand = "";
+        }
+        return brand;
     }
 }
