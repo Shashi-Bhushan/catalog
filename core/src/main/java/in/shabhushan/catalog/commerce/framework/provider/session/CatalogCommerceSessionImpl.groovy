@@ -14,16 +14,27 @@
  * limitations under the License.
  */
 
-package in.shabhushan.catalog.commerce.framework.provider.session;
+package in.shabhushan.catalog.commerce.framework.provider.session
 
 import com.adobe.cq.commerce.api.CommerceException
+import com.adobe.cq.commerce.api.PlacedOrder
+import com.adobe.cq.commerce.api.PriceInfo
+import com.adobe.cq.commerce.api.Product
 import com.adobe.cq.commerce.common.AbstractJcrCommerceService
 import com.adobe.cq.commerce.common.AbstractJcrCommerceSession
+import com.adobe.cq.commerce.common.DefaultJcrCartEntry
+import com.day.cq.i18n.I18n
+import org.apache.jackrabbit.util.Text
 import org.apache.sling.api.SlingHttpServletRequest
 import org.apache.sling.api.SlingHttpServletResponse
 import org.apache.sling.api.resource.Resource
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+
+import javax.jcr.Node
+import javax.jcr.NodeIterator
+import javax.jcr.Session
+import javax.jcr.query.Query
 
 /**
  * Created by Shashi Bhushan
@@ -51,5 +62,139 @@ class CatalogCommerceSessionImpl extends AbstractJcrCommerceSession {
     protected BigDecimal getShipping(String method) {
         BigDecimal shippingCost = shippingCosts.get(method)
         return shippingCost ?: BigDecimal.ZERO
+    }
+
+    @Override
+    protected String tokenizePaymentInfo(Map<String, String> paymentDetails) throws CommerceException {
+        //
+        // This is only a stub implementation for the demo site, for which there is no
+        // real payment processing (or payment info tokenization).
+        //
+        return "faux-payment-token";
+    }
+
+    @Override
+    protected void initiateOrderProcessing(String orderPath) throws CommerceException {
+        //
+        // This is only a stub implementation for the demo site, for which there is no
+        // real order processing.
+        //
+        Session serviceSession = null;
+        try {
+            serviceSession = commerceService.serviceContext().slingRepository.loginService("orders", null);
+            Node order = serviceSession.getNode(orderPath);
+            order.setProperty("orderStatus", "Processing");
+            order.getSession().save();
+        } catch (Exception e) {
+            log.error("Failed to update order", e);
+        } finally {
+            if (serviceSession != null) {
+                serviceSession.logout();
+            }
+        }
+    }
+
+    @Override
+    protected String getOrderStatus(String orderId) throws CommerceException {
+        //
+        // Status is kept in the vendor section (/var/commerce); need to find corresponding order there.
+        //
+        Session serviceSession = null;
+        try {
+            serviceSession = commerceService.serviceContext().slingRepository.loginService("orders", null);
+            //
+            // example query: /jcr:root/var/commerce/orders//element(*)[@orderId='foo')]
+            //
+            StringBuilder buffer = new StringBuilder();
+            buffer.append("/jcr:root/var/commerce/orders//element(*)[@orderId = '")
+                .append(Text.escapeIllegalXpathSearchChars(orderId).replaceAll("'", "''"))
+                .append("']");
+
+            final Query query = serviceSession.getWorkspace().getQueryManager().createQuery(buffer.toString(), Query.XPATH);
+            NodeIterator nodeIterator = query.execute().getNodes();
+            if (nodeIterator.hasNext()) {
+                return nodeIterator.nextNode().getProperty("orderStatus").getString();
+            }
+        } catch (Exception e) {
+            // fail-safe when the query above contains errors
+            log.error("Error while fetching order status for orderId '" + orderId + "'", e);
+        } finally {
+            if (serviceSession != null) {
+                serviceSession.logout();
+            }
+        }
+        final I18n i18n = new I18n(request);
+        return i18n.get("unknown", "order status");
+    }
+
+
+
+    @Override
+    public void modifyCartEntry(int entryNumber, int quantity) throws CommerceException {
+        // The default AbstractJcrCommerceSession implementation does not update the cart so we override it
+        super.doModifyCartEntry(entryNumber, quantity, null);
+        calcCart();
+        saveCart();
+    }
+
+    @Override
+    public void addCartEntry(Product product, int quantity) throws CommerceException {
+        if (checkAddProductQuantity(product, quantity)) {
+            return;
+        }
+
+        Map<String, Object> properties = new HashMap<String, Object>();
+
+        // The default AbstractJcrCommerceSession implementation does not store the unit price in the saved order
+        // so we explicitly add a property for that (the properties map is saved in the jcr)
+        BigDecimal unitPrice = product.getProperty(PN_UNIT_PRICE, BigDecimal.class);
+        if (unitPrice != null) {
+            properties.put(PN_UNIT_PRICE, unitPrice);
+        }
+
+        addCartEntry(product, quantity, properties);
+    }
+
+    /**
+     * If the given product is already in the cart, this method adds the given quantity to that cart entry. The product check in the cart is
+     * based on the product SKU.
+     *
+     * @param product
+     *            The product to check.
+     * @param quantity
+     *            The quantity to be added to the existing cart entry.
+     * @return true, if the product was already in the cart and the quantity has been updated.
+     * @throws CommerceException
+     */
+    private boolean checkAddProductQuantity(Product product, int quantity) throws CommerceException {
+        for (CartEntry existingEntry : cart) {
+            DefaultJcrCartEntry existingEntryImpl = (DefaultJcrCartEntry) existingEntry;
+            if (existingEntryImpl.getProduct().getSKU().equals(product.getSKU())) {
+                modifyCartEntry(existingEntryImpl.getEntryIndex(), existingEntryImpl.getQuantity() + quantity);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public PlacedOrder getPlacedOrder(String orderId) throws CommerceException {
+        PlacedOrder placedOrder = super.getPlacedOrder(orderId);
+
+        // We restore the product prices from the saved order
+        if (placedOrder != null) {
+            for (CartEntry cartEntry : placedOrder.getCartEntries()) {
+                String price = cartEntry.getProperty(PN_UNIT_PRICE, String.class);
+                if (price != null) {
+                    BigDecimal unitPrice = new BigDecimal(price);
+                    DefaultJcrCartEntry jcrCartEntry = (DefaultJcrCartEntry) cartEntry;
+                    jcrCartEntry.setPrice(new PriceInfo(unitPrice, locale), "UNIT", "PRE_TAX");
+                    BigDecimal preTaxPrice = unitPrice.multiply(new BigDecimal(cartEntry.getQuantity()));
+                    jcrCartEntry.setPrice(new PriceInfo(preTaxPrice, locale), "LINE", "PRE_TAX");
+                }
+            }
+        }
+
+        return placedOrder;
     }
 }
