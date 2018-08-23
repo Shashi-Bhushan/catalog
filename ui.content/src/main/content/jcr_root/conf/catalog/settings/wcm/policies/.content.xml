@@ -6,49 +6,43 @@
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
-                <responsivegrid jcr:primaryType="nt:unstructured">
-                    <catalog-default
-                        jcr:description="Policy for editable layout containers"
+                <!-- Page's Default Policies -->
+                <page jcr:primaryType="nt:unstructured">
+                    <jcr:content
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Catalog Default"
+                        mergeList="{Boolean}true"/>
+                    <catalog-default-page
+                        jcr:description="Default Page Policy for Catalog Project's pages"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Catalog Default Page Policy"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid]"
+                        clientlibs="[wcm.foundation.components.page.responsive,catalog.product]">
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </catalog-default-page>
+                </page>
+                <!-- Responsive Grid Inside Page's Policy -->
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <!-- only a few group:General Components are allowed -->
+                    <catalog-default
+                        jcr:description="Default Component Policy for Catalog Project's Paragraph System"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Catalog Default Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/dam/cfm/components/contentfragment,/libs/foundation/components/download,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/image,/libs/wcm/foundation/components/responsivegrid,/libs/wcm/foundation/components/list,/libs/foundation/components/reference,/libs/foundation/components/table,/libs/wcm/foundation/components/textimage,/libs/wcm/foundation/components/text,/libs/wcm/foundation/components/title,/libs/foundation/components/video]"
                         policyResourceType="wcm/foundation/components/responsivegrid">
-                        <cq:authoring jcr:primaryType="nt:unstructured">
-                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
-                                <document
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="[application/vnd.openxmlformats,application/msword,application/vnd.ms-powerpoint,application/mspowerpoint,application/powerpoint,application/x-mspowerpoint,application/x-msexcel,application/x-excel,application/excel,application/vnd.ms-excel,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document]"
-                                    droptarget="file"
-                                    resourceType="foundation/components/download"
-                                    type="Images"/>
-                                <video
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="video/*"
-                                    droptarget="video"
-                                    resourceType="foundation/components/video"
-                                    type="Images"/>
-                                <experiencefragment
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="content"
-                                    assetMimetype="text/html"
-                                    droptarget="experiencefragment"
-                                    resourceType="cq/experience-fragments/editor/components/experiencefragment"
-                                    type="experiencefragment"/>
-                            </assetToComponentMapping>
-                        </cq:authoring>
                         <jcr:content
                             jcr:primaryType="nt:unstructured"
                             mergeList="{Boolean}true"/>
                     </catalog-default>
+                    <!-- Catalog-Default + group:Catalog.Structure is allowed -->
                     <catalog-structure
                         jcr:description="Policy for templates to allow structure components"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Catalog Structure"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[group:General,group:Catalog.Structure]"
+                        components="[/libs/dam/cfm/components/contentfragment,/libs/foundation/components/download,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/image,/libs/wcm/foundation/components/responsivegrid,/libs/wcm/foundation/components/list,/libs/foundation/components/reference,/libs/foundation/components/table,/libs/wcm/foundation/components/textimage,/libs/wcm/foundation/components/text,/libs/wcm/foundation/components/title,/libs/foundation/components/video,group:Catalog.Structure]"
                         policyResourceType="wcm/foundation/components/responsivegrid">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -79,6 +73,30 @@
                             jcr:primaryType="nt:unstructured"
                             mergeList="{Boolean}true"/>
                     </catalog-structure>
+                    <!-- Only group:Catalog.ProductListing -->
+                    <catalog-product-listing
+                        jcr:description="Policy for Product Listing Paragraph System"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Catalog Listing"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Catalog.ProductListing]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </catalog-product-listing>
+                    <!-- Only group:Catalog.ProductDetail -->
+                    <catalog-product-detail
+                        jcr:description="Policy for Product Detail Paragraph System"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Catalog Detail"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Catalog.ProductDetail]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </catalog-product-detail>
                 </responsivegrid>
             </components>
         </foundation>
