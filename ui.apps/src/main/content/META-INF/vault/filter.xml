@@ -6,4 +6,5 @@
     <filter root="/apps/custom-components"/>
 
     <filter root="/etc/clientlibs/catalog"/>
+    <filter root="/etc/importers/catalog-goodreads-importer"/>
 </workspaceFilter>
