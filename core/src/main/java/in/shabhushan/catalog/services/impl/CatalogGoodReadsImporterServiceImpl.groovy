@@ -8,6 +8,7 @@ import in.shabhushan.catalog.dto.Books
 import in.shabhushan.catalog.dto.GoodreadsResponse
 import in.shabhushan.catalog.dto.Response
 import in.shabhushan.catalog.services.CatalogGoodReadsImporterService
+import in.shabhushan.catalog.services.CreateProductNodesService
 import in.shabhushan.catalog.services.HttpService
 import in.shabhushan.catalog.services.ResultDeserializationService
 import org.apache.felix.scr.annotations.Component
@@ -44,6 +45,9 @@ class CatalogGoodReadsImporterServiceImpl implements CatalogGoodReadsImporterSer
     @Reference
     private ResultDeserializationService resultDeserializationService
 
+    @Reference
+    private CreateProductNodesService createProductNodesService
+
     @Override
     void importCatalog(SlingHttpServletRequest request, SlingHttpServletResponse response) {
         String baseApiPath = request.getParameter(GoodReadsImporterConstants.BASE_API_PATH)
@@ -52,6 +56,10 @@ class CatalogGoodReadsImporterServiceImpl implements CatalogGoodReadsImporterSer
         String productsPath = request.getParameter(GoodReadsImporterConstants.BASE_PRODUCTS_PATH)
 
         List<Book> books = getBooks(getUrl(baseApiPath, apiKey, authorId))
+
+        log.info "${books}"
+
+        createProductNodesService.createProducts(productsPath, books)
     }
 
     private static final String getUrl(String baseApiPath, String apiKey, String authorId) {
