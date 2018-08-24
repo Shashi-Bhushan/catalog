@@ -2,9 +2,7 @@ Catalog
 ========
 
 This Project is an AEM based Book Catalog System. Hence the name Catalog. 
-It's meant to be a development exercise. AEM version supported is AEM 6.1.
-
-Note: As of Aug 15th 2017, I have started migrating this to AEM 6.4. Will remove this line when the project is migrated completed to AEM 6.4.
+It's meant to be a development exercise. AEM version supported is AEM 6.4.
 
 Features -
 -   *Uses Separate UI and Content Package System.*  
@@ -26,9 +24,11 @@ Building
 
 Common commands:
 
-From the root directory, run ``mvn -PautoInstallPackage clean install`` to build the bundle and ui package and install to a CQ instance.
+From the root directory, run ``mvn -PautoInstallPackage clean install`` to build the core, config and ui.apps packages and install to a CQ instance.
+This package will have all the Groovy code, OSGi configurations and apps package. 
 
-From the root directory, run ``mvn -PautoInstallContent clean install`` to build the content package and install to a CQ instance.
+From the root directory, run ``mvn -PautoInstallContent clean install`` to build the ui.content package and install to a CQ instance.
+This package will have all the editable templates and their policies, Product scaffolding, Project Catalog specific tags, Catalog specific dam images, Catalog specific users, Catalog's Products, their blueprints and Catalog's content. 
 
 From the bundle directory, run ``mvn -PautoInstallBundle clean install`` to build *just* the bundle and install to a CQ instance.
 
