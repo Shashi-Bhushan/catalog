@@ -27,6 +27,5 @@ Make Product Listing
 Bugs:
 Catalog rollout does not override existing pages.
 
-<!--TODO: Generic Header Footer -->
 <!--TODO: Implement Context Hub(Client Context) -->
 <!--TODO: Add more products in hierarchy Like We Retail Products -->

@@ -14,14 +14,18 @@
                 sling:resourceType="catalog/components/structure/header"
                 theme="inverse"
                 projectName="Catalog Project"/>
+            <productDetail
+                jcr:primaryType="cq:PageContent"
+                sling:resourceType="catalog/components/structure/productDetail"/>
+            <recentlyViewed
+                jcr:primaryType="nt:unstructured"
+                max="3"
+                excludeProductsInCart="true"
+                sling:resourceType="commerce/components/recentlyviewed"/>
             <responsivegrid
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid"
-                editable="{Boolean}true">
-                <productListing
-                    jcr:primaryType="cq:PageContent"
-                    sling:resourceType="catalog/components/structure/productDetail"/>
-            </responsivegrid>
+                editable="{Boolean}true"/>
             <footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="catalog/components/structure/footer"/>
