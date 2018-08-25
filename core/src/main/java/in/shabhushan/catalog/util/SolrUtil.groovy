@@ -60,6 +60,6 @@ class SolrUtil {
             }
         }
 
-        return solrInputDocument
+        return solrInputDocuments
     }
 }

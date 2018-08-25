@@ -3,6 +3,7 @@ package in.shabhushan.catalog.services.impl
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import in.shabhushan.catalog.context.SolrContext
+import org.apache.solr.client.solrj.impl.HttpSolrClient
 import org.apache.solr.common.SolrInputDocument
 import in.shabhushan.catalog.services.SolrIndexService
 import org.apache.felix.scr.annotations.Component
@@ -31,7 +32,7 @@ class SolrIndexServiceImpl implements SolrIndexService {
 
         HttpSolrClient server = new HttpSolrClient(solrContext.solrUrl)
 
-        solrInputDocuments.forEach({SolrInputDocument solrInputDocument
+        solrInputDocuments.forEach({SolrInputDocument solrInputDocument ->
             server.add(solrInputDocument)
             server.commit()
         })

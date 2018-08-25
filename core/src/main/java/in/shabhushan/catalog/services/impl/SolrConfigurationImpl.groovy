@@ -23,31 +23,31 @@ import org.osgi.service.component.ComponentContext
 )
 @Properties([
     @Property(
-        name = SOLR_PROTOCOL,
+        name = SolrConfigurationImpl.SOLR_PROTOCOL,
         label = "Solr Server Protocol"
     ),
     @Property(
-        name = SOLR_SERVER_NAME,
+        name = SolrConfigurationImpl.SOLR_SERVER_NAME,
         label = "Solr Server Name"
     ),
     @Property(
-        name = SOLR_SERVER_PORT,
+        name = SolrConfigurationImpl.SOLR_SERVER_PORT,
         label = "Solr Server Port"
     ),
     @Property(
-        name = SOLR_SERVER_COLLECTION_NAME,
+        name = SolrConfigurationImpl.SOLR_SERVER_COLLECTION_NAME,
         label = "Solr Server Collection Name"
     ),
     @Property(
-        name = CONTENT_PAGE_PATH,
+        name = SolrConfigurationImpl.CONTENT_PAGE_PATH,
         label = "Content Page Path"
     ),
     @Property(
-        name = RESOURCE_TYPE,
+        name = SolrConfigurationImpl.RESOURCE_TYPE,
         label = "Resource Type"
     ),
     @Property(
-        name = ALLOWED_TEMPLATES,
+        name = SolrConfigurationImpl.ALLOWED_TEMPLATES,
         label = "Allowed Templates",
         cardinality = Integer.MAX_VALUE
     )
