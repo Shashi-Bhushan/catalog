@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/libs/commerce/templates/section"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="New Books"
+        sling:resourceType="commerce/components/section">
+        <templates
+            jcr:primaryType="nt:unstructured"
+            product="/content/catalogs/catalog/en/template-pages/catalog-product-detail-template"
+            proxyProductPages="parseFloat"
+            proxyProductPagesSelection="inherit"
+            section="/content/catalogs/catalog/en/template-pages/catalog-product-listing-template"/>
+        <target
+            jcr:primaryType="nt:unstructured"
+            cq_designPath="/etc/designs/catalog-design"
+            jcr_title="New Books"/>
+        <filter
+            jcr:primaryType="nt:unstructured"
+            basePath="[/var/commerce/products/catalog/newBooks]"
+            search="SELECT * FROM [nt:base] AS s WHERE ISDESCENDANTNODE([/var/commerce/products/catalog/newBooks])"
+            searchType="JCR-SQL2"/>
+    </jcr:content>
+</jcr:root>
