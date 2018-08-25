@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory
     label = "Catalog Importer",
     description = "Catalog's Importer for GoodReads",
     immediate = true,
-    metatype = true,
+    metatype = false,
     enabled = true
 )
 @Service(CatalogGoodReadsImporterService)

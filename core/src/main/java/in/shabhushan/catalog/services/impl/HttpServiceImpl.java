@@ -27,7 +27,7 @@ import java.io.InputStream;
 @Component(
     label = "Http Service",
     immediate = true,
-    metatype = true,
+    metatype = false,
     enabled = true
 )
 @Service(HttpService.class)
