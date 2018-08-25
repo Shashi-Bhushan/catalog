@@ -59,7 +59,7 @@ class CatalogGoodReadsImporterServiceImpl implements CatalogGoodReadsImporterSer
 
         log.info "${books}"
 
-        createProductNodesService.createProducts(productsPath, books)
+        createProductNodesService.createProducts(response.getWriter(), productsPath, books)
     }
 
     private static final String getUrl(String baseApiPath, String apiKey, String authorId) {

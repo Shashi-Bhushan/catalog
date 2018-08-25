@@ -37,30 +37,34 @@ class CreateProductNodesServiceImpl implements CreateProductNodesService {
     private ObjectMapper mapper = new ObjectMapper()
 
     @Override
-    void createProducts(String productPath, List<Book> books) {
+    void createProducts(PrintWriter writer, String productPath, List<Book> books) {
         if(resourceResolver == null) {
             resourceResolver = getResourceResolver()
         }
 
-        Resource resource = resourceResolver.getResource(productPath)
-
         books.forEach({ Book book ->
             String title = book.title.toLowerCase().replaceAll(" ", "-")
 
-
+            String date = "{Date}${book.publication_year}-${book.publication_month}-${book.publication_day}T00:00:00.000+05:30"
             Map<String, Object> map = [
                 "jcr:primaryType" : "nt:unstructured",
                 "sling:resourceType" : "commerce/components/product",
                 "cq:commerceType" : 'product',
-                "jcr:title" : title,
+                "textIsRich" : "[true,true]",
+                "identifier" : title,
+                "jcr:title" : book.title,
                 "summary" : book.description,
                 "noOfPages" : book.num_pages,
-                "publishedDate" : "{Date}${book.publication_year}-${book.publication_month}-${book.publication_day}T00:00:00.000+05:30",
+                "publishedDate" : date,
                 "rating" : book.average_rating
             ]
 
-            Resource createdResource = ResourceUtil.getOrCreateResource(resourceResolver, "$productPath/$title", map , "nt:unstructured" , true)
-            log.info "$createdResource.path"
+            try {
+                Resource createdResource = ResourceUtil.getOrCreateResource(resourceResolver, "$productPath/$title", map, "nt:unstructured", true)
+                writer.println "Node created at $createdResource.path"
+            } catch (Exception cause) {
+                writer.println "Exception at $productPath/$title. Exception is $cause.message"
+            }
         })
     }
 

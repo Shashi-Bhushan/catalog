@@ -4,52 +4,6 @@
     jcr:primaryType="sling:Folder"
     jcr:title="Technology">
     <jcr:content jcr:primaryType="nt:unstructured"/>
-    <the-art-of-invisibility
-        cq:commerceType="product"
-        cq:tags="[catalog:science,catalog:science/technology,catalog:science/technology/computer-science]"
-        jcr:description="The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data"
-        jcr:mixinTypes="[cq:Taggable]"
-        jcr:primaryType="nt:unstructured"
-        jcr:title="The Art of Invisibility"
-        sling:resourceType="commerce/components/product"
-        identifier="invisi1"
-        noOfPages="350"
-        price="350"
-        publishedDate="{Date}2017-04-24T00:00:00.000+05:30"
-        rating="5"
-        starRating="7"
-        summary="&lt;p>&lt;b>Kevin Mitnick, the world's most famous hacker, teaches you easy cloaking and counter-measures for citizens and consumers in the age of Big Brother and Big Data.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Like it or not, your every move is being watched and analyzed. Consumer's identities are being stolen, and a person's every step is being tracked and stored. What once might have been dismissed as paranoia is now a hard truth, and privacy is a luxury few can afford or understand.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In this explosive yet practical book, Kevin Mitnick illustrates what is happening without your knowledge--and he teaches you &amp;quot;the art of invisibility.&amp;quot; Mitnick is the world's most famous--and formerly the Most Wanted--computer hacker. He has hacked into some of the country's most powerful and seemingly impenetrable agencies and companies, and at one point he was on a three-year run from the FBI. Now, though, Mitnick is reformed and is widely regarded as&amp;nbsp;&lt;i>the&amp;nbsp;&lt;/i>expert on the subject of computer security. He knows exactly how vulnerabilities can be exploited and just what to do to prevent that from happening.&amp;nbsp;&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In THE ART OF INVISIBILITY Mitnick provides both online and real life tactics and inexpensive methods to protect you and your family, in easy step-by-step instructions. He even talks about more advanced &amp;quot;elite&amp;quot; techniques, which, if used properly, can maximize your privacy. Invisibility isn't just for superheroes--privacy is a power you deserve and need in this modern age.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-        textIsRich="[true,true]">
-        <assets jcr:primaryType="nt:unstructured">
-            <asset
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="commerce/components/product/image"
-                fileReference="/content/dam/catalogs/catalog/science/technology/30363785.jpg"/>
-        </assets>
-    </the-art-of-invisibility>
-    <the-second-machine-age
-        cq:commerceType="product"
-        cq:tags="[catalog:science,catalog:science/technology,catalog:science/technology/computer-science]"
-        jcr:description="Work, Progress, and Prosperity in a Time of Brilliant Technologies"
-        jcr:mixinTypes="[cq:Taggable]"
-        jcr:primaryType="nt:unstructured"
-        jcr:title="The Second Machine Age"
-        sling:resourceType="commerce/components/product"
-        identifier="invisi2"
-        noOfPages="336"
-        price="350"
-        publishedDate="{Date}2016-01-25T00:00:00.000+05:30"
-        rating="8"
-        starRating="8"
-        summary="&lt;p>&lt;b>In recent years, Google’s autonomous cars have logged thousands of miles on American highways and IBM’s Watson trounced the best human Jeopardy! players. Digital technologies—with hardware, software, and networks at their core—will in the near future diagnose diseases more accurately than doctors can, apply enormous data sets to transform retailing, and accomplish many tasks once considered uniquely human.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In The Second Machine Age MIT’s Erik Brynjolfsson and Andrew McAfee—two thinkers at the forefront of their field—reveal the forces driving the reinvention of our lives and our economy. As the full impact of digital technologies is felt, we will realize immense bounty in the form of dazzling personal technology, advanced infrastructure, and near-boundless access to the cultural items that enrich our lives.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Amid this bounty will also be wrenching change. Professions of all kinds—from lawyers to truck drivers—will be forever upended. Companies will be forced to transform or die. Recent economic indicators reflect this shift: fewer people are working, and wages are falling even as productivity and profits soar.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Drawing on years of research and up-to-the-minute trends, Brynjolfsson and McAfee identify the best strategies for survival and offer a new path to prosperity. These include revamping education so that it prepares people for the next economy instead of the last one, designing new collaborations that pair brute processing power with human ingenuity, and embracing policies that make sense in a radically transformed landscape.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;A fundamentally optimistic book, The Second Machine Age alters how we think about issues of technological, societal, and economic progress.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-        textIsRich="[true,true]">
-        <assets jcr:primaryType="nt:unstructured">
-            <asset
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="commerce/components/product/image"
-                fileReference="/content/dam/catalogs/catalog/science/technology/23316526.jpg"/>
-        </assets>
-    </the-second-machine-age>
     <genetics-101
         cq:commerceType="product"
         cq:tags="[catalog:science]"
@@ -73,6 +27,52 @@
                 fileReference="/content/dam/catalogs/catalog/science/36538893.jpg"/>
         </assets>
     </genetics-101>
+    <lost-in-math
+        cq:commerceType="product"
+        cq:tags="[catalog:science]"
+        jcr:description="How Beauty Leads Physics Astray"
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Lost in Math"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi2"
+        noOfPages="304"
+        price="467"
+        publishedDate="{Date}2018-06-12T00:00:00.000+05:30"
+        rating="8"
+        starRating="8"
+        summary="&lt;p>&lt;b>A contrarian argues that modern physicists' obsession with beauty has given us wonderful math but bad science. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Whether pondering black holes or predicting discoveries at CERN, physicists believe the best theories are beautiful, natural, and elegant, and this standard separates popular theories from disposable ones. This is why, Sabine Hossenfelder argues, we have not seen a major breakthrough in the foundations of physics for more than four decades. The belief in beauty has become so dogmatic that it now conflicts with scientific objectivity: observation has been unable to confirm mindboggling theories, like supersymmetry or grand unification, invented by physicists based on aesthetic criteria. Worse, these 'too good to not be true' theories are actually untestable and they have left the field in a cul-de-sac. To escape, physicists must rethink their methods. Only by embracing reality as it is can science discover the truth.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+        <assets jcr:primaryType="nt:unstructured">
+            <asset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/catalogs/catalog/science/36341728.jpg"/>
+        </assets>
+    </lost-in-math>
+    <the-art-of-invisibility
+        cq:commerceType="product"
+        cq:tags="[catalog:science,catalog:science/technology,catalog:science/technology/computer-science]"
+        jcr:description="The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data"
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="The Art of Invisibility"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi1"
+        noOfPages="350"
+        price="350"
+        publishedDate="{Date}2017-04-24T00:00:00.000+05:30"
+        rating="5"
+        starRating="7"
+        summary="&lt;p>&lt;b>Kevin Mitnick, the world's most famous hacker, teaches you easy cloaking and counter-measures for citizens and consumers in the age of Big Brother and Big Data.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Like it or not, your every move is being watched and analyzed. Consumer's identities are being stolen, and a person's every step is being tracked and stored. What once might have been dismissed as paranoia is now a hard truth, and privacy is a luxury few can afford or understand.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In this explosive yet practical book, Kevin Mitnick illustrates what is happening without your knowledge--and he teaches you &amp;quot;the art of invisibility.&amp;quot; Mitnick is the world's most famous--and formerly the Most Wanted--computer hacker. He has hacked into some of the country's most powerful and seemingly impenetrable agencies and companies, and at one point he was on a three-year run from the FBI. Now, though, Mitnick is reformed and is widely regarded as&amp;nbsp;&lt;i>the&amp;nbsp;&lt;/i>expert on the subject of computer security. He knows exactly how vulnerabilities can be exploited and just what to do to prevent that from happening.&amp;nbsp;&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In THE ART OF INVISIBILITY Mitnick provides both online and real life tactics and inexpensive methods to protect you and your family, in easy step-by-step instructions. He even talks about more advanced &amp;quot;elite&amp;quot; techniques, which, if used properly, can maximize your privacy. Invisibility isn't just for superheroes--privacy is a power you deserve and need in this modern age.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+        <assets jcr:primaryType="nt:unstructured">
+            <asset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/catalogs/catalog/science/technology/30363785.jpg"/>
+        </assets>
+    </the-art-of-invisibility>
     <the-poisoned-city
         cq:commerceType="product"
         cq:tags="[catalog:science]"
@@ -96,52 +96,29 @@
                 fileReference="/content/dam/catalogs/catalog/science/35020353.jpg"/>
         </assets>
     </the-poisoned-city>
-    <lost-in-math
+    <the-second-machine-age
         cq:commerceType="product"
-        cq:tags="[catalog:science]"
-        jcr:description="How Beauty Leads Physics Astray"
+        cq:tags="[catalog:science,catalog:science/technology,catalog:science/technology/computer-science]"
+        jcr:description="Work, Progress, and Prosperity in a Time of Brilliant Technologies"
         jcr:mixinTypes="[cq:Taggable]"
         jcr:primaryType="nt:unstructured"
-        jcr:title="Lost in Math"
+        jcr:title="The Second Machine Age"
         sling:resourceType="commerce/components/product"
         identifier="invisi2"
-        noOfPages="304"
-        price="467"
-        publishedDate="{Date}2018-06-12T00:00:00.000+05:30"
+        noOfPages="336"
+        price="350"
+        publishedDate="{Date}2016-01-25T00:00:00.000+05:30"
         rating="8"
         starRating="8"
-        summary="&lt;p>&lt;b>A contrarian argues that modern physicists' obsession with beauty has given us wonderful math but bad science. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Whether pondering black holes or predicting discoveries at CERN, physicists believe the best theories are beautiful, natural, and elegant, and this standard separates popular theories from disposable ones. This is why, Sabine Hossenfelder argues, we have not seen a major breakthrough in the foundations of physics for more than four decades. The belief in beauty has become so dogmatic that it now conflicts with scientific objectivity: observation has been unable to confirm mindboggling theories, like supersymmetry or grand unification, invented by physicists based on aesthetic criteria. Worse, these 'too good to not be true' theories are actually untestable and they have left the field in a cul-de-sac. To escape, physicists must rethink their methods. Only by embracing reality as it is can science discover the truth.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        summary="&lt;p>&lt;b>In recent years, Google’s autonomous cars have logged thousands of miles on American highways and IBM’s Watson trounced the best human Jeopardy! players. Digital technologies—with hardware, software, and networks at their core—will in the near future diagnose diseases more accurately than doctors can, apply enormous data sets to transform retailing, and accomplish many tasks once considered uniquely human.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In The Second Machine Age MIT’s Erik Brynjolfsson and Andrew McAfee—two thinkers at the forefront of their field—reveal the forces driving the reinvention of our lives and our economy. As the full impact of digital technologies is felt, we will realize immense bounty in the form of dazzling personal technology, advanced infrastructure, and near-boundless access to the cultural items that enrich our lives.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Amid this bounty will also be wrenching change. Professions of all kinds—from lawyers to truck drivers—will be forever upended. Companies will be forced to transform or die. Recent economic indicators reflect this shift: fewer people are working, and wages are falling even as productivity and profits soar.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Drawing on years of research and up-to-the-minute trends, Brynjolfsson and McAfee identify the best strategies for survival and offer a new path to prosperity. These include revamping education so that it prepares people for the next economy instead of the last one, designing new collaborations that pair brute processing power with human ingenuity, and embracing policies that make sense in a radically transformed landscape.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;A fundamentally optimistic book, The Second Machine Age alters how we think about issues of technological, societal, and economic progress.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
         textIsRich="[true,true]">
-    <assets jcr:primaryType="nt:unstructured">
-        <asset
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="commerce/components/product/image"
-            fileReference="/content/dam/catalogs/catalog/science/36341728.jpg"/>
-    </assets>
-    </lost-in-math>
-    <the-third-bank-of-river
-        cq:commerceType="product"
-        cq:tags="[catalog:science]"
-        jcr:description="Power and Survival in the Twenty-First-Century Amazon"
-        jcr:mixinTypes="[cq:Taggable]"
-        jcr:primaryType="nt:unstructured"
-        jcr:title="The Third Bank of the River"
-        sling:resourceType="commerce/components/product"
-        identifier="invisi2"
-        noOfPages="352"
-        price="467"
-        publishedDate="{Date}2018-06-05T00:00:00.000+05:30"
-        rating="8"
-        starRating="8"
-        summary="&lt;p>&lt;b>A sweeping look at the war over the Amazon--as activists, locals, and indigenous tribes struggle to save it from the threat of loggers, drug lords, and corrupt cops and politicians&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Following doctors and detectives, environmental activists and indigenous tribes, The Third Bank of the River traces the history of the Amazon from the arrival of the first Spanish flotilla to the drones that are now mapping unexplored parts of the forest. Grounded in rigorous firsthand reporting and in-depth research, Chris Feliciano Arnold reveals a portrait of Brazil and the Amazon that is complex, bloody, and often tragic.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;During the 2014 world cup, an isolated Amazon tribe emerged from the rain forest on the misty border of Peru and Brazil, escaping massacre at the hands of loggers who wanted their land. A year later, in the jungle capital of Manaus, a bloody weekend of reprisal killings inflame a drug war that has blurred the line between cops and kingpins. Both events reveal the dual struggles of those living in and around the world's largest river. As indigenous tribes lose their ancestral culture and territory to the lure and threat of the outside world, the question arises of how best to save isolated tribes: Keep them away from the modern world or make contact in an effort to save them from extinction? As Brazil looks to be a world leader in the twenty-first century, this magnificent and vast region is mired in chaos and violence that echoes the atrocities that have haunted the rain forest since Europeans first traveled its waters.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-        textIsRich="[true,true]">
-    <assets jcr:primaryType="nt:unstructured">
-        <asset
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="commerce/components/product/image"
-            fileReference="/content/dam/catalogs/catalog/science/34930822.jpg"/>
-    </assets>
-    </the-third-bank-of-river>
+        <assets jcr:primaryType="nt:unstructured">
+            <asset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/catalogs/catalog/science/technology/23316526.jpg"/>
+        </assets>
+    </the-second-machine-age>
     <the-secret-token
         cq:commerceType="product"
         cq:tags="[catalog:science]"
@@ -158,11 +135,34 @@
         starRating="8"
         summary="&lt;p>&lt;b>A sweeping account of a four-hundred-year-old mystery, the archeologists racing to unearth the answer, and what the Lost Colony reveals about America--from colonial days to today&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;In 1587, 115 men, women, and children arrived on Roanoke, an island off the coast of North Carolina. Chartered by Queen Elizabeth I, their colony was to establish a foothold for England in the New World. But by the time the colony's leader, John White, returned to Roanoke from a resupply mission in England, his settlers were nowhere to be found. They had vanished into the wilderness, leaving behind only a single clue--the word 'Croatoan' carved into a tree. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;The disappearance of the Lost Colony became an enduring American mystery. For four centuries, it has gone unsolved, obsessing countless historians, archeologists, and amateur sleuths. Today, after centuries of searching in vain, new clues have begun to surface. In The Secret Token, Andrew Lawler offers a beguiling history of the Lost Colony, and of the relentless quest to bring its fate to light. He accompanies competing archeologists as they seek out evidence, each team hoping to be the first to solve the riddle. In the course of his journey, Lawler explores how the Lost Colony came to haunt our national consciousness, working its way into literature, popular culture, and politics. &lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Incisive and absorbing, The Secret Token offers a new understanding not just of the Lost Colony, but of how its absence continues to define--and divide--America.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
         textIsRich="[true,true]">
-    <assets jcr:primaryType="nt:unstructured">
-        <asset
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="commerce/components/product/image"
-            fileReference="/content/dam/catalogs/catalog/science/34937397.jpg"/>
-    </assets>
+        <assets jcr:primaryType="nt:unstructured">
+            <asset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/catalogs/catalog/science/34937397.jpg"/>
+        </assets>
     </the-secret-token>
+    <the-third-bank-of-river
+        cq:commerceType="product"
+        cq:tags="[catalog:science]"
+        jcr:description="Power and Survival in the Twenty-First-Century Amazon"
+        jcr:mixinTypes="[cq:Taggable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="The Third Bank of the River"
+        sling:resourceType="commerce/components/product"
+        identifier="invisi2"
+        noOfPages="352"
+        price="467"
+        publishedDate="{Date}2018-06-05T00:00:00.000+05:30"
+        rating="8"
+        starRating="8"
+        summary="&lt;p>&lt;b>A sweeping look at the war over the Amazon--as activists, locals, and indigenous tribes struggle to save it from the threat of loggers, drug lords, and corrupt cops and politicians&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Following doctors and detectives, environmental activists and indigenous tribes, The Third Bank of the River traces the history of the Amazon from the arrival of the first Spanish flotilla to the drones that are now mapping unexplored parts of the forest. Grounded in rigorous firsthand reporting and in-depth research, Chris Feliciano Arnold reveals a portrait of Brazil and the Amazon that is complex, bloody, and often tragic.&lt;/b>&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;During the 2014 world cup, an isolated Amazon tribe emerged from the rain forest on the misty border of Peru and Brazil, escaping massacre at the hands of loggers who wanted their land. A year later, in the jungle capital of Manaus, a bloody weekend of reprisal killings inflame a drug war that has blurred the line between cops and kingpins. Both events reveal the dual struggles of those living in and around the world's largest river. As indigenous tribes lose their ancestral culture and territory to the lure and threat of the outside world, the question arises of how best to save isolated tribes: Keep them away from the modern world or make contact in an effort to save them from extinction? As Brazil looks to be a world leader in the twenty-first century, this magnificent and vast region is mired in chaos and violence that echoes the atrocities that have haunted the rain forest since Europeans first traveled its waters.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+        textIsRich="[true,true]">
+        <assets jcr:primaryType="nt:unstructured">
+            <asset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/catalogs/catalog/science/34930822.jpg"/>
+        </assets>
+    </the-third-bank-of-river>
 </jcr:root>

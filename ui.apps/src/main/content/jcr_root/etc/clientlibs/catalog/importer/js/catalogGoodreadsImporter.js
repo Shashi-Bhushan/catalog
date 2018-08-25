@@ -94,7 +94,7 @@ CQ.commerce.CatalogGoodreadsImporter = CQ.Ext.extend(CQ.Ext.Viewport, {
                                             "fieldDescription" : CQ.I18n.getMessage("Base path to import products to"),
                                             "name" : "baseProductsPath",
                                             "allowBlank" : false,
-                                            "value" : "/var/commerce/products/catalog"
+                                            "value" : "/var/commerce/products/catalog/newBooks"
                                         },{
                                             "xtype":"hidden",
                                             "name":"_charset_",
