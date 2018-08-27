@@ -2,6 +2,7 @@ package in.shabhushan.catalog.services.impl
 
 import in.shabhushan.catalog.services.ResourceResolverService
 import org.apache.felix.scr.annotations.Component
+import org.apache.felix.scr.annotations.Deactivate
 import org.apache.felix.scr.annotations.Reference
 import org.apache.felix.scr.annotations.Service
 import org.apache.sling.api.resource.ResourceResolver
@@ -34,5 +35,12 @@ class ResourceResolverServiceImpl implements ResourceResolverService {
         Map<String, Object> param = ["sling.service.subservice":"signupService"]
 
         return resourceResolverFactory.getServiceResourceResolver(param)
+    }
+
+    @Deactivate
+    void deactivate() {
+        if(resourceResolver.isLive()) {
+            resourceResolver.close()
+        }
     }
 }
