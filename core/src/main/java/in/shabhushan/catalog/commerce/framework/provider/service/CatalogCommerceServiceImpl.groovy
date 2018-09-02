@@ -26,6 +26,7 @@ import com.day.cq.commons.inherit.ComponentInheritanceValueMap
 import com.day.cq.commons.inherit.HierarchyNodeInheritanceValueMap
 import com.day.cq.commons.inherit.InheritanceValueMap
 import com.day.cq.commons.jcr.JcrConstants
+import com.day.cq.commons.jcr.JcrUtil
 import com.day.cq.tagging.Tag
 import com.day.cq.wcm.api.Page
 import groovy.transform.CompileStatic
@@ -34,11 +35,13 @@ import in.shabhushan.catalog.commerce.framework.provider.product.CatalogCommerce
 import in.shabhushan.catalog.commerce.framework.provider.session.CatalogCommerceSessionImpl
 import in.shabhushan.catalog.constants.CommonConstants
 import org.apache.commons.collections.Predicate
+import org.apache.commons.lang3.StringUtils
 import org.apache.jackrabbit.commons.JcrUtils
 import org.apache.sling.api.SlingHttpServletRequest
 import org.apache.sling.api.SlingHttpServletResponse
 import org.apache.sling.api.resource.Resource
 import org.apache.sling.api.resource.ResourceUtil
+import org.apache.sling.api.resource.ValueMap
 
 import javax.jcr.Node
 import javax.jcr.RepositoryException
@@ -149,23 +152,51 @@ class CatalogCommerceServiceImpl extends AbstractJcrCommerceService implements C
         // NOP
     }
 
+    /**
+     * Stores {@link CommonConstants#PROPERTY_HYBRIS_PRODUCT_ID} with products and their variants
+     * @param productData
+     * @param productPage
+     * @param productReference
+     * @throws CommerceException
+     */
     @Override
     void productRolloutHook(Product productData, Page productPage, Product productReference) throws CommerceException {
         log.info "productRolloutHook initiated with $productData.path, $productPage.path and $productReference.path"
-        Node productNode = productReference.adaptTo(Node.class);
-        if (productData.axisIsVariant("color")) {
-            if (!productNode.hasProperty(VARIATION_AXIS)) {
-                productNode.setProperty(VARIATION_AXIS, "color");
-                productNode.setProperty("variationTitle", "Color");
+        Node productReferenceNode = productReference.adaptTo(Node.class);
+        productReferenceNode.setProperty(CommonConstants.PROPERTY_HYBRIS_PRODUCT_ID, productData.getSKU())
+
+        // copy variant IDs or something to that effect
+        Iterator<Product> variants = productData.getVariants();
+        while (variants.hasNext()) {
+            Product variant = variants.next();
+            ValueMap values = variant.adaptTo(ValueMap.class);
+
+            if (!productReferenceNode.hasProperty("variationAxis")
+                && values.get("variantAttribute.name", String[].class) != null) {
+                String leadAxis = productData.adaptTo(ValueMap.class).get("leadAxis", String.class);
+                String axis = getVariantAxis(values, leadAxis);
+                productReferenceNode.setProperty("variationAxis", axis);
+                productReferenceNode.setProperty("variationTitle", StringUtils.capitalize(axis));
             }
-        } else {
-            if (productNode.hasProperty(VARIATION_AXIS) && productNode.getProperty(VARIATION_AXIS).getString().equals("color")) {
-                productNode.setProperty(VARIATION_AXIS, "");
-                productNode.setProperty("variationTitle", "");
+
+            String jcrName = JcrUtil.isValidName(variant.getSKU()) ? variant.getSKU() : JcrUtil
+                .createValidName(variant.getSKU());
+            if (productReferenceNode.hasNode(jcrName)) {
+                Node variantNode = productReferenceNode.getNode(jcrName);
+                variantNode.setProperty(CommonConstants.PROPERTY_HYBRIS_PRODUCT_ID, variant.getSKU());
             }
         }
 
         log.info "productRolloutHook finished"
+    }
+
+    protected String getVariantAxis(final ValueMap values, final String leadAxis) {
+        String[] attrs = values.get("variantAttribute.name", String[].class);
+        if (attrs != null && attrs.length > 0) {
+            return Arrays.asList(attrs).contains(leadAxis) ? leadAxis : (String) attrs[0];
+        } else {
+            return values.get("variantAttribute.name", String.class);
+        }
     }
 
     @Override
