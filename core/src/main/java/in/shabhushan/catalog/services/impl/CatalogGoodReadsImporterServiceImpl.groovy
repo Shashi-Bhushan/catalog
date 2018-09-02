@@ -1,7 +1,10 @@
 package in.shabhushan.catalog.services.impl
 
+import com.adobe.cq.commerce.pim.api.ProductImporter
+import com.adobe.cq.commerce.pim.common.AbstractProductImporter
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
+import in.shabhushan.catalog.constants.CommonConstants
 import in.shabhushan.catalog.constants.GoodReadsImporterConstants
 import in.shabhushan.catalog.dto.Book
 import in.shabhushan.catalog.dto.Books
@@ -12,15 +15,21 @@ import in.shabhushan.catalog.services.CreateProductNodesService
 import in.shabhushan.catalog.services.HttpService
 import in.shabhushan.catalog.services.ResultDeserializationService
 import org.apache.felix.scr.annotations.Component
+import org.apache.felix.scr.annotations.Properties
+import org.apache.felix.scr.annotations.Property
 import org.apache.felix.scr.annotations.Reference
 import org.apache.felix.scr.annotations.Service
 import org.apache.sling.api.SlingHttpServletRequest
 import org.apache.sling.api.SlingHttpServletResponse
+import org.apache.sling.api.resource.ResourceResolver
 import org.json.JSONException
 import org.json.JSONObject
 import org.json.XML
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+
+import javax.jcr.Node
+import javax.jcr.RepositoryException
 
 /**
  * @author Shashi Bhushan
@@ -33,9 +42,10 @@ import org.slf4j.LoggerFactory
     enabled = true
 )
 @Service(CatalogGoodReadsImporterService)
+@Properties(value = [ @Property(name = "commerceProvider", value = CommonConstants.COMMERCE_PROVIDER, propertyPrivate = true) ])
 @CompileStatic
 @Slf4j
-class CatalogGoodReadsImporterServiceImpl implements CatalogGoodReadsImporterService{
+class CatalogGoodReadsImporterServiceImpl extends AbstractProductImporter implements CatalogGoodReadsImporterService{
 
     private static final Logger LOG = LoggerFactory.getLogger(CatalogGoodReadsImporterServiceImpl.class);
 
@@ -84,5 +94,37 @@ class CatalogGoodReadsImporterServiceImpl implements CatalogGoodReadsImporterSer
         Response deserializedResponse = resultDeserializationService.deserializeResult(jsonObj?.toString(), Response.class)
 
         return deserializedResponse?.getGoodreadsResponse()?.getAuthor()?.getBooks()?.getBook()
+    }
+
+    /**
+     * Checks for if API Path for product import, base store id etc are set or not
+     * @param slingHttpServletRequest
+     * @param slingHttpServletResponse
+     * @return
+     * @throws IOException
+     */
+    @Override
+    protected boolean validateInput(SlingHttpServletRequest slingHttpServletRequest, SlingHttpServletResponse slingHttpServletResponse) throws IOException {
+        return false
+    }
+
+    /**
+     * Starts the import of products
+     * @param resourceResolver
+     * @param node is the base Node from where products' should start
+     * @param b is the import incremental, if it is save version info as well
+     * @throws RepositoryException
+     * @throws IOException
+     */
+    @Override
+    protected void doImport(ResourceResolver resourceResolver, Node node, boolean b) throws RepositoryException, IOException {
+        /**
+         * From Product Response feed, get product
+         *
+         * while importing this product, check for "categories" property
+         * if has category and does not have "baseProductCode" && "baseProduct" then it's a base product
+         * if does not have category and have "baseProductCode" && "baseProduct" then it's a variant product
+         */
+
     }
 }

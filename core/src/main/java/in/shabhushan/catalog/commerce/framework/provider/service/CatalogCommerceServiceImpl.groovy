@@ -22,6 +22,9 @@ import com.adobe.cq.commerce.common.AbstractJcrCommerceService
 import com.adobe.cq.commerce.common.CommerceHelper
 import com.adobe.cq.commerce.common.ServiceContext
 import com.adobe.cq.commerce.common.promotion.AbstractJcrVoucher
+import com.day.cq.commons.inherit.ComponentInheritanceValueMap
+import com.day.cq.commons.inherit.HierarchyNodeInheritanceValueMap
+import com.day.cq.commons.inherit.InheritanceValueMap
 import com.day.cq.commons.jcr.JcrConstants
 import com.day.cq.tagging.Tag
 import com.day.cq.wcm.api.Page
@@ -29,6 +32,7 @@ import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import in.shabhushan.catalog.commerce.framework.provider.product.CatalogCommerceProductImpl
 import in.shabhushan.catalog.commerce.framework.provider.session.CatalogCommerceSessionImpl
+import in.shabhushan.catalog.constants.CommonConstants
 import org.apache.commons.collections.Predicate
 import org.apache.jackrabbit.commons.JcrUtils
 import org.apache.sling.api.SlingHttpServletRequest
@@ -37,6 +41,7 @@ import org.apache.sling.api.resource.Resource
 import org.apache.sling.api.resource.ResourceUtil
 
 import javax.jcr.Node
+import javax.jcr.RepositoryException
 
 /**
  * Created by Shashi Bhushan
@@ -47,6 +52,8 @@ import javax.jcr.Node
 class CatalogCommerceServiceImpl extends AbstractJcrCommerceService implements CommerceService {
 
     private static final String REQUEST_ATTRIBUTE_NAME = CatalogCommerceServiceImpl.class.getName();
+
+    public static final String VARIATION_AXIS = "variationAxis"
 
     private Resource resource
 
@@ -105,14 +112,60 @@ class CatalogCommerceServiceImpl extends AbstractJcrCommerceService implements C
         return null;
     }
 
+    /**
+     * Set {@link CommonConstants#PROPERTY_HYBRIS_BASE_STORE} etc. at /content/catalog/en page
+     *
+     * FROM WHERE GET THESE
+     * From Blueprint Page(/content/catalogs/catalog/en/base-catalog), get /var/commerce/products/catalog(Stored at filter/basePath)
+     *  Get the properties from /var/commerce/products/catalog and set on /content/catalog/en
+     * @param blueprint
+     * @param catalog
+     */
     @Override
     public void catalogRolloutHook(Page blueprint, Page catalog) {
-        // NOP
+        log.info "catalogRolloutHook initiated with $blueprint.path and $catalog.path"
+        Resource blueprintResource = blueprint.getContentResource();
+        InheritanceValueMap blueprintProps = new HierarchyNodeInheritanceValueMap(blueprintResource);
+        String basePath = blueprintProps.getInherited("filter/basePath", "/var/commerce/products");
+
+        try {
+            Resource productDataRoot = blueprintResource.getResourceResolver().getResource(basePath);
+            if (productDataRoot != null) {
+                InheritanceValueMap productDataProps = new ComponentInheritanceValueMap(productDataRoot);
+                Node catalogNode = catalog.getContentResource().adaptTo(Node.class);
+                catalogNode.setProperty(CommonConstants.PROPERTY_HYBRIS_BASE_STORE,
+                    productDataProps.getInherited(CommonConstants.PROPERTY_HYBRIS_BASE_STORE, ""));
+                catalogNode.setProperty(CommonConstants.PROPERTY_HYBRIS_CATALOG_ID,
+                    productDataProps.getInherited(CommonConstants.PROPERTY_HYBRIS_CATALOG_ID, ""));
+            }
+        } catch (RepositoryException e) {
+            throw new CommerceException("Catalog rollout hook failed: ", e);
+        }
+        log.info "catalogRolloutHook initiated with $blueprint.path and $catalog.path"
     }
 
     @Override
     public void sectionRolloutHook(Page blueprint, Page section) {
         // NOP
+    }
+
+    @Override
+    void productRolloutHook(Product productData, Page productPage, Product productReference) throws CommerceException {
+        log.info "productRolloutHook initiated with $productData.path, $productPage.path and $productReference.path"
+        Node productNode = productReference.adaptTo(Node.class);
+        if (productData.axisIsVariant("color")) {
+            if (!productNode.hasProperty(VARIATION_AXIS)) {
+                productNode.setProperty(VARIATION_AXIS, "color");
+                productNode.setProperty("variationTitle", "Color");
+            }
+        } else {
+            if (productNode.hasProperty(VARIATION_AXIS) && productNode.getProperty(VARIATION_AXIS).getString().equals("color")) {
+                productNode.setProperty(VARIATION_AXIS, "");
+                productNode.setProperty("variationTitle", "");
+            }
+        }
+
+        log.info "productRolloutHook finished"
     }
 
     @Override

@@ -22,4 +22,5 @@
     <filter root="/var/commerce/products/catalog"/>
     <!-- Design Page-->
     <filter root="/etc/designs/catalog-design"/>
+    <filter root="/etc/workflow/models/content-approval-workflow"/>
 </workspaceFilter>
