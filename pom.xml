@@ -226,12 +226,24 @@
             <url>https://repo.adobe.com/nexus/content/repositories/public/</url>
             <layout>default</layout>
         </repository>
+        <repository>
+            <id>citytech</id>
+            <name>Citytech Public Repository</name>
+            <url>http://nexus.citytech.ctmsp.com/content/groups/public/</url>
+            <layout>default</layout>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>adobe</id>
             <name>Adobe Public Repository</name>
             <url>https://repo.adobe.com/nexus/content/repositories/public/</url>
+            <layout>default</layout>
+        </pluginRepository>
+        <pluginRepository>
+            <id>citytech</id>
+            <name>Citytech Public Repository</name>
+            <url>http://nexus.citytech.ctmsp.com/content/groups/public/</url>
             <layout>default</layout>
         </pluginRepository>
     </pluginRepositories>
